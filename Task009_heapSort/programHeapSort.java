@@ -30,7 +30,6 @@ public class programHeapSort {
             int temp = arr[0];
             arr[0] = arr[i];
             arr[i] = temp;
-
             buildHeap(arr, i, 0);
         }
         
@@ -45,29 +44,19 @@ public class programHeapSort {
         if (flag == true) {
             if (l < arrLen && arr[l] > arr[rootElement])
                 rootElement = l;
-
             if (r < arrLen && arr[r] > arr[rootElement])
-                rootElement = r;
-        
-            if (rootElement != i) {
-                int swap = arr[i];
-                arr[i] = arr[rootElement];
-                arr[rootElement] = swap;
-                buildHeap(arr, arrLen, rootElement);
-            }
+                rootElement = r;   
         } else {
             if (l < arrLen && arr[l] < arr[rootElement])
                 rootElement = l;
-
             if (r < arrLen && arr[r] < arr[rootElement])
-                rootElement = r;
-
-            if (rootElement != i) {
-                int swap = arr[i];
-                arr[i] = arr[rootElement];
-                arr[rootElement] = swap;
-                buildHeap(arr, arrLen, rootElement);
-            }
+                rootElement = r;    
+        }
+        if (rootElement != i) {
+            int swap = arr[i];
+            arr[i] = arr[rootElement];
+            arr[rootElement] = swap;
+            buildHeap(arr, arrLen, rootElement);
         }
     }
 
