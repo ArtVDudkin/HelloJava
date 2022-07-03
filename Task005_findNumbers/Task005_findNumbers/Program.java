@@ -107,7 +107,6 @@ public class Program {
     }
 
     public static ArrayList<String> findNums(String value) {
-        
         ArrayList<String> res = new ArrayList<String>();
         int coeffArrSize = countX(expr);                        // определяем, сколько '?' осталось
         int[] coeffArr = new int[coeffArrSize];                 // массив для хранения коэффициентов, которые подставляем в expr
@@ -128,7 +127,7 @@ public class Program {
                 coeffArr[j] = temp % 10;
                 temp /= 10;
                 temp_str = replaceChar(temp_str, Character.forDigit(coeffArr[j],10), indexArr[j]);
-                System.out.println(temp_str);
+                //System.out.println(temp_str);
                 parseExprToQWE(temp_str);
                 
                 // if (checkEquation(q, w, e)) {
@@ -145,10 +144,10 @@ public class Program {
     public static void main(String[] args) {
         //expr = "2? + ?5 = 69";
         //expr = "?7 + ?5 = 8?";
-        expr = "?271 + 351 = 8???";
+        //expr = "?271 + 351 = 8???";
         //expr = "???? + 351 = 7411";
         //expr = "351 + ???? = 7411";
-        //expr = "?5? + ?5 = ?80";
+        expr = "?5? + ?5 = ?80";
 
         System.out.println(expr);
         parseExprToQWE(expr);
@@ -161,8 +160,6 @@ public class Program {
         if (countX(expr) == 0) {
             System.out.println(expr);
         } else {
-            System.out.println(expr);
-            System.out.println(countX(expr));
             ArrayList<String> result = findNums(expr);
             if (result.isEmpty())
                 System.out.println("Решений нет");    
