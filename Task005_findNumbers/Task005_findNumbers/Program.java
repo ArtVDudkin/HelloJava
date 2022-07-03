@@ -55,10 +55,9 @@ public class Program {
                         listSum.set(i -1, listSum.get(i -1) -1); 
                 } else
                     digit = listSum.get(i) - listNum2.get(i);
-                
                 listNum1.set(i, digit);     
-                q = replaceChar(q, Character.forDigit(digit,10), i);
-            }    
+                q = replaceChar(q, Character.forDigit(digit,10), i - size + q.length() );
+            } else   
             
             // если символы пропущены во втором числе w
             if (listNum1.get(i) != null && listNum2.get(i) == null && listSum.get(i) != null) {
@@ -68,9 +67,9 @@ public class Program {
                         listSum.set(i -1, listSum.get(i -1) -1); 
                 } else
                     digit = listSum.get(i) - listNum1.get(i);
-                listNum2.set(i, digit);
-                w = replaceChar(w, Character.forDigit(digit,10), i);         
-            }
+                listNum2.set(i, digit); 
+                w = replaceChar(w, Character.forDigit(digit,10), i - size + w.length() );  
+            } else
 
             // если символы пропущены в сумме е
             if (listNum1.get(i) != null && listNum2.get(i) != null && listSum.get(i) == null) {
@@ -81,7 +80,7 @@ public class Program {
                 } else  
                     mem = 0;
                 listSum.set(i, digit);
-                e = replaceChar(e, Character.forDigit(digit,10), i);
+                e = replaceChar(e, Character.forDigit(digit,10), i - size + e.length() );
             }    
         }
     }
@@ -116,6 +115,7 @@ public class Program {
         for (int i = 0; i < expr.length(); i++) {                                 
             if (expr.charAt(i) == '?') {
                 indexArr[k] = i;
+                System.out.println(indexArr[k]);
                 k++;
             }
         }
@@ -126,14 +126,14 @@ public class Program {
             for (int j = coeffArrSize -1; j >= 0; j--) {
                 coeffArr[j] = temp % 10;
                 temp /= 10;
-                temp_str = replaceChar(temp_str, Character.forDigit(coeffArr[j],10), indexArr[j]);
-                //System.out.println(temp_str);
-                parseExprToQWE(temp_str);
-                
-                // if (checkEquation(q, w, e)) {
-                //     System.out.println(q + " + " + w + " = " + e);
-                //     res.add(q + " + " + w + " = " + e);
-                // }
+                temp_str = replaceChar(expr, Character.forDigit(coeffArr[j],10), indexArr[j]);
+               
+            }
+            parseExprToQWE(temp_str);
+            //System.out.println(temp_str);
+            if (checkEquation(q, w, e)) {
+                    System.out.println(q + " + " + w + " = " + e);
+                    res.add(q + " + " + w + " = " + e);
             }
 
         }
@@ -147,15 +147,13 @@ public class Program {
         //expr = "?271 + 351 = 8???";
         //expr = "???? + 351 = 7411";
         //expr = "351 + ???? = 7411";
-        expr = "?5? + ?5 = ?80";
-
+        expr = "?15? + ?5 = 1?80";
         System.out.println(expr);
         parseExprToQWE(expr);
         listNum1 = getDigitsQWE(q);
         listNum2 = getDigitsQWE(w);
         listSum = getDigitsQWE(e);
         tryCalc();
-        
         expr = q + " + " + w + " = " + e; 
         if (countX(expr) == 0) {
             System.out.println(expr);
