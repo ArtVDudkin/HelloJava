@@ -156,9 +156,7 @@ public class Program {
         listNum2 = getDigitsQWE(w);
         listSum = getDigitsQWE(e);
         tryCalc();
-        System.out.println(listNum1);
-        System.out.println(listNum2);
-        System.out.println(listSum);
+        
         expr = q + " + " + w + " = " + e; 
         if (countX(expr) == 0) {
             System.out.println(expr);
