@@ -115,7 +115,6 @@ public class Program {
         for (int i = 0; i < expr.length(); i++) {                                 
             if (expr.charAt(i) == '?') {
                 indexArr[k] = i;
-                System.out.println(indexArr[k]);
                 k++;
             }
         }
@@ -126,16 +125,14 @@ public class Program {
             for (int j = coeffArrSize -1; j >= 0; j--) {
                 coeffArr[j] = temp % 10;
                 temp /= 10;
-                temp_str = replaceChar(expr, Character.forDigit(coeffArr[j],10), indexArr[j]);
+                temp_str = replaceChar(temp_str, Character.forDigit(coeffArr[j],10), indexArr[j]);
                
             }
             parseExprToQWE(temp_str);
-            //System.out.println(temp_str);
             if (checkEquation(q, w, e)) {
                     System.out.println(q + " + " + w + " = " + e);
                     res.add(q + " + " + w + " = " + e);
             }
-
         }
         return res;
     }
@@ -147,7 +144,7 @@ public class Program {
         //expr = "?271 + 351 = 8???";
         //expr = "???? + 351 = 7411";
         //expr = "351 + ???? = 7411";
-        expr = "?15? + ?5 = 1?80";
+        expr = "?5? + ?5 = ?80";
         System.out.println(expr);
         parseExprToQWE(expr);
         listNum1 = getDigitsQWE(q);
