@@ -126,7 +126,6 @@ public class Program {
                 coeffArr[j] = temp % 10;
                 temp /= 10;
                 temp_str = replaceChar(temp_str, Character.forDigit(coeffArr[j],10), indexArr[j]);
-               
             }
             parseExprToQWE(temp_str);
             if (checkEquation(q, w, e)) {
