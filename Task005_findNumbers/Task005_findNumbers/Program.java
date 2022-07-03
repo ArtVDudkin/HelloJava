@@ -91,11 +91,6 @@ public class Program {
         return str.substring(0, index) + ch + str.substring(index+1);
     }
 
-    // определяет, сколько цифр неизвестно
-    // public static Integer countX (String expr) { 
-    //     String[] splitArray = expr.split("\\?");
-    //     return splitArray.length -1; 
-    // }
     public static Integer countX (String expr) { 
         int count = 0;
         for (int i = 0; i < expr.length(); i++)
@@ -133,12 +128,13 @@ public class Program {
                 coeffArr[j] = temp % 10;
                 temp /= 10;
                 temp_str = replaceChar(temp_str, Character.forDigit(coeffArr[j],10), indexArr[j]);
+                System.out.println(temp_str);
                 parseExprToQWE(temp_str);
                 
-                if (checkEquation(q, w, e)) {
-                    System.out.println(q + " + " + w + " = " + e);
-                    res.add(q + " + " + w + " = " + e);
-                }
+                // if (checkEquation(q, w, e)) {
+                //     System.out.println(q + " + " + w + " = " + e);
+                //     res.add(q + " + " + w + " = " + e);
+                // }
             }
 
         }
@@ -149,10 +145,10 @@ public class Program {
     public static void main(String[] args) {
         //expr = "2? + ?5 = 69";
         //expr = "?7 + ?5 = 8?";
-        //expr = "?271 + 351 = 8???";
+        expr = "?271 + 351 = 8???";
         //expr = "???? + 351 = 7411";
         //expr = "351 + ???? = 7411";
-        expr = "?5? + ?5 = ?80";
+        //expr = "?5? + ?5 = ?80";
 
         System.out.println(expr);
         parseExprToQWE(expr);
