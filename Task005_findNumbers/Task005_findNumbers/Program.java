@@ -143,8 +143,8 @@ public class Program {
         //expr = "?271 + 351 = 8???";
         //expr = "???? + 351 = 7411";
         //expr = "351 + ???? = 7411";
-        expr = "3?1 + 123 = 23";
-        //expr = "?5? + ?5 = ?80";
+        //expr = "3?1 + 123 = 23";
+        expr = "?5? + ?5 = ?80";
         System.out.println(expr);
         parseExprToQWE(expr);
         listNum1 = getDigitsQWE(q);
