@@ -4,17 +4,17 @@ public class Program {
 
         public static void main(String[] args) {
         
-        MyLog log1 = new MyLog();
-        Human man1 = new Human();
-        Cat cat1 = new Cat("Barsik");
-        log1.appendToLog(man1.callCat("kis-kis"));
-        log1.appendToLog(cat1.listenHuman(man1.callCat("kis-kis")));
-        log1.appendToLog(man1.callCat("Hello, Barsik!"));
-        log1.appendToLog(cat1.listenHuman(man1.callCat("Hello, Barsik!")));
-        log1.appendToLog(man1.touchCat());
-        log1.appendToLog(cat1.sayMur());
+        MyLog log = new MyLog();
+        Human man = new Human();
+        Cat cat = new Cat("Barsik");
+        log.appendToLog(man.callCat("kis-kis"));
+        log.appendToLog(cat.listenHuman(man.callCat("kis-kis")));
+        log.appendToLog(man.callCat("Hello, Barsik!"));
+        log.appendToLog(cat.listenHuman(man.callCat("Hello, Barsik!")));
+        log.appendToLog(man.touchCat());
+        log.appendToLog(cat.sayMur());
         
-        log1.viewEvents();
+        log.viewEvents();
     }
 
 }

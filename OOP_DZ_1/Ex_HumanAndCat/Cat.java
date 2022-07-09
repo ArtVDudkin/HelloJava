@@ -2,25 +2,27 @@ package Ex_HumanAndCat;
 
 public class Cat {
     
-    public String catName;
+    private String catName;
 
     public Cat(String catName) {
         this.catName = catName;
     }
 
     public String listenHuman(String value) {
-        String res = "";
+        StringBuilder res = new StringBuilder();
+        
         if (value.contains("kis-kis")) {
-            res += sayMeow();
-            res += lookAtHuman();
-            return res;
+            res.append(sayMeow());
+            res.append(lookAtHuman());
+            return res.toString();
         } else if (value.contains(catName)) {
-            res += sayMur();
-            res += lookAtHuman();
-            res += runToHuman();
-            return res;
-        } else
+            res.append(sayMur());
+            res.append(lookAtHuman());
+            res.append(runToHuman());
+            return res.toString();
+        } else {
             return "";
+        }
     }
 
     public String sayMeow() {
