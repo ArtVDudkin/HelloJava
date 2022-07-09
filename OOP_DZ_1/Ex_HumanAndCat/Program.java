@@ -2,9 +2,9 @@ package Ex_HumanAndCat;
 
 public class Program {
 
-        public static MyLog log1 = new MyLog();
         public static void main(String[] args) {
-
+        
+        MyLog log1 = new MyLog();
         Human man1 = new Human();
         Cat cat1 = new Cat("Barsik");
         log1.appendToLog(man1.callCat("kis-kis"));

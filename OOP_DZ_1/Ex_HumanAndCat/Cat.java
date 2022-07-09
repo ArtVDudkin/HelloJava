@@ -32,11 +32,11 @@ public class Cat {
     }
 
     public String lookAtHuman() {
-        return "\ncat: looks at human one time and do nothing";
+        return "\ncat: looks at human one time and do nothing...";
     }
 
     public String runToHuman() {
-        return "\ncat: runs to human and starts to wait something";
+        return "\ncat: runs to human and starts to wait something...";
     }
 
 }
