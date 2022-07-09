@@ -10,14 +10,14 @@ public class Program {
         Human man2 = new Human("Elena");
         
         //создаем две двери шкафа, которые по умолчанию закрыты
-        WardrobeDoor door1 = new WardrobeDoor(1, State.Closed);
-        WardrobeDoor door2 = new WardrobeDoor(2, State.Closed);
+        WardrobeDoor door1 = new WardrobeDoor(1, State.CLOSED);
+        WardrobeDoor door2 = new WardrobeDoor(2, State.CLOSED);
         
-        door1.openDoor(man1, 1);
-        door2.openDoor(man2, 2);
-        door1.closeDoor(man2, 1);
-        door2.closeDoor(man1, 2);
-        door1.closeDoor(man1, 1);
+        man1.openDoor(door1);
+        man2.openDoor(door2);
+        man1.closeDoor(door2);
+        man2.closeDoor(door1);
+        man1.closeDoor(door1);  // пытаемся закрыть уже закрытую дверь - получаем сообщение, что дверь уже закрыта
     }
 
 }
