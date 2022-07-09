@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Person {
     
-    public String fullName;
+    private String fullName;
     
     private ArrayList<Person> family = new ArrayList<>();
     

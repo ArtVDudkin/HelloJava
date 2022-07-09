@@ -10,21 +10,14 @@ public class Research {
         tree = geoTree.getTree();
     }
     
-    public ArrayList<Person> spend(Person p, Node.Relationship re) {
+    public ArrayList<Person> spend(Person pers, Node.Relationship relation) {
     
         var result = new ArrayList<Person>();
     
-            // tree.forEach((t) -> {
-            // if (t.p1.fullName == p.fullName
-            // && t.re == re) {
-            // result.add(t.p2);
-            // }
-            // });
-    
         for (Node t : tree) {
-            if (t.p1.fullName == p.fullName
-                    && t.re == re) {
-                result.add(t.p2);
+            if (t.person1.toString() == pers.toString()
+                    && t.relation == relation) {
+                result.add(t.person2);
             }
         }
     

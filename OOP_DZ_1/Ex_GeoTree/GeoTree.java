@@ -11,8 +11,8 @@ public class GeoTree {
     }
 
     public void append(Person parent, Person children) {
-        tree.add(new Node(parent, Node.Relationship.parent, children));
-        tree.add(new Node(children, Node.Relationship.children, parent));
+        tree.add(new Node(parent, Node.Relationship.PARENT, children));
+        tree.add(new Node(children, Node.Relationship.CHILDREN, parent));
     }
 }
 

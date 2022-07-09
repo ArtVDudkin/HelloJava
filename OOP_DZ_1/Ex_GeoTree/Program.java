@@ -16,14 +16,14 @@ public class Program {
         mary.appendToFamily(n021);
         mary.appendToFamily(n022);
 
-        Research(natasha, "");
+        research(natasha, "");
     }
 
-    static void Research(Person root, String sp) {
+    static void research(Person root, String sp) {
         if (root != null) {
-            Printer.OutputData(sp + root.fullName);
+            Printer.outputData(sp + root.toString());
             for (Person item : root.getFamily()) {
-                Research(item, sp + "  ");
+                research(item, sp + "  ");
             }
         }
     }
