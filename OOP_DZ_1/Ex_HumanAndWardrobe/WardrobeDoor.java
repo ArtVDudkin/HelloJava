@@ -28,7 +28,7 @@ public class WardrobeDoor {
             this.state = State.Opened;
             System.out.printf("%s opened door #%d\n", hm.name, door);
         } else
-        System.out.printf("%s tryed to open door #%d, but it was closed\n", hm.name, door);
+            System.out.printf("%s tryed to open door #%d, but it was closed\n", hm.name, door);
         
     }  
 

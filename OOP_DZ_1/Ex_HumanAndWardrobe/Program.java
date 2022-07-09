@@ -8,7 +8,8 @@ public class Program {
 
         Human man1 = new Human("Nikolai");
         Human man2 = new Human("Elena");
-
+        
+        //создаем две двери шкафа, которые по умолчанию закрыты
         WardrobeDoor door1 = new WardrobeDoor(1, State.Closed);
         WardrobeDoor door2 = new WardrobeDoor(2, State.Closed);
         
