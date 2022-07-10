@@ -1,17 +1,10 @@
 package Ex2_HumanAndWardrobe;
 
-public class WardrobeDoor {
-    
-    public State state;
-    public Integer doorIndex;
+public class WardrobeDoor extends Door {
 
-    public WardrobeDoor(Integer doorIndex, State state) {
-        this.state = state;
-        this.doorIndex = doorIndex;
+    //создаем две двери шкафа, которые по умолчанию закрыты
+    public WardrobeDoor(String doorType) {
+        this.state = state.CLOSED;
+        this.doorType = doorType;
     }
-
-    enum State {
-        OPENED, CLOSED
-    }
-
 }

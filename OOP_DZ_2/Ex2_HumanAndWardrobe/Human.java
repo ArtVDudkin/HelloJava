@@ -8,22 +8,23 @@ public class Human {
         this.name = name;
     }
 
-    public void closeDoor(WardrobeDoor door) {
+    public void closeDoor(Door door) {
         
-        if (door.state == WardrobeDoor.State.OPENED) {
-            door.state = WardrobeDoor.State.CLOSED;
-            System.out.printf("%s closed door #%d\n", name, door.doorIndex);
+        if (door.state == Door.State.OPENED) {
+            door.state = Door.State.CLOSED;
+            System.out.printf("%s closed %s\n", name, door.doorType);
         } else {
-            System.out.printf("%s tryed to close door #%d, but it was closed\n", name, door.doorIndex);
+            System.out.printf("%s tryed to close %s, but it was closed\n", name, door.doorType);
         }
     }
 
-    public void openDoor(WardrobeDoor door) {
-        if (door.state == WardrobeDoor.State.CLOSED) {
-            door.state = WardrobeDoor.State.OPENED;
-            System.out.printf("%s opened door #%d\n", name, door.doorIndex);
+    public void openDoor(Door door) {
+        if (door.state == Door.State.CLOSED) {
+            door.state = Door.State.OPENED;
+            System.out.printf("%s opened %s\n", name, door.doorType);
+            
         } else {
-            System.out.printf("%s tryed to open door #%d, but it was closed\n", name, door.doorIndex);
+            System.out.printf("%s tryed to open %s, but it was closed\n", name, door.doorType);
         }
     }  
 
