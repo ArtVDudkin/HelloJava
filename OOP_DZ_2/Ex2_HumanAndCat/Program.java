@@ -24,8 +24,7 @@ public class Program {
         Hamster hams = new Hamster("mr Homa");
         man.addPet(hams);
         log.appendToLog(man.callAllPets("Hey pets! Where are you?)"));
-        log.appendToLog(man.callPet(hams, "Hello, mr Homa!"));
-        log.appendToLog(hams.listenHuman(man.callPet(hams,"Hello, mr Homa!")));
+    
         log.viewEvents();
     }
 
