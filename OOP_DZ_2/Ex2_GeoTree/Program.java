@@ -11,6 +11,7 @@ public class Program {
 
         // класс GeoTree  построен на ArrayList, класс NewGeoTree построен на LinkedList
         // если заменить тип, то ничего не должно сломаться
+        
         //GeoTree gt = new GeoTree();
         NewGeoTree gt = new NewGeoTree();
         gt.append(irina, vasya);
