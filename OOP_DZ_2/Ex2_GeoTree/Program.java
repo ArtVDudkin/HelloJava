@@ -3,30 +3,26 @@ package Ex2_GeoTree;
 public class Program {
     public static void main(String[] args) {
 
-        Person natasha = new Person("Наташа");
-        Person alex = new Person("Саша");
-        Person mary = new Person("Маша");
-        Person n021 = new Person("Алла");
-        Person n022 = new Person("Иван");
-        Person n011 = new Person("Валера");
+        Person irina = new Person("Ирина");
+        Person vasya = new Person("Вася");
+        Person masha = new Person("Маша");
+        Person jane = new Person("Женя");
+        Person ivan = new Person("Ваня");
 
-        natasha.appendToFamily(alex);
-        natasha.appendToFamily(mary);
-        alex.appendToFamily(n011);
-        mary.appendToFamily(n021);
-        mary.appendToFamily(n022);
-
-        research(natasha, "");
+        // класс GeoTree  построен на ArrayList, класс NewGeoTree построен на LinkedList
+        // если заменить тип, то ничего не должно сломаться
+        //GeoTree gt = new GeoTree();
+        NewGeoTree gt = new NewGeoTree();
+        gt.append(irina, vasya);
+        gt.append(irina, masha);
+        gt.append(vasya, jane);
+        gt.append(vasya, ivan);
+        System.out.println("Дети Васи");
+        System.out.println(gt.search(vasya, Node.Relationship.PARENT));
+        System.out.println("Родители Васи");
+        System.out.println(gt.search(vasya, Node.Relationship.CHILDREN));
     }
 
-    static void research(Person root, String sp) {
-        if (root != null) {
-            Printer.outputData(sp + root.toString());
-            for (Person item : root.getFamily()) {
-                research(item, sp + "  ");
-            }
-        }
-    }
 }
 
 
