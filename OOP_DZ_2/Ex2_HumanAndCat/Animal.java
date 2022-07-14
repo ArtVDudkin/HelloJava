@@ -8,19 +8,21 @@ public abstract class Animal {
         return animalName;
     }
 
-    public String animalVoice() {
-        return "";
+    public String say() {
+        return new String();
     }
 
-    public String animalReaction1() {
+    // act1 и act2 - базовые реакции животного, которые в дальнейшем могут остаться такими же, 
+    // а могут быть переопределены по-другому 
+    public String act1() {
         return "\nlooks at human one time and do nothing...";
     }
 
-    public String animalReaction2() {
+    public String act2() {
         return "\nruns to human and starts to wait something...";
     }
 
-    public String getAnimalName() {
+    public String getName() {
         return animalName;
     }
 }

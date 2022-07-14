@@ -1,12 +1,13 @@
 package Ex2_HumanAndCat;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Human {
     
-    private ArrayList<Animal> myPets;
+    private List<Animal> myPets;
 
-    public Human(Animal... args) {
+    public Human() {
         myPets = new ArrayList<Animal>();
     }
 
@@ -21,7 +22,7 @@ public class Human {
     }
 
     public String callPet(Animal animal, String value) {
-        return String.format("human: calls %s: %s", animal.getAnimalName(), value);
+        return String.format("human: calls %s: %s", animal.getName(), value);
     }
 
     public String callAllPets(String value) {
@@ -34,10 +35,10 @@ public class Human {
     }
 
     public String touchAnimal(Animal animal) {
-        return "human: touch " + animal.getAnimalName();
+        return "human: touch " + animal.getName();
     }
 
-    public ArrayList<Animal> getMyPets() {
+    public List<Animal> getMyPets() {
         return myPets;
     }
 

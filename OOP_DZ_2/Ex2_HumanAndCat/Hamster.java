@@ -13,23 +13,23 @@ public class Hamster extends Animal {
         StringBuilder res = new StringBuilder();
         res.append(hamsterName + ": ");
         if (value.contains("Homa")) {
-            res.append(animalVoice());
-            res.append(animalReaction1());
-            res.append(animalReaction2());
+            res.append(say());
+            res.append(act1());
+            res.append(act2());
             return res.toString();
         } else {
-            res.append(animalVoice());
+            res.append(say());
             return res.toString();
         }
     }
 
     @Override
-    public String animalVoice() {
+    public String say() {
         return "pi-pi-pi!";
     }
 
     @Override
-    public String getAnimalName() {
+    public String getName() {
         return hamsterName;
     }
 }
