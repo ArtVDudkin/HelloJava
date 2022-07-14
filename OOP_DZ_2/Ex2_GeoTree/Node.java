@@ -2,6 +2,10 @@ package Ex2_GeoTree;
 
 public class Node {
     
+    private Person person1;
+    private Relationship relation;
+    private Person person2;
+
     enum Relationship {
         PARENT,
         CHILDREN
@@ -13,9 +17,17 @@ public class Node {
         this.person2 = person2;
     }
 
-    Person person1;
-    Relationship relation;
-    Person person2;
+    public Person getPerson1() {
+        return person1;
+    }
+
+    public Person getPerson2() {
+        return person2;
+    }
+
+    public Relationship getRelation() {
+        return relation;
+    }
 
     @Override
     public String toString() {

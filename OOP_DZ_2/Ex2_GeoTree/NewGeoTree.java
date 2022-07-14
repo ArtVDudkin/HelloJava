@@ -1,12 +1,13 @@
 package Ex2_GeoTree;
 
 import java.util.LinkedList;
+import java.util.List;
 
-public class NewGeoTree implements interfaceTree {
+public class NewGeoTree implements InterfaceTree {
     
-    private LinkedList<Node> newTree = new LinkedList<Node>();
+    private List<Node> newTree = new LinkedList<>();
     
-    public LinkedList<Node> getTree() {
+    public List<Node> getTree() {
         return newTree;
     }
     
@@ -16,14 +17,14 @@ public class NewGeoTree implements interfaceTree {
         newTree.add(new Node(children, Node.Relationship.CHILDREN, parent));  
     }
 
-    public LinkedList<Person> search(Person pers, Node.Relationship relation) {
+    public List<Person> search(Person pers, Node.Relationship relation) {
     
-        LinkedList<Person> result = new LinkedList<Person>();
+        List<Person> result = new LinkedList<>();
     
         for (Node item : newTree) {
-            if (item.person1.toString() == pers.toString()
-                    && item.relation == relation) {
-                result.add(item.person2);
+            if (item.getPerson1() == pers
+                    && item.getRelation() == relation) {
+                result.add(item.getPerson2());
             }
         }
         return result;

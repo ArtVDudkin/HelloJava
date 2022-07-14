@@ -1,8 +1,9 @@
 package Ex2_GeoTree;
 
-public class Printer {
+public class Printer implements InterfacePrinter {
     
-    public static void outputData (String data) {
+    @Override
+    public void outputData (String data) {
         System.out.println(data);
     }
 }

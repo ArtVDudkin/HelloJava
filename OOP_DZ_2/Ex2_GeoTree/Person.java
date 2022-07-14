@@ -1,14 +1,15 @@
 package Ex2_GeoTree;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Person {
     
     private String fullName;
     
-    private ArrayList<Person> family = new ArrayList<>();
+    private List<Person> family = new ArrayList<>();
     
-    public ArrayList<Person> getFamily() {
+    public List<Person> getFamily() {
         return family;
     }
     

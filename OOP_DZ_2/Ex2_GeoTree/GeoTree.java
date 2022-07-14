@@ -1,12 +1,13 @@
 package Ex2_GeoTree;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class GeoTree implements interfaceTree {
+public class GeoTree implements InterfaceTree {
     
-    private ArrayList<Node> tree = new ArrayList<>();
+    private List<Node> tree = new ArrayList<>();
 
-    public ArrayList<Node> getTree() {
+    public List<Node> getTree() {
         return tree;
     }
 
@@ -16,14 +17,14 @@ public class GeoTree implements interfaceTree {
         tree.add(new Node(children, Node.Relationship.CHILDREN, parent));
     }
 
-    public ArrayList<Person> search(Person pers, Node.Relationship relation) {
+    public List<Person> search(Person pers, Node.Relationship relation) {
     
-        ArrayList<Person> result = new ArrayList<Person>();
+        List<Person> result = new ArrayList<>();
     
         for (Node item : tree) {
-            if (item.person1.toString() == pers.toString()
-                    && item.relation == relation) {
-                result.add(item.person2);
+            if (item.getPerson1() == pers
+                    && item.getRelation() == relation) {
+                result.add(item.getPerson2());
             }
         }
         return result;
