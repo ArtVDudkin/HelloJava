@@ -2,11 +2,30 @@ package Ex2_HumanAndWardrobe;
 
 public abstract class Door {
     
-    public State state;
-    public String doorType;
+    private String name;
+    private State state;
+    
+    public enum DoorType {
+        VEHICLE, WARDROBE; 
+    }
 
-    enum State {
+    public enum State {
         OPENED, CLOSED
     }
 
+    public State getState() {
+        return this.state;
+    }
+
+    public void setState(State newState) {
+        state = newState;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String doorName) {
+        name = doorName;
+    }
 }

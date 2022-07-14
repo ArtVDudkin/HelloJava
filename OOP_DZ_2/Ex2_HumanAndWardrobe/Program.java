@@ -1,6 +1,5 @@
 package Ex2_HumanAndWardrobe;
 
-
 public class Program {
 
         public static void main(String[] args) {

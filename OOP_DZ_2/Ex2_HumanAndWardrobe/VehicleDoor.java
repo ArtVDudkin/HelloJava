@@ -1,10 +1,12 @@
 package Ex2_HumanAndWardrobe;
 
-public class VehicleDoor extends Door{
-    
+public class VehicleDoor extends Door {
+   
+    public DoorType doorType;
     //создаем две двери авто, которые по умолчанию закрыты
-    public VehicleDoor(String doorType) {
-        this.state = state.CLOSED;
-        this.doorType = doorType;
+    public VehicleDoor(String name) {
+        this.doorType = DoorType.VEHICLE;
+        setState(State.CLOSED);
+        setName(name);
     }
 }

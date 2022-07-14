@@ -1,6 +1,6 @@
 package Ex2_HumanAndWardrobe;
 
-public class Human {
+public class Human implements InterfaceDoor {
     
     private String name;
 
@@ -8,23 +8,25 @@ public class Human {
         this.name = name;
     }
 
+    @Override
     public void closeDoor(Door door) {
         
-        if (door.state == Door.State.OPENED) {
-            door.state = Door.State.CLOSED;
-            System.out.printf("%s closed %s\n", name, door.doorType);
+        if (door.getState() == Door.State.OPENED) {
+            door.setState(Door.State.CLOSED);
+            System.out.printf("%s closed %s\n", name, door.getName());
         } else {
-            System.out.printf("%s tryed to close %s, but it was closed\n", name, door.doorType);
+            System.out.printf("%s tryed to close %s, but it was closed\n", name, door.getName());
         }
     }
 
+    @Override
     public void openDoor(Door door) {
-        if (door.state == Door.State.CLOSED) {
-            door.state = Door.State.OPENED;
-            System.out.printf("%s opened %s\n", name, door.doorType);
+        if (door.getState() == Door.State.CLOSED) {
+            door.setState(Door.State.OPENED); 
+            System.out.printf("%s opened %s\n", name, door.getName());
             
         } else {
-            System.out.printf("%s tryed to open %s, but it was closed\n", name, door.doorType);
+            System.out.printf("%s tryed to open %s, but it was closed\n", name, door.getName());
         }
     }  
 
