@@ -1,12 +1,13 @@
 package Ex2_HumanAndCat;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MyLog {
     
-    public ArrayList<String> catLog = new ArrayList<String>();
+    public List<String> catLog = new ArrayList<>();
     
-    public void appendToLog(String event) {
+    public void append(String event) {
         catLog.add(event);
     }
 

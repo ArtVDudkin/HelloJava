@@ -8,7 +8,7 @@ public class Human {
     private List<Animal> myPets;
 
     public Human() {
-        myPets = new ArrayList<Animal>();
+        myPets = new ArrayList<>();
     }
 
     public void addPet(Animal... args) {
