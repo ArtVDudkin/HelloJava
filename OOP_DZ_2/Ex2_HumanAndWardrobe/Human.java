@@ -1,6 +1,6 @@
 package Ex2_HumanAndWardrobe;
 
-public class Human implements InterfaceDoor {
+public class Human implements IDoor {
     
     private String name;
 
