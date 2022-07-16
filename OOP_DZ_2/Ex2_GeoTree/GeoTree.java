@@ -3,7 +3,7 @@ package Ex2_GeoTree;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GeoTree implements InterfaceTree {
+public class GeoTree implements ITree {
     
     private List<Node> tree = new ArrayList<>();
 

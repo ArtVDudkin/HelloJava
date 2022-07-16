@@ -3,7 +3,7 @@ package Ex2_GeoTree;
 import java.util.LinkedList;
 import java.util.List;
 
-public class NewGeoTree implements InterfaceTree {
+public class NewGeoTree implements ITree {
     
     private List<Node> newTree = new LinkedList<>();
     
