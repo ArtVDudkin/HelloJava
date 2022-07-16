@@ -1,17 +1,15 @@
 package Ex2_HumanAndCat;
 
 public class Hamster extends Animal {
-    
-    private String hamsterName;
 
     public Hamster(String hamName) {
-        this.hamsterName = hamName;
+        super.setName(hamName);
     }
 
     @Override
     public String listenHuman(String value) {
         StringBuilder res = new StringBuilder();
-        res.append(hamsterName + ": ");
+        res.append(super.getName() + ": ");
         if (value.contains("Homa")) {
             res.append(say());
             res.append(act1());
@@ -26,10 +24,5 @@ public class Hamster extends Animal {
     @Override
     public String say() {
         return "pi-pi-pi!";
-    }
-
-    @Override
-    public String getName() {
-        return hamsterName;
     }
 }

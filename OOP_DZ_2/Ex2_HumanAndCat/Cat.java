@@ -1,22 +1,20 @@
 package Ex2_HumanAndCat;
 
 public class Cat extends Animal {
-    
-    private String catName;
 
     public Cat(String catName) {
-        this.catName = catName;
+        super.setName(catName);
     }
 
     @Override
     public String listenHuman(String value) {
         StringBuilder res = new StringBuilder();
-        res.append(catName + ": ");
+        res.append(super.getName() + ": ");
         if (value.contains("kis-kis")) {
             res.append(say());
             res.append(act1());
             return res.toString();
-        } else if (value.contains(catName)) {
+        } else if (value.contains(super.getName())) {
             res.append(sayMur());
             res.append(act1());
             res.append(act2());
@@ -36,8 +34,4 @@ public class Cat extends Animal {
         return "Mur-Mur-Mur!";
     }
 
-    @Override
-    public String getName() {
-        return catName;
-    }
 }

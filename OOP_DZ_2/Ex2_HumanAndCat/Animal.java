@@ -9,7 +9,7 @@ public abstract class Animal {
     }
 
     public String say() {
-        return new String();
+        return null;
     }
 
     // act1 и act2 - базовые реакции животного, которые в дальнейшем могут остаться такими же, 
@@ -24,5 +24,9 @@ public abstract class Animal {
 
     public String getName() {
         return animalName;
+    }
+
+    public void setName(String name) {
+        animalName = name;
     }
 }
