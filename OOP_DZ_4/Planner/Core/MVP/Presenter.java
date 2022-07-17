@@ -21,10 +21,10 @@ public class Presenter {
     }
 
     // TODO добавить механизм добавления записей и проверку корректности...
-    // public void add() {
-    //     model.currentBook().add(
-    //             new Note());
-    // }
+    public void add() {
+        // model.currentBook().add(
+        //         new Note());
+    }
 
     public void remove() {
         if (model.currentBook().count() < 1) {

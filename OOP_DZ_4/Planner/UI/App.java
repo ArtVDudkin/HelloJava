@@ -33,7 +33,7 @@ public class App {
                         presenter.saveToFile();;
                         break;
                     case "5":
-                        presenter.next();
+                        presenter.add();
                         break;
                     case "6":
                         presenter.remove();
