@@ -11,7 +11,7 @@ public class Presenter {
     }
 
     public void loadFromFile() {
-        model.clear();              // очищаем текущую книгу, иначе она дополняется такими же записями
+        model.clear();              // очищаем текущую книгу, иначе она дополняется точно такими же записями
         model.load();
         if (model.currentBook().count() > 0) {
             model.setCurrentIndex(0);

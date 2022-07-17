@@ -36,7 +36,7 @@ public class App {
                         presenter.next();
                         break;
                     case "6":
-                        presenter.next();
+                        presenter.remove();
                         break;
                     case "7":
                         System.exit(0);

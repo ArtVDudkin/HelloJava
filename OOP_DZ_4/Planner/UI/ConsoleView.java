@@ -11,9 +11,11 @@ public class ConsoleView implements View {
     }
 
     public void print(Notebook currentBook) {
+        
         for (var note : currentBook.getNotes()) {
             System.out.printf("%d\t%s\t%s\t%s\t%s\t%s\t%s\n", note.id, note.date, note.time, note.deadline, note.task, note.author, note.priority);       
         };
+        
     }
     
     @Override

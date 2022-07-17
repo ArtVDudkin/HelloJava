@@ -13,7 +13,7 @@ import Planner.Core.Models.Note.Priority;
 
 public class Model {
 
-    public Notebook currentBook;
+    private Notebook currentBook;
     private int currentIndex;
     private String path;
 
