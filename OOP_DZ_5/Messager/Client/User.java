@@ -2,7 +2,6 @@ package Messager.Client;
 
 import Messager.Server.IChat;
 import Messager.Server.MessageModel;
-import Messager.Server.TextMessage;
 
 public class User extends Client {
 
@@ -30,7 +29,6 @@ public class User extends Client {
     }
   
     public void sendMsg(MessageModel text) {
-        //var mm = new TextMessage(text);
         this.chatroom.sendMessage(text, this);
     }
 }
