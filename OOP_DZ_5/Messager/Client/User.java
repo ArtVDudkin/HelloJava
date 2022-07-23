@@ -29,8 +29,8 @@ public class User extends Client {
         System.out.printf("Чат %s: %s\n", super.getName(), msg.text);
     }
   
-    public void sendMsg(String text) {
-        var mm = new TextMessage(text);
-        this.chatroom.sendMessage(mm, this);
+    public void sendMsg(MessageModel text) {
+        //var mm = new TextMessage(text);
+        this.chatroom.sendMessage(text, this);
     }
 }
