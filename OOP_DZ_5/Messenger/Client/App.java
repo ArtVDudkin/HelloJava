@@ -14,9 +14,10 @@ public class App {
         user1.sendMsg("Привет всем!");
         user2.sendMsg("ку-ку!");
         user3.sendMsg("Hi!");
-        User user4 = new User("Коля", myChat);
+        Admin admin = new Admin("Коля", myChat);
 
-        user4.sendMsg("Как дела?");
-        user3.remove(myChat);
+        admin.sendMsg("Как дела?");
+        user3.sendMsg("Админ банан!");
+        admin.kickUser(user3, myChat);
     }
 }
