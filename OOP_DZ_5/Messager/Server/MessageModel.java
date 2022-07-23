@@ -1,6 +1,6 @@
 package Messager.Server;
 
-public class MessageModel {
+public abstract class MessageModel {
     
     public String text;
     int id;
