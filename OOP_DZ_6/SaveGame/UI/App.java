@@ -45,18 +45,18 @@ public class App {
                             //     //     step = scanner.nextInt();
                             //     if (inp.hasNextInt()) {
                             //         step = inp.nextInt();
-                                    String msg ="";
-                                    if (step <= 0) {
-                                        System.out.println("Количество взятых конфет должно быть больше 1!");
-                                    }
-                                    if (step > 28) {
-                                        msg = "Не более " + 28 + " конфет!";
-                                        System.out.println(msg);
-                                    }
-                                    if (step > 24) {
-                                        msg = "Всего конфет осталось " + 24 + "! Вы не можете взять больше! Попробуйте еще раз?";
-                                        System.out.println(msg);
-                                    }
+                                    // String msg ="";
+                                    // if (step <= 0) {
+                                    //     System.out.println("Количество взятых конфет должно быть больше 1!");
+                                    // }
+                                    // if (step > 28) {
+                                    //     msg = "Не более " + 28 + " конфет!";
+                                    //     System.out.println(msg);
+                                    // }
+                                    // if (step > 24) {
+                                    //     msg = "Всего конфет осталось " + 24 + "! Вы не можете взять больше! Попробуйте еще раз?";
+                                    //     System.out.println(msg);
+                                    // }
                             //     // } else {  
                             //     //     // if (scanner.hasNext("s")) {
                             //     //     //     modelG.saveGame();
