@@ -26,7 +26,7 @@ public class Doc {
     }
 
     public void restoreState(DocMemento memento) {
-        text = memento.text;
-        style = memento.style;
+        text = memento.getText();
+        style = memento.getStyle();
     }
 }
