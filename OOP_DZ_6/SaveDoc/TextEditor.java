@@ -28,8 +28,10 @@ public class TextEditor {
                         history.push(myDocument.SaveState());
                         break;
                     case "3":
-                        myDocument.restoreState(history.pop());
-                        myDocument.print();
+                        if (!history.isEmpty()) {
+                            myDocument.restoreState(history.pop());
+                            myDocument.print();
+                        }
                         break;
                     case "4":
                         System.exit(0);
