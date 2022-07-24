@@ -39,22 +39,6 @@ public class TextEditor {
                 }
             }
         }
-        
-        
-        // // создали документ и добавили текст
-        // myDocument.addBlock("Привет, мир!");
-        // myDocument.setStyle(2);
-        // myDocument.print();
-        // // сохранили документ в стек
-        // history.push(myDocument.SaveState());
-
-        // // изменили документ
-        // myDocument.addBlock("И снова привет!!!");
-        // myDocument.setStyle(3);
-        // myDocument.print();
-        // // восстановили документ из стека
-        // myDocument.restoreState(history.pop());
-        // myDocument.print();
 
     }
 }
