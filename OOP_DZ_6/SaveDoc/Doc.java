@@ -18,11 +18,10 @@ public class Doc {
     }
 
     public void print() {
-        System.out.printf("--- ПЕЧАТЬ ---\nСтиль: тип {%d}\nТекст:\n{%s}\n", style, text);
+        System.out.printf("--- ПЕЧАТЬ ---\nСтиль: тип {%d}\nТекст: {%s}\n", style, text);
     }
    
     public DocMemento SaveState() {
-        System.out.println("Сохранение документа.");
         return new DocMemento(text, style);
     }
 
