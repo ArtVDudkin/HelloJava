@@ -34,7 +34,7 @@ public class App {
                             if (inp.hasNextInt()) {
                                 presenter.getValue(inp);
                             }
-                            System.out.println("Game started");
+                            System.out.println("Game started"); // для проверки, потом удалить
                         } else {
                             view.print("Такой команды нет");
                         }
