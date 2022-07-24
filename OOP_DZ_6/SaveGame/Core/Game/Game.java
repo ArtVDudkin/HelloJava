@@ -25,6 +25,10 @@ public class Game {
         this.currentCandies = value;
     }
 
+    public int getCurrCandies() {
+        return currentCandies;
+    }
+
     public void sendMsg(String text) {
         this.msg = text;
         console.print(msg);

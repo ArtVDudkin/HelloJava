@@ -45,42 +45,34 @@ public class Model {
     }
 
     public void checkData(Scanner value) {
-        // do {
-                                
-                            //     // Scanner scanner = new Scanner(System.in);
-                            //     // if (scanner.hasNextInt()) {
-                            //     //     step = scanner.nextInt();
-                            //     if (inp.hasNextInt()) {
-                            //         step = inp.nextInt();
-                                    // String msg ="";
-                                    // if (step <= 0) {
-                                    //     System.out.println("Количество взятых конфет должно быть больше 1!");
-                                    // }
-                                    // if (step > 28) {
-                                    //     msg = "Не более " + 28 + " конфет!";
-                                    //     System.out.println(msg);
-                                    // }
-                                    // if (step > 24) {
-                                    //     msg = "Всего конфет осталось " + 24 + "! Вы не можете взять больше! Попробуйте еще раз?";
-                                    //     System.out.println(msg);
-                                    // }
-                            //     // } else {  
-                            //     //     // if (scanner.hasNext("s")) {
-                            //     //     //     modelG.saveGame();
-                                        
-                            //     //     //     sendMsg("Game saved"); 
-                            //     //     // } else if (scanner.hasNext("l")) {
-                            //     //     //     modelG.loadGame();
-                            //     //     //     sendMsg("Game loaded");
-                            //     //     // } else {
-                            //     //          sendMsg("Ошибка ввода!");
-                            //     //     }     
-                            //         msg = "Введите целое число от 1 до " + 28 + "!";
-                            //         System.out.println(msg);
-                            //         step = 28 + 1; // если введено не целое число, а что-то другое, то искуственно зацикливаем ввод значений
-                            //     }   
-                            // }
-                            // while(step < 1 || step > 28 || step > 24);
+        int step = 0;
+        String msg ="";
+        do {           
+            // Scanner scanner = new Scanner(System.in);
+            if (value.hasNextInt()) {
+                step = value.nextInt();            
+                
+                if (step <= 0) {
+                    System.out.println("Количество взятых конфет должно быть больше 1!");
+                }
+                if (step > cfg.getCandiesByStep()) {
+                    msg = "Не более " + cfg.getCandiesByStep() + " конфет!";
+                    System.out.println(msg);
+                }
+                if (step > currentGame.getCurrCandies()) {
+                    msg = "Всего конфет осталось " + currentGame.getCurrCandies() + "! Вы не можете взять больше! Попробуйте еще раз?";
+                    System.out.println(msg);
+                }
+
+                } else {
+                    System.out.println("Ошибка ввода!");
+                }     
+                msg = "Введите целое число от 1 до " + cfg.getCandiesByStep() + "!";
+                System.out.println(msg);
+                step = cfg.getCandiesByStep() + 1; // если введено не целое число, а что-то другое, то искуственно зацикливаем ввод значений
+              
+        }
+        while(step < 1 || step > cfg.getCandiesByStep() || step > currentGame.getCurrCandies());
     }
     
 }
