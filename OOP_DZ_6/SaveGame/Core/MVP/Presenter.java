@@ -1,5 +1,7 @@
 package SaveGame.Core.MVP;
 
+import java.util.Scanner;
+
 public class Presenter {
     
     private Model model;
@@ -34,6 +36,10 @@ public class Presenter {
 
     public Model getModel() {
         return model;
+    }
+
+    public void getValue(Scanner value) {
+        model.checkData(value);
     }
 
 }
