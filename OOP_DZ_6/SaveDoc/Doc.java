@@ -5,7 +5,7 @@ public class Doc {
     private String text = "";   // текст документа
     private int style = 1;      // стиль всего текста
 
-    public void addBlock(String text) {
+    public void addText(String text) {
         this.text += text;
         System.out.printf("Добавлен блок: {%s}\n", text);
     }
@@ -21,7 +21,7 @@ public class Doc {
         System.out.printf("--- ПЕЧАТЬ ---\nСтиль: тип {%d}\nТекст: {%s}\n", style, text);
     }
    
-    public DocMemento SaveState() {
+    public DocMemento saveState() {
         return new DocMemento(text, style);
     }
 
