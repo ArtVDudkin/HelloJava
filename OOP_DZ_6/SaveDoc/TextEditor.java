@@ -15,8 +15,6 @@ public class TextEditor {
                 System.out.println("\033[H\033[J");
                 switch (key) {
                     case "1":
-                        // создали документ и добавили текст
-                        String temp = "";
                         System.out.println("Введите текст");
                         Scanner scanner = new Scanner(System.in);
                         myDocument.addBlock(scanner.nextLine() + " ");
@@ -24,7 +22,6 @@ public class TextEditor {
                         myDocument.print();
                         break;
                     case "2":
-                        // сохранили документ в стек
                         history.push(myDocument.SaveState());
                         break;
                     case "3":
