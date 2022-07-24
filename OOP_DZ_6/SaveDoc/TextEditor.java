@@ -10,7 +10,7 @@ public class TextEditor {
         
         try (Scanner inp = new Scanner(System.in)) {
             while (true) {
-                System.out.println(" 1 - append text  2 - save  3 - restore  4 - exit");
+                System.out.println(" 1 - Добавить текст  2 - Сохранить  3 - Отменить изменение  4 - Выход");
                 String key = inp.next();
                 System.out.println("\033[H\033[J");
                 switch (key) {
