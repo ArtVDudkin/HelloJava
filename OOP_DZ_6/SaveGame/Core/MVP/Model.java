@@ -35,7 +35,7 @@ public class Model {
         caretaker = new Caretaker();
     }
 
-    public Game currentGame() {
+    public Game getCurrentGame() {
         return this.currentGame;
     }
     
