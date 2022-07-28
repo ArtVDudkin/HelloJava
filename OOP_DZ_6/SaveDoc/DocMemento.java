@@ -11,11 +11,11 @@ public class DocMemento {
     }
 
     public int getStyle() {
-        return style;
+        return this.style;
     }
 
     public String getText() {
-        return text;
+        return this.text;
     }
     
 }

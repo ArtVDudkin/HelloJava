@@ -18,7 +18,7 @@ public class Doc {
     }
 
     public void print() {
-        System.out.printf("--- ПЕЧАТЬ ---\nСтиль: тип {%d}\nТекст: {%s}\n", style, text);
+        System.out.printf("--- ПЕЧАТЬ ---\nСтиль: тип {%d}\nТекст: {%s}\n", style, this.text);
     }
    
     public DocMemento saveState() {
@@ -26,7 +26,7 @@ public class Doc {
     }
 
     public void restoreState(DocMemento memento) {
-        text = memento.getText();
-        style = memento.getStyle();
+        this.text = memento.getText();
+        this.style = memento.getStyle();
     }
 }
