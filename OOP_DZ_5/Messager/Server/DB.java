@@ -27,7 +27,7 @@ public class DB implements IReposirory {
     @Override
     public Client getByName(String name) {
         for (Client user : users) {
-            if (user.getName() == name) {
+            if (user.getName().equals(name)) {
                 return user;
             }
         }
