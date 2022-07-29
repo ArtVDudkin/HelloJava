@@ -25,7 +25,6 @@ public class EditorHistory {
         System.out.println("Сохранение документа");
         history.addLast(memento);
         changeIdx(1);
-        System.out.println(this.idx);
         while (history.size() != this.idx + 1) {
             history.pollFirst();
         }
@@ -35,7 +34,6 @@ public class EditorHistory {
         System.out.println("Отмена последнего действия");
         history.addFirst(history.pollLast());
         changeIdx(-1);
-        System.out.println(this.idx + "--" + history.size());
         return history.getLast();
     }
 
@@ -43,7 +41,6 @@ public class EditorHistory {
         System.out.println("Возврат последнего действия");
         history.addLast(history.pollFirst());
         changeIdx(1);
-        System.out.println(this.idx + "--" + history.size());
         return history.getLast();
     }
 

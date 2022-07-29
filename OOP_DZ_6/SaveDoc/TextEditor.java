@@ -17,7 +17,7 @@ public class TextEditor {
                     case "1":
                         System.out.println("Введите текст");
                         Scanner scanner = new Scanner(System.in);
-                        myDocument.addText(scanner.nextLine() + " ");
+                        myDocument.append(scanner.nextLine() + " ");
                         myDocument.setStyle(2);
                         myDocument.print();
                         history.addLast(myDocument.saveState());

@@ -1,11 +1,12 @@
 package SaveDoc;
 
-public class Doc {
+public class Doc extends Model{
     
     private String text = "";   // текст документа
     private int style = 1;      // стиль всего текста
 
-    public void addText(String text) {
+    @Override
+    public void append(String text) {
         this.text += text;
         System.out.printf("Добавлен блок: {%s}\n", text);
     }
@@ -17,14 +18,17 @@ public class Doc {
         System.out.printf("Установлен стиль: тип {%d}\n", style);
     }
 
+    @Override
     public void print() {
         System.out.printf("--- ПЕЧАТЬ ---\nСтиль: тип {%d}\nТекст: {%s}\n", style, this.text);
     }
    
+    @Override
     public DocMemento saveState() {
         return new DocMemento(text, style);
     }
 
+    @Override
     public void restoreState(DocMemento memento) {
         this.text = memento.getText();
         this.style = memento.getStyle();
