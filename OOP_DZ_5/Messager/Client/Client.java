@@ -4,35 +4,17 @@ import Messager.Server.IChat;
 import Messager.Server.MessageModel;
 
 public abstract class Client {
-    private String name;
-    protected IChat chatroom;
    
-    public String getName() {
-        return name;
-    }
+    abstract public String getName();
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    abstract IChat getChatroom();
 
-    public IChat getChatroom() {
-        return chatroom;
-    }
+    abstract void join(IChat chatroom);
 
-    public void setChatroom(IChat chatroom) {
-        this.chatroom = chatroom;
-    }
-
-    public void join(IChat chatroom) {
-    }
-
-    public void remove(IChat chatroom) {
-    }
+    abstract void remove(IChat chatroom);
   
-    public void printMessage(MessageModel msg) {
-    }
+    abstract public void printMessage(MessageModel msg);
   
-    public void sendMsg(String text) {
-    }
+    abstract void sendMsg(MessageModel text);
 
 }

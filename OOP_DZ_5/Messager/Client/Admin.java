@@ -1,6 +1,7 @@
 package Messager.Client;
 
 import Messager.Server.IChat;
+import Messager.Server.TextMessage;
 
 public class Admin extends User {
 
@@ -13,6 +14,7 @@ public class Admin extends User {
     }
 
     public void kickUser(Client client, IChat chatroom) {
+        this.chatroom.sendMessage(new TextMessage("Админ удалил пользователя " + client.getName() + " за плохое поведение!"), client);
         this.chatroom.removeClient(client);
     }
     
