@@ -10,20 +10,20 @@ public class Human {
 
     public void closeDoor(WardrobeDoor door) {
         
-        if (door.state == WardrobeDoor.State.OPENED) {
-            door.state = WardrobeDoor.State.CLOSED;
-            System.out.printf("%s closed door #%d\n", name, door.doorIndex);
+        if (door.getState().equals(WardrobeDoor.State.OPENED)) {
+            door.setState(WardrobeDoor.State.CLOSED);
+            System.out.printf("%s closed door #%d\n", name, door.getDoorIndex());
         } else {
-            System.out.printf("%s tryed to close door #%d, but it was closed\n", name, door.doorIndex);
+            System.out.printf("%s tryed to close door #%d, but it was closed\n", name, door.getDoorIndex());
         }
     }
 
     public void openDoor(WardrobeDoor door) {
-        if (door.state == WardrobeDoor.State.CLOSED) {
-            door.state = WardrobeDoor.State.OPENED;
-            System.out.printf("%s opened door #%d\n", name, door.doorIndex);
+        if (door.getState().equals(WardrobeDoor.State.CLOSED)) {
+            door.setState(WardrobeDoor.State.OPENED);
+            System.out.printf("%s opened door #%d\n", name, door.getDoorIndex());
         } else {
-            System.out.printf("%s tryed to open door #%d, but it was closed\n", name, door.doorIndex);
+            System.out.printf("%s tryed to open door #%d, but it was closed\n", name, door.getDoorIndex());
         }
     }  
 

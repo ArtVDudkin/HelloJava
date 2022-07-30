@@ -2,8 +2,8 @@ package Ex_HumanAndWardrobe;
 
 public class WardrobeDoor {
     
-    public State state;
-    public Integer doorIndex;
+    private  State state;
+    private Integer doorIndex;
 
     public WardrobeDoor(Integer doorIndex, State state) {
         this.state = state;
@@ -14,4 +14,15 @@ public class WardrobeDoor {
         OPENED, CLOSED
     }
 
+    public State getState() {
+        return this.state;
+    }
+
+    public void setState(State newState) {
+        this.state = newState;
+    }
+
+    public int getDoorIndex() {
+        return this.doorIndex;
+    }
 }
