@@ -13,8 +13,8 @@ public class Person {
         return family;
     }
     
-    public void appendToFamily(Person p) {
-        family.add(p);
+    public void appendToFamily(Person pers) {
+        family.add(pers);
     }
     
     public Person(String fullName) {

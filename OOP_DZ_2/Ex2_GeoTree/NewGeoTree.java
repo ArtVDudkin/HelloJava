@@ -22,8 +22,8 @@ public class NewGeoTree implements ITree {
         List<Person> result = new LinkedList<>();
     
         for (Node item : newTree) {
-            if (item.getPerson1() == pers
-                    && item.getRelation() == relation) {
+            if ( item.getPerson1().equals(pers)
+                    && item.getRelation().equals(relation) ) {
                 result.add(item.getPerson2());
             }
         }

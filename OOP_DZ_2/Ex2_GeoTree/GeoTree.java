@@ -22,8 +22,8 @@ public class GeoTree implements ITree {
         List<Person> result = new ArrayList<>();
     
         for (Node item : tree) {
-            if (item.getPerson1() == pers
-                    && item.getRelation() == relation) {
+            if ( item.getPerson1().equals(pers)
+                    && item.getRelation().equals(relation) ) {
                 result.add(item.getPerson2());
             }
         }
