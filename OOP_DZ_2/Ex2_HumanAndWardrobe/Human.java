@@ -11,7 +11,7 @@ public class Human implements IDoor {
     @Override
     public void closeDoor(Door door) {
         
-        if (door.getState() == Door.State.OPENED) {
+        if (door.isOpened()) {
             door.setState(Door.State.CLOSED);
             System.out.printf("%s closed %s\n", name, door.getName());
         } else {
@@ -21,7 +21,7 @@ public class Human implements IDoor {
 
     @Override
     public void openDoor(Door door) {
-        if (door.getState() == Door.State.CLOSED) {
+        if (!door.isOpened()) {
             door.setState(Door.State.OPENED); 
             System.out.printf("%s opened %s\n", name, door.getName());
             

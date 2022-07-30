@@ -18,7 +18,11 @@ public abstract class Door {
     }
 
     public void setState(State newState) {
-        state = newState;
+        this.state = newState;
+    }
+    
+    public Boolean isOpened() {
+        return this.state.equals(state.OPENED);
     }
 
     public String getName() {
