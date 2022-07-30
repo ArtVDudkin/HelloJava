@@ -1,28 +1,26 @@
 package Ex_GeoTree;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Research {
     
-    ArrayList<Node> tree;
+    private List<Node> tree;
     
     public void Reserch(GeoTree geoTree) {
         tree = geoTree.getTree();
     }
     
-    public ArrayList<Person> spend(Person pers, Node.Relationship relation) {
-    
+    public List<Person> spend(Person pers, Node.Relationship relation) {
         var result = new ArrayList<Person>();
     
-        for (Node t : tree) {
-            if (t.person1.toString() == pers.toString()
-                    && t.relation == relation) {
-                result.add(t.person2);
+        for (Node item : tree) {
+            if ( item.getPerson1().equals(pers)
+                    && item.getRelation().equals(relation) ) {
+                result.add(item.getPerson2() );
             }
         }
-    
         return result;
     }
 
 }
-

@@ -1,12 +1,13 @@
 package Ex_GeoTree;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class GeoTree {
     
-    private ArrayList<Node> tree = new ArrayList<>();
+    private List<Node> tree = new ArrayList<>();
 
-    public ArrayList<Node> getTree() {
+    public List<Node> getTree() {
         return tree;
     }
 
