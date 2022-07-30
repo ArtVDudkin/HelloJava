@@ -5,14 +5,14 @@ import java.util.List;
 
 public class MyLog {
     
-    public List<String> catLog = new ArrayList<>();
+    private List<String> log = new ArrayList<>();
     
     public void append(String event) {
-        catLog.add(event);
+        log.add(event);
     }
 
     public void viewEvents() {
-        for (var item : catLog){
+        for (var item : log){
             System.out.println(item);
         }
     }

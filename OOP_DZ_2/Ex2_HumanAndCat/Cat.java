@@ -34,4 +34,14 @@ public class Cat extends Animal {
         return "Mur-Mur-Mur!";
     }
 
+    @Override
+    public String act1() {
+        return "\nlooks at human one time and do nothing...";
+    }
+    
+    @Override
+    public String act2() {
+        return "\nruns to human and starts to wait something...";
+    }
+
 }
