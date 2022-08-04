@@ -1,6 +1,7 @@
 package Planner.Core.Infrastructure;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import Planner.Core.Models.Note;
@@ -14,13 +15,10 @@ public class Notebook {
     }
 
     // add new
-    public boolean add(Note note) {
-        boolean flag = false;
+    public void add(Note note) {
         if (!tasks.contains(note)) {
             tasks.add(note);
-            flag = true;
         }
-        return flag;
     }
 
     // read
@@ -28,17 +26,11 @@ public class Notebook {
         return contains(index) ? tasks.get(index) : null;
     }
 
-    // update
-    // ???...
-
     // delete
-    public boolean remove(int index) {
-        boolean flag = false;
+    public void remove(int index) {
         if (index != -1) {
             tasks.remove(tasks.get(index));
-            flag = true;
         }
-        return flag;
     }
 
     private boolean contains(int index) {
@@ -47,11 +39,15 @@ public class Notebook {
     }
 
     public List<Note> getNotes() {
-        // if ???...
-        return tasks;
+        return tasks.size() > 0 ? tasks : null;
     }
 
     public int count() {
         return tasks.size();
     }
+
+    public void sort() {
+        Collections.sort(getNotes(), new MyComparator());
+    }
+
 }

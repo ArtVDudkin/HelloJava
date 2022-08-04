@@ -7,18 +7,17 @@ import Planner.Core.MVP.Presenter;
 import Planner.Core.MVP.View;
 
 public class App {
+    
     public static void buttonClick() {
-        System.out.print("\033[H\033[J");   // очистить консоль
         View view = new ConsoleView();
         Presenter presenter = new Presenter(view, Config.pathDB);
         presenter.loadFromFile();
 
         try (Scanner in = new Scanner(System.in)) {
-
             while (true) {
-                System.out.println(" 1 - prev  2 - next  3 - load  4 - save  5 - add  6 - remove  7 - exit");
+                view.showMenu(0);
                 String key = in.next();
-                System.out.print("\033[H\033[J");
+                view.refresh();
                 switch (key) {
                     case "1":
                         presenter.prev();
@@ -39,6 +38,9 @@ public class App {
                         presenter.remove();
                         break;
                     case "7":
+                        presenter.sortByPriority();
+                        break;
+                    case "8":
                         System.exit(0);
                     default:
                         System.out.println("Такой команды нет");
