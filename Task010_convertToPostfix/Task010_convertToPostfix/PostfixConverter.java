@@ -30,7 +30,6 @@ public class PostfixConverter {
             // Список и приоритет операторов
             Map<Character, Integer> operPriority = new Hashtable<Character, Integer>();
             operPriority.put('(', 0);
-            operPriority.put('P', 0);
             operPriority.put('+', 1);
             operPriority.put('-', 1);
             operPriority.put('*', 2);

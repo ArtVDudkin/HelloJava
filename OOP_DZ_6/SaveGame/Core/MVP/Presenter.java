@@ -11,8 +11,24 @@ public class Presenter {
         this.view = view;
     }
 
+    public Model getModel() {
+        return model;
+    }
+
+    public void setModel(Model model) {
+        this.model = model;
+    }
+
+    public View getView() {
+        return view;
+    }
+    public void setView(View view) {
+        this.view = view;
+    }
+
     public void newGame() {
         model = new Model();
+
     }
 
     public void saveGame() {
@@ -34,9 +50,7 @@ public class Presenter {
         }
     }
 
-    public Model getModel() {
-        return model;
-    }
+    
 
     public void getValue(Scanner value) {
         model.checkData(value);

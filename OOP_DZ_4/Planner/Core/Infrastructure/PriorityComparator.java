@@ -4,7 +4,7 @@ import java.util.Comparator;
 
 import Planner.Core.Models.Note;
 
-public class MyComparator implements Comparator<Note> {
+public class PriorityComparator implements Comparator<Note> {
 
     @Override
     public int compare(Note o1, Note o2) {

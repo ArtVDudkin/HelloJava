@@ -8,7 +8,7 @@ import SaveGame.Core.MVP.View;
 public class App {
     public static void buttonClick() {
         System.out.print("\033[H\033[J");   // очистить консоль
-        View view = new ConsoleView();
+        View view = new ConsoleView("\033[H\033[J");
         Presenter presenter = new Presenter(view);
     
         try (Scanner inp = new Scanner(System.in)) {

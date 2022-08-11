@@ -47,6 +47,5 @@ public class ConsoleView implements View {
         System.out.printf("%s", text);
         return in.nextLine();
     }
-
     
 }

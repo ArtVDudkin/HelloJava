@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 import Planner.Config;
-import Planner.Core.Infrastructure.MyComparator;
+import Planner.Core.Infrastructure.PriorityComparator;
 import Planner.Core.Infrastructure.Notebook;
 import Planner.Core.Models.Note;
 import Planner.Core.Models.Note.Priority;

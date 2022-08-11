@@ -7,6 +7,8 @@ import java.util.Scanner;
 import SaveGame.Core.Game.Config;
 import SaveGame.Core.Saver.Caretaker;
 import SaveGame.Core.Saver.Originator;
+import SaveGame.UI.App;
+import SaveGame.UI.ConsoleView;
 
 public class Model {
 
@@ -14,12 +16,22 @@ public class Model {
     private Config cfg;
     private Originator originator;
     private Caretaker caretaker;
+    private String msg;
+    private Presenter presenter;
 
     public Model() {
         currentGame = new Game();
         originator = new Originator();
         caretaker = new Caretaker();
         originator.setState(currentGame);
+        
+        msg = "Привет, дорогой друг! Предлагаем сыграть в увлекательную игру 'Забери последнюю конфетку!'\n" + 
+        "Правила простые: на столе лежат " + cfg.getInitCandies() + " конфет. \n" + 
+        "Вы по очереди берёте несколько конфет, но не более " + cfg.getCandiesByStep() + " штук за раз.\n" +
+        "Побеждает тот, кто заберёт последнюю конфету и не оставит другому игроку ничего!"; 
+        presenter.setView(new ConsoleView(msg));  
+        msg = "Против Вас играет бот Никодим";
+        presenter.setView(new ConsoleView(msg));
     }
 
     public void save() {
@@ -44,11 +56,13 @@ public class Model {
         return this.currentGame;
     }
 
-    public void checkData(Scanner value) {
+    public int checkData(Scanner value) {
         int step = 0;
         String msg ="";
         do {           
-            // Scanner scanner = new Scanner(System.in);
+            if (value == null) {
+                value = new Scanner(System.in);
+            }
             if (value.hasNextInt()) {
                 step = value.nextInt();            
                 
@@ -73,6 +87,7 @@ public class Model {
               
         }
         while(step < 1 || step > cfg.getCandiesByStep() || step > currentGame.getCurrCandies());
+        return currentGame.checkStep(step);
     }
     
 }

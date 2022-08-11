@@ -3,7 +3,7 @@ package Planner.Core.Models;
 public class Note implements Comparable<Note> {
     private int id;
     private String date;     // попробовать заменить на LocalDate и LocalTime
-    private String time;     //  ..есть трудности при чтении строки из файла и конвертации в эти типы
+    private String time;     //  ..есть трудности при чтении строки из файла и конвертации в эти типы из-за формата даты гггг.мм.дд
     private String deadline;
     private String task;
     private String author;
@@ -42,15 +42,25 @@ public class Note implements Comparable<Note> {
 
     @Override
     public int compareTo(Note o) {
-        // TODO Auto-generated method stub
-        return 0;
+        if (this.priority.equals(Priority.HIGH) && !o.getPriority().equals(Priority.HIGH)) {
+            return 0;
+        } 
+        if (this.priority.equals(Priority.LOW) && !o.getPriority().equals(Priority.LOW)) {
+            return 2;
+        } 
+        if (this.priority.equals(Priority.MEDIUM) && o.getPriority().equals(Priority.HIGH)) {
+            return 2;
+        } 
+        if (this.priority.equals(Priority.MEDIUM) && o.getPriority().equals(Priority.LOW)) {
+            return 0;
+        } 
+        return 1;
     }
 
     @Override
     public boolean equals(Object obj) {
         Note nt = (Note)obj;
-        return this.id == nt.id
-                && this.task == nt.task;
+        return this.id == nt.id && this.task == nt.task;
     }
 
     public static int genId(int id) {
