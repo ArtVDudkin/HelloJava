@@ -1,11 +1,7 @@
 package Exceptions_DZ_3;
 
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
-
-import Exceptions_DZ_3.Note.Gender;
 
 public class App {
     
@@ -15,13 +11,12 @@ public class App {
         DataParser dparse = new DataParser(dprov.getData());
         dparse.parseData();
         Note nt = new Note();
-        nt.setSurname(dparse.getData(0));
-        nt.setName(dparse.getData(1));
-        nt.setPatronimic(dparse.getData(2));
-        DateTimeFormatter df = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-        nt.setBirthday(LocalDate.parse(dparse.getData(3), df));
-        nt.setPhone(Integer.parseInt(dparse.getData(4)));
-        nt.setGender(Gender.toGender(dparse.getData(5)));        
+        nt.setSurname(dparse.getSurname());
+        nt.setName(dparse.getName());
+        nt.setPatronimic(dparse.getPatronymic());
+        nt.setBirthday(dparse.getBirthday());
+        nt.setPhone(dparse.getPhone());
+        nt.setGender(dparse.getGender());        
         DataSaver ds = new DataSaver();
         ds.save(nt);
         restart();

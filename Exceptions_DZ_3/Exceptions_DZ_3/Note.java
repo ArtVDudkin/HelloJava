@@ -8,7 +8,7 @@ public class Note {
     private String name;
     private String patronimic;
     private LocalDate birthday;
-    private Integer phone;
+    private Long phone;
     private Gender gender;
     
     public enum Gender {
@@ -34,7 +34,7 @@ public class Note {
 
     }
 
-    public Note(String surname, String name, String patronimic, LocalDate birthday, Integer phone, Gender gender) {
+    public Note(String surname, String name, String patronimic, LocalDate birthday, Long phone, Gender gender) {
         this.surname = surname;
         this.name = name;
         this.patronimic = patronimic;
@@ -79,11 +79,11 @@ public class Note {
         this.birthday = birthday;
     }
 
-    public Integer getPhone() {
+    public Long getPhone() {
         return this.phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(Long phone) {
         this.phone = phone;
     }
 

@@ -3,8 +3,7 @@ package Exceptions_DZ_3;
 public class BadPhoneException extends Exception {
     String inputString;
 
-    public BadPhoneException(String inputString) {
-        this.inputString = inputString;
+    public BadPhoneException() {
     }
 
     @Override

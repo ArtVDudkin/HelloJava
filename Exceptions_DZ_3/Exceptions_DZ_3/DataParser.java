@@ -10,12 +10,11 @@ import Exceptions_DZ_3.Note.Gender;
 public class DataParser {
     
     private String[] splitStr;
-    private String[] resData;
-    private String firstName;
-    private String lastName;
-    private String patronymicName;
-    private LocalDate birthDate;
-    private Long phoneNumber;
+    private String name;
+    private String surname;
+    private String patronymic;
+    private LocalDate birthday;
+    private Long phone;
     private Gender gender;
 
     public DataParser(String inpData) throws IOException {
@@ -25,14 +24,34 @@ public class DataParser {
         this.splitStr = inpData.split(" ");
     }
 
-    public String getData(int param) {
-        return this.splitStr[param];
+    public String getName() {
+        return this.name;
+    }
+
+    public String getSurname() {
+        return this.surname;
+    }
+
+    public String getPatronymic() {
+        return this.patronymic;
+    }
+
+    public LocalDate getBirthday() {
+        return this.birthday;
+    }
+
+    public Long getPhone() {
+        return this.phone;
+    }
+
+    public Gender getGender() {
+        return this.gender;
     }
 
     public void parseData() throws IOException {
         switch (itemCounter(this.splitStr)) {
             case -1: {
-                System.out.println("Ошибка ввода: введено недостаточно количество данных!");
+                System.out.println("Ошибка ввода: введено недостаточное количество данных!");
                 App.restart();
             }
             case 1: {
@@ -70,8 +89,6 @@ public class DataParser {
                     if (this.gender == null) {
                         try {
                             this.gender = checkGender(item);
-                            System.out.println(this.gender);
-                            this.resData[5] = checkGender(item).toString();
                         } catch (BadGenderException e) {
                             errCollector.append(e.getMessage());
                         }
@@ -79,24 +96,21 @@ public class DataParser {
                         errCollector.append("Ошибка ввода пола\n");
                     }
                 } else {
-                    if (this.lastName == null) {
+                    if (this.surname == null) {
                         try {
-                            this.lastName = checkFIO(item);
-                           // this.resData[1] = checkFIO(item);
+                            this.surname = checkFIO(item);
                         } catch (BadFIOException e) {
                             errCollector.append(e.getMessage());
                         }
-                    } else if (this.firstName == null) {
+                    } else if (this.name == null) {
                         try {
-                            this.firstName = checkFIO(item);
-                           // this.resData[0] = checkFIO(item);
+                            this.name = checkFIO(item);
                         } catch (BadFIOException e) {
                             errCollector.append(e.getMessage());
                         }
-                    } else if (this.patronymicName == null) {
+                    } else if (this.patronymic == null) {
                         try {
-                            this.patronymicName = checkFIO(item);
-                            //this.resData[2] = checkFIO(item);
+                            this.patronymic = checkFIO(item);
                         } catch (BadFIOException e) {
                             errCollector.append(e.getMessage());
                         }
@@ -107,10 +121,9 @@ public class DataParser {
             } else {
 
                 if (item.matches("[0-9]{2}\\.[0-9]{2}\\.[0-9]{4}")) {
-                    if (this.birthDate == null) {
+                    if (this.birthday == null) {
                         try {
-                            this.birthDate = checkBirthday(item);
-                            //this.resData[3] = checkBirthday(item).toString();
+                            this.birthday = checkBirthday(item);
                         } catch (BadBirthdayException e) {
                             errCollector.append(e.getMessage());
                         }
@@ -118,9 +131,9 @@ public class DataParser {
                         errCollector.append("Ошибка ввода даты рождения\n");
                     }
                 } else {
-                    if (this.phoneNumber == null) {
+                    if (this.phone == null) {
                         try {
-                            this.phoneNumber = checkPhoneNumber(item);
+                            this.phone = checkPhoneNumber(item);
                         } catch (BadPhoneException e) {
                             errCollector.append(e.getMessage());
                         }
@@ -137,7 +150,7 @@ public class DataParser {
     }
 
     public String getLastName() {
-        return lastName;
+        return surname;
     }
 
     private String checkFIO(String inputString) throws BadFIOException {
@@ -148,21 +161,21 @@ public class DataParser {
         }
     }
 
-    private long checkPhoneNumber(String inpuString) throws BadPhoneException {
-        if (inpuString.length() == 10) {
+    private Long checkPhoneNumber(String inpuString) throws BadPhoneException {
+        if (inpuString.length() >= 4 && inpuString.length() <= 10) {
             try {
                 return Long.parseLong(inpuString);
             } catch (NumberFormatException e) {
-                throw new BadPhoneException(inpuString);
+                throw new BadPhoneException();
             }
         } else {
-            throw new BadPhoneException(inpuString);
+            throw new BadPhoneException();
         }
     }
 
     private Gender checkGender(String inputString) throws BadGenderException {
         try {
-            return Gender.valueOf(inputString);
+            return Gender.toGender(inputString);
         } catch (IllegalArgumentException e) {
             throw new BadGenderException();
         }
