@@ -23,14 +23,6 @@ public class DataParser {
             throw new NullPointerException("Данные отсутствуют");
         }
         this.splitStr = inpData.split(" ");
-        parseData();
-        System.out.println(this.resData[0]);
-        System.out.println(this.resData[1]);
-        System.out.println(this.resData[2]);
-        System.out.println(this.resData[3]);
-        System.out.println(this.resData[4]);
-        System.out.println(this.resData[5]);
-
     }
 
     public String getData(int param) {
@@ -71,19 +63,20 @@ public class DataParser {
         if (splitedStr == null) {
             throw new NullPointerException("Данные отсутствуют");
         }
-        StringBuilder errorCollection = new StringBuilder();
+        StringBuilder errCollector = new StringBuilder();
         for (String item : splitedStr) {
             if (Character.isLetter(item.charAt(0))) {
                 if (item.length() == 1) {
                     if (this.gender == null) {
                         try {
                             this.gender = checkGender(item);
+                            System.out.println(this.gender);
                             this.resData[5] = checkGender(item).toString();
                         } catch (BadGenderException e) {
-                            errorCollection.append(e.getMessage());
+                            errCollector.append(e.getMessage());
                         }
                     } else {
-                        errorCollection.append("Ошибка ввода пола\n");
+                        errCollector.append("Ошибка ввода пола\n");
                     }
                 } else {
                     if (this.lastName == null) {
@@ -91,24 +84,24 @@ public class DataParser {
                             this.lastName = checkFIO(item);
                            // this.resData[1] = checkFIO(item);
                         } catch (BadFIOException e) {
-                            errorCollection.append(e.getMessage());
+                            errCollector.append(e.getMessage());
                         }
                     } else if (this.firstName == null) {
                         try {
                             this.firstName = checkFIO(item);
                            // this.resData[0] = checkFIO(item);
                         } catch (BadFIOException e) {
-                            errorCollection.append(e.getMessage());
+                            errCollector.append(e.getMessage());
                         }
                     } else if (this.patronymicName == null) {
                         try {
                             this.patronymicName = checkFIO(item);
                             //this.resData[2] = checkFIO(item);
                         } catch (BadFIOException e) {
-                            errorCollection.append(e.getMessage());
+                            errCollector.append(e.getMessage());
                         }
                     } else {
-                        errorCollection.append("Ошибка ввода ФИО.\n");
+                        errCollector.append("Ошибка ввода ФИО.\n");
                     }
                 }
             } else {
@@ -119,27 +112,27 @@ public class DataParser {
                             this.birthDate = checkBirthday(item);
                             //this.resData[3] = checkBirthday(item).toString();
                         } catch (BadBirthdayException e) {
-                            errorCollection.append(e.getMessage());
+                            errCollector.append(e.getMessage());
                         }
                     } else {
-                        errorCollection.append("Ошибка ввода даты рождения\n");
+                        errCollector.append("Ошибка ввода даты рождения\n");
                     }
                 } else {
                     if (this.phoneNumber == null) {
                         try {
                             this.phoneNumber = checkPhoneNumber(item);
                         } catch (BadPhoneException e) {
-                            errorCollection.append(e.getMessage());
+                            errCollector.append(e.getMessage());
                         }
                     } else {
-                        errorCollection.append("Ошибка ввода номера телефона\n");
+                        errCollector.append("Ошибка ввода номера телефона\n");
                     }
                 }
 
             }
         }
-        if (errorCollection.length() > 0) {
-            throw new BadParsingException(errorCollection.toString());
+        if (errCollector.length() > 0) {
+            throw new BadParsingException(errCollector.toString());
         }
     }
 

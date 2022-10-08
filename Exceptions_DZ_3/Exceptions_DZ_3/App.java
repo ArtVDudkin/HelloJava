@@ -13,6 +13,7 @@ public class App {
         System.out.println("Эта программа умеет записывать и хранить данные обо всех!");
         DataProvider dprov = new DataProvider();
         DataParser dparse = new DataParser(dprov.getData());
+        dparse.parseData();
         Note nt = new Note();
         nt.setSurname(dparse.getData(0));
         nt.setName(dparse.getData(1));
