@@ -12,5 +12,5 @@ public class BadParsingException extends Exception {
     public String getMessage() {
         return this.message;
     }
-    
+
 }

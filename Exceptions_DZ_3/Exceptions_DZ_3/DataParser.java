@@ -119,7 +119,6 @@ public class DataParser {
                     }
                 }
             } else {
-
                 if (item.matches("[0-9]{2}\\.[0-9]{2}\\.[0-9]{4}")) {
                     if (this.birthday == null) {
                         try {
