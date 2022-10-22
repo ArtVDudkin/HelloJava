@@ -17,10 +17,12 @@ public abstract class Hero {
         this.armor = armor;
     }
 
-    public void attack(Hero hero) {};
+    public int attack(Hero enemy) {
+        return enemy.getWeapon().getStrength();
+    }
 
-    public Integer getDamage(Weapon weapon) {
-        return null;
+    public void getDamage(int damage) {
+        this.health -= damage;
     }
 
     public String getName() {
@@ -33,6 +35,10 @@ public abstract class Hero {
 
     public Weapon getWeapon() {
         return this.weapon;
+    }
+
+    public Armor getArmor() {
+        return this.armor;
     }
     
 }
