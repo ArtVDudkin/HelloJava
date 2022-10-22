@@ -67,7 +67,7 @@ public class Program {
         for (Shape item : shapes) {
             sumArea += item.calcArea();
         }
-        System.out.println("Sum of areas " + shapes.size() + " elements in array = " + sumArea);
+        System.out.println("Sum of areas of " + shapes.size() + " elements in array = " + sumArea);
     }
     
 }
