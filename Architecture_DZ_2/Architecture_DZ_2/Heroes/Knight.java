@@ -18,8 +18,12 @@ public class Knight extends Hero {
             int damage = enemy.getHealth() - super.getWeapon().getStrength() * enemy.getArmor().getRate() / 100;
             enemy.getDamage(damage);
             System.out.println("Knight " + super.getName() + " attacks " + enemy.getName() + " and takes damage "+ damage);
-            System.out.println(enemy.getName() + " health = " + enemy.getHealth());
-            return super.getWeapon().getStrength();
+            if(enemy.getHealth() <= 0) {
+                System.out.println(enemy.getName() + " killed by " + this. getName());
+            } else {
+                System.out.println(enemy.getName() + " health = " + enemy.getHealth());
+            }
+            return enemy.getHealth() - super.getWeapon().getStrength() * enemy.getArmor().getRate() / 100;
         }
     }
 }
