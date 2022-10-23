@@ -1,6 +1,8 @@
 package Architecture_DZ_3.Shapes;
 
-public class Rectangle extends Shape {
+import Architecture_DZ_3.Interfaces.IRectangle;
+
+public class Rectangle extends Shape implements IRectangle {
 
     private double sideA;
     private double sideB;

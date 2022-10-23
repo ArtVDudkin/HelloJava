@@ -1,6 +1,8 @@
 package Architecture_DZ_3.Shapes;
 
-public class Triangle extends Shape {
+import Architecture_DZ_3.Interfaces.ITriangle;
+
+public class Triangle extends Shape implements ITriangle {
 
     private double sideA;
     private double sideB;

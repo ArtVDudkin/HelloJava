@@ -1,6 +1,8 @@
 package Architecture_DZ_3.Shapes;
 
-public class Circle extends Shape {
+import Architecture_DZ_3.Interfaces.ICircle;
+
+public class Circle extends Shape implements ICircle {
     
     private double radius;
     

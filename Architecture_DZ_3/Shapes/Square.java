@@ -1,6 +1,8 @@
 package Architecture_DZ_3.Shapes;
 
-public class Square extends Shape {
+import Architecture_DZ_3.Interfaces.ISquare;
+
+public class Square extends Shape implements ISquare {
 
     private double sideA;
 
