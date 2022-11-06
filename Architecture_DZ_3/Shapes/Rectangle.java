@@ -1,28 +1,48 @@
 package Architecture_DZ_3.Shapes;
 
-import Architecture_DZ_3.Interfaces.IRectangle;
+import Architecture_DZ_3.Interfaces.ICalcArea;
+import Architecture_DZ_3.Interfaces.ICalcPerimetr;
 
-public class Rectangle extends Shape implements IRectangle {
+public class Rectangle extends Shape implements ICalcArea, ICalcPerimetr {
 
-    private double sideA;
-    private double sideB;
+    private double height;
+    private double width;
 
-    public Rectangle(double sideA, double sideB) throws Exception {
-        if (sideA <= 0 || sideB <= 0) {
+    public Rectangle(double height, double width) throws Exception {
+        if (height <= 0 || width <= 0) {
             throw new RuntimeException("Error: both side length of rectangle must have positive value");
         }
-        this.sideA = sideA;
-        this.sideB = sideB;
+        this.height = height;
+        this.width = width;
+    }
+
+    public Rectangle() {
+    }
+
+    public void setHeight(double value) {
+        this.height = value;
+    }
+
+    public double getHeight() {
+        return this.height;
+    }
+
+    public void setWidth(double value) {
+        this.width = value;
+    }
+
+    public double getWidth() {
+        return this.width;
     }
 
     @Override
     public double calcPerimetr() {
-        return (sideA + sideB)*2;
+        return (height + width)*2;
     }
 
     @Override
     public double calcArea() {
-        return sideA * sideB;
+        return height * width;
     }
     
 }

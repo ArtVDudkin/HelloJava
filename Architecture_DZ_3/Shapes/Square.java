@@ -1,26 +1,23 @@
 package Architecture_DZ_3.Shapes;
 
-import Architecture_DZ_3.Interfaces.ISquare;
+public class Square extends Rectangle {
 
-public class Square extends Shape implements ISquare {
-
-    private double sideA;
-
-    public Square(double sideA) throws Exception {
+    public Square(double sideA) {
         if (sideA <= 0) {
             throw new RuntimeException("Error: side length of square must have positive value");
         }
-        this.sideA = sideA;
+        super.setHeight(sideA);
+        super.setWidth(sideA);
     }
 
     @Override
     public double calcPerimetr() {
-        return sideA * 4;
+        return super.getHeight() * 4;
     }
 
     @Override
     public double calcArea() {
-        return sideA * sideA;
+        return super.getHeight() * super.getWidth();
     }
     
 }

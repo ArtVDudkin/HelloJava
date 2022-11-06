@@ -3,6 +3,8 @@ package Architecture_DZ_3;
 import java.util.ArrayList;
 import java.util.List;
 
+import Architecture_DZ_3.Interfaces.ICalcArea;
+import Architecture_DZ_3.Interfaces.ICalcPerimetr;
 import Architecture_DZ_3.Shapes.Circle;
 import Architecture_DZ_3.Shapes.Rectangle;
 import Architecture_DZ_3.Shapes.Shape;
@@ -14,6 +16,7 @@ public class Program {
         
         double sumPerimetr = 0;
         double sumArea = 0;
+        int mistCount = 0;
         
         List<Shape> shapes = new ArrayList<>();
         
@@ -60,12 +63,21 @@ public class Program {
         }
 
         for (Shape item : shapes) {
-            sumPerimetr += item.calcPerimetr();
+            if(item instanceof ICalcPerimetr) {
+                sumPerimetr += item.calcPerimetr();
+            } else {
+                mistCount++;
+            }
         }
-        System.out.println("Sum of perimetrs of "+ shapes.size() +" elements in array = " + sumPerimetr);
+        System.out.println("Sum of perimetrs of " + shapes.size() + " elements in array = " + sumPerimetr);
+        if(mistCount > 0) {
+            System.out.println("Warning: for " + mistCount + " figures in array perimetr can not be calculated!");
+        }
 
         for (Shape item : shapes) {
-            sumArea += item.calcArea();
+            if(item instanceof ICalcArea) {
+                sumArea += item.calcArea();
+            }
         }
         System.out.println("Sum of areas of " + shapes.size() + " elements in array = " + sumArea);
     }

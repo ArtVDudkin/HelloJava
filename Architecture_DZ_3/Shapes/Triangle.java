@@ -1,8 +1,9 @@
 package Architecture_DZ_3.Shapes;
 
-import Architecture_DZ_3.Interfaces.ITriangle;
+import Architecture_DZ_3.Interfaces.ICalcArea;
+import Architecture_DZ_3.Interfaces.ICalcPerimetr;
 
-public class Triangle extends Shape implements ITriangle {
+public class Triangle extends Shape implements ICalcArea, ICalcPerimetr {
 
     private double sideA;
     private double sideB;

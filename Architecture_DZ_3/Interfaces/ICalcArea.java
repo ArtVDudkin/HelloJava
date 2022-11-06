@@ -1,8 +1,6 @@
 package Architecture_DZ_3.Interfaces;
 
-public interface IShape {
-    
-    double calcPerimetr();
+public interface ICalcArea {
 
     double calcArea();
 
