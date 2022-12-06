@@ -40,7 +40,7 @@ https://www.figma.com/file/ONqDMp59OIQSqSb77ZCUAW/CloudServiceRobotCleaner?node-
 ![Use-case_diagram](img/Use_case_diagram.jpg)
 
 
-4. Спроектировать слой API Gateway (mobile, web), сформировать REST запросы: GET, POST, PUT, DELETE (https://swagger.io).
+4. Слой API Gateway и REST запросы: GET, POST, PUT, DELETE (https://swagger.io).
 ** (необязательно) Разработать REST контракты API между компонентами и сгенерировавать (автоматически на ресурсе https://swagger.io) код на разных языках программирования.
 
 5. UML-диаграмма компонентов бизнес-логики представлена на ниже:
