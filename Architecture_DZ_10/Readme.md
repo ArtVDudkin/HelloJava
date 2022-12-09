@@ -24,7 +24,7 @@
 
 1. Экранные формы пользовательского интерфейса (web-SPA, native mobile), основные компоненты (подключение робота, управление помещениями, расписание работы, сервисное обслуживание робота, история уборок) разработаны в Figma и представлены по ссылке:
 
-https://www.figma.com/file/ONqDMp59OIQSqSb77ZCUAW/CloudServiceRobotCleaner?node-id=0%3A1&t=qqaDIhX800FIWYp8-1
+[Экранные формы в Figma](https://www.figma.com/file/ONqDMp59OIQSqSb77ZCUAW/CloudServiceRobotCleaner?node-id=0%3A1&t=qqaDIhX800FIWYp8-1)
 
 2. Доменная модель включает в себя следующие сущности и их атрибуты:
   * Пользователи (имя, страна, город, телефон, email, серийные номера роботов-пылесосов пользователя)
@@ -37,14 +37,17 @@ https://www.figma.com/file/ONqDMp59OIQSqSb77ZCUAW/CloudServiceRobotCleaner?node-
   * История уборок (дата и время, комната, режим уборки, код результата уборки)
 
 3. Use-case диаграмма, описывающая сценарии подключения, выбора помещения, программы уборки, настройку расписания, просмотр статистики в виде Актор – Прецедент, представлена ниже:
+
 ![Use-case_diagram](img/Use_case_diagram.jpg)
 
-4. Слой API Gateway и REST запросы: GET, POST, PUT, DELETE (https://swagger.io).
+4. Разработан слой API Gateway и REST запросы: GET, POST, PUT, DELETE (с использованием ресурса https://editor.swagger.io).
 ** (необязательно) Разработать REST контракты API между компонентами и сгенерировавать (автоматически на ресурсе https://swagger.io) код на разных языках программирования.
 
-
+Спецификация содержится в файле по адресу API/openapi.json
+Сгенерирован код на языке Java для клиентского приложения (java-client-generated), а также для сервера (spring-server-generated). 
 
 5. UML-диаграмма компонентов бизнес-логики представлена на ниже:
+
 ![UML-diagram](img/UML_diagram.jpg)
 
 6. Состав информации для кеширования:
@@ -58,4 +61,5 @@ https://www.figma.com/file/ONqDMp59OIQSqSb77ZCUAW/CloudServiceRobotCleaner?node-
 * на уровне репозитория: кэш индексов баз данных, кэш результатов запросов (например, расписание уборки, перечень моделей роботов-пылесосов, производимых нашей компанией, перечни стран и городов).
 
 7. ERD-модель домена представлена на диаграмме ниже:
+
 ![ERD-model](img/ERD_model.jpg)

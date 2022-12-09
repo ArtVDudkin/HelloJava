@@ -1,0 +1,1301 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Cloud service for robot-vacuum cleaner",
+    "description": "This is a study project considering server based on the OpenAPI 3.0 specification. \nYou can now help us improve the API whether it's by making changes to the definition itself or to the code.\nThat way, with time, we can improve the API in general, and expose some of the new features in OAS3.",
+    "contact": {
+      "email": "kardan97@yandex.ru"
+    },
+    "version": "0.0.2"
+  },
+  "servers": [
+    {
+      "url": "https://petstore3.swagger.io/api/v3"
+    },
+    {
+      "url": "https://localhost:8080/api/v1"
+    }
+  ],
+  "tags": [
+    {
+      "name": "robot",
+      "description": "Everything about your Robot"
+    },
+    {
+      "name": "timetable",
+      "description": "Operations about timetable of cleanings"
+    },
+    {
+      "name": "user",
+      "description": "Operations about user"
+    },
+    {
+      "name": "rooms",
+      "description": "Operations about rooms"
+    }
+  ],
+  "paths": {
+    "/robot/add": {
+      "post": {
+        "tags": [
+          "robot"
+        ],
+        "summary": "Add a new robot to user account",
+        "description": "Add a new robot to user account",
+        "operationId": "addRobot",
+        "requestBody": {
+          "description": "Add a new robot to user account",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Robot"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Robot"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/Robot"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Robot"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Robot"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/robot/{robotId}": {
+      "get": {
+        "tags": [
+          "robot"
+        ],
+        "summary": "Get robot by ID",
+        "description": "Get robot by ID",
+        "operationId": "getRobot",
+        "parameters": [
+          {
+            "name": "robotId",
+            "in": "path",
+            "description": "ID of robot to return",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Robot"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Robot"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Robot not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "robot"
+        ],
+        "summary": "Update info about an existing robot",
+        "description": "Update info about an existing robot by Id",
+        "operationId": "updateRobot",
+        "parameters": [
+          {
+            "name": "robotId",
+            "in": "path",
+            "description": "ID of robot to return",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Update an existent robot in the store",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Robot"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Robot"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/Robot"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Robot"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Robot"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Robot not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "robot"
+        ],
+        "summary": "Delete a robot by ID",
+        "description": "delete a robot by ID",
+        "operationId": "deleteRobot",
+        "parameters": [
+          {
+            "name": "robotId",
+            "in": "path",
+            "description": "Robot id to delete",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Robot"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Robot"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid robot ID value"
+          },
+          "404": {
+            "description": "Robot not found"
+          }
+        }
+      }
+    },
+    "/robot/{robotId}/checkUpdate": {
+      "get": {
+        "tags": [
+          "robot"
+        ],
+        "summary": "Check a new firmware update for Robot",
+        "description": "Check a new firmware update for Robot",
+        "operationId": "checkUpdate",
+        "parameters": [
+          {
+            "name": "robotId",
+            "in": "path",
+            "description": "Robot id to delete",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Firmware"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Firmware"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid robot ID value"
+          },
+          "404": {
+            "description": "Robot not found"
+          }
+        }
+      }
+    },
+    "/robot/{robotId}/checkStatus": {
+      "get": {
+        "tags": [
+          "robot"
+        ],
+        "summary": "Check a current Robot status",
+        "description": "Check a current Robot status",
+        "operationId": "checkStatus",
+        "parameters": [
+          {
+            "name": "robotId",
+            "in": "path",
+            "description": "Robot id to delete",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Robot"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Robot"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid robot ID value"
+          },
+          "404": {
+            "description": "Robot not found"
+          }
+        }
+      }
+    },
+    "/robot/{robotId}/downloadUpdate": {
+      "get": {
+        "tags": [
+          "robot"
+        ],
+        "summary": "Downloads a new firmware update",
+        "description": "Downloads a new firmware update",
+        "operationId": "downloadFile",
+        "parameters": [
+          {
+            "name": "robotId",
+            "in": "path",
+            "description": "ID of pet to update",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid robot ID value"
+          },
+          "404": {
+            "description": "Robot not found"
+          }
+        }
+      }
+    },
+    "/timetable/newclean": {
+      "post": {
+        "tags": [
+          "timetable"
+        ],
+        "summary": "Create a new record in timetable",
+        "description": "Create a new record in timetable",
+        "operationId": "newRecord",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Timetable"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Timetable"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/Timetable"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Timetable"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/timetable/all": {
+      "get": {
+        "tags": [
+          "timetable"
+        ],
+        "summary": "Returns timetable with all known cleanings",
+        "description": "Returns timetable with all known cleanings",
+        "operationId": "getTimetable",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Timetable"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Timetable not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "timetable"
+        ],
+        "summary": "Delete all records from timetable",
+        "operationId": "clearTimetable",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Timetable"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/timetable/{recordId}": {
+      "get": {
+        "tags": [
+          "timetable"
+        ],
+        "summary": "Get record in timetable by ID",
+        "operationId": "getRecord",
+        "parameters": [
+          {
+            "name": "recordId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Timetable"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Timetable"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Record not found in timetable"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "timetable"
+        ],
+        "summary": "Update record in timetable by ID",
+        "operationId": "editRecord",
+        "parameters": [
+          {
+            "name": "recordId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Timetable"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Timetable"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Record not found in timetable"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "timetable"
+        ],
+        "summary": "Delete record from timetable by ID",
+        "operationId": "deleteRecord",
+        "parameters": [
+          {
+            "name": "recordId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Record not found in timetable"
+          }
+        }
+      }
+    },
+    "/user": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Create user account",
+        "description": "This create a new user account.",
+        "operationId": "createUser",
+        "requestBody": {
+          "description": "Created user account",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/user/login": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Logs user into the system",
+        "description": "",
+        "operationId": "loginUser",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "description": "The user name for login",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "description": "The password for login in clear text",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "headers": {
+              "X-Rate-Limit": {
+                "description": "calls per hour allowed by the user",
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "X-Expires-After": {
+                "description": "date in UTC when token expires",
+                "schema": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              }
+            },
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid username/password supplied"
+          }
+        }
+      }
+    },
+    "/user/logout": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Logs out current logged in user session",
+        "description": "Logs out current logged in user session",
+        "operationId": "logoutUser",
+        "parameters": [],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/user/{userID}": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Get user by ID",
+        "description": "Get user by ID",
+        "operationId": "getUser",
+        "parameters": [
+          {
+            "name": "userID",
+            "in": "path",
+            "description": "The user ID that needs to be returned",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid user ID supplied"
+          },
+          "404": {
+            "description": "User not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Update user",
+        "description": "This update info in user account.",
+        "operationId": "updateUser",
+        "parameters": [
+          {
+            "name": "userID",
+            "in": "path",
+            "description": "user id that need to be updated",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Update info in existing user account",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Delete user",
+        "description": "This delete user account.",
+        "operationId": "deleteUser",
+        "parameters": [
+          {
+            "name": "userID",
+            "in": "path",
+            "description": "user ID that needs to be deleted",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid user ID supplied"
+          },
+          "404": {
+            "description": "User not found"
+          }
+        }
+      }
+    },
+    "/room": {
+      "post": {
+        "tags": [
+          "rooms"
+        ],
+        "summary": "Add a new room",
+        "description": "Add a new room",
+        "operationId": "addRoom",
+        "requestBody": {
+          "description": "Create a new room",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Room"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Room"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/Room"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Room"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Room"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/room/{roomID}": {
+      "get": {
+        "tags": [
+          "rooms"
+        ],
+        "summary": "Get room by ID",
+        "description": "Get room by ID",
+        "operationId": "getRoom",
+        "parameters": [
+          {
+            "name": "roomID",
+            "in": "path",
+            "description": "The name that needs to be fetched. Use user1 for testing. ",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Room"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Room"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid room id supplied"
+          },
+          "404": {
+            "description": "Room not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "rooms"
+        ],
+        "summary": "Update room by ID",
+        "description": "Update room by ID",
+        "operationId": "updateRoom",
+        "parameters": [
+          {
+            "name": "roomID",
+            "in": "path",
+            "description": "room ID that need to be updated",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Room"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Room"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid room id supplied"
+          },
+          "404": {
+            "description": "Room not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "rooms"
+        ],
+        "summary": "Delete room by ID",
+        "description": "This delete room by ID.",
+        "operationId": "deleteRoom",
+        "parameters": [
+          {
+            "name": "roomID",
+            "in": "path",
+            "description": "The room id that needs to be deleted",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Room"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Room"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid room id supplied"
+          },
+          "404": {
+            "description": "Room not found"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "username": {
+            "type": "string"
+          },
+          "country": {
+            "$ref": "#/components/schemas/Country"
+          },
+          "city": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "integer",
+            "format": "int32",
+            "example": 89991234567
+          },
+          "email": {
+            "type": "string",
+            "example": "john@email.com"
+          },
+          "password": {
+            "type": "string"
+          },
+          "robotID1": {
+            "$ref": "#/components/schemas/Robot"
+          },
+          "robotID2": {
+            "$ref": "#/components/schemas/Robot"
+          },
+          "robotID3": {
+            "$ref": "#/components/schemas/Robot"
+          }
+        },
+        "xml": {
+          "name": "user"
+        }
+      },
+      "Country": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          },
+          "cityID": {
+            "$ref": "#/components/schemas/City"
+          }
+        },
+        "xml": {
+          "name": "country"
+        }
+      },
+      "City": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "xml": {
+          "name": "city"
+        }
+      },
+      "Statistic": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "timetableID": {
+            "$ref": "#/components/schemas/Timetable"
+          },
+          "resultID": {
+            "type": "string"
+          }
+        },
+        "xml": {
+          "name": "statistic"
+        }
+      },
+      "Timetable": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "datetime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "roomID": {
+            "$ref": "#/components/schemas/Room"
+          },
+          "resultID": {
+            "$ref": "#/components/schemas/Result"
+          }
+        },
+        "xml": {
+          "name": "timetable"
+        }
+      },
+      "Room": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "roomname": {
+            "type": "string"
+          },
+          "roomsquare": {
+            "type": "string"
+          }
+        },
+        "xml": {
+          "name": "room"
+        }
+      },
+      "Result": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Details": {
+            "type": "string",
+            "description": "What does this code mean"
+          }
+        },
+        "xml": {
+          "name": "result"
+        }
+      },
+      "Model": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          },
+          "firmwareID": {
+            "$ref": "#/components/schemas/Firmware"
+          }
+        },
+        "xml": {
+          "name": "model"
+        }
+      },
+      "Firmware": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "version": {
+            "type": "string"
+          },
+          "URL": {
+            "type": "string"
+          }
+        },
+        "xml": {
+          "name": "firmware"
+        }
+      },
+      "Robot": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "serialNo": {
+            "type": "string"
+          },
+          "model": {
+            "$ref": "#/components/schemas/Model"
+          },
+          "firmware": {
+            "type": "string"
+          },
+          "config": {
+            "type": "array",
+            "xml": {
+              "wrapped": true
+            },
+            "items": {
+              "type": "string",
+              "xml": {
+                "name": "config"
+              }
+            }
+          },
+          "diadnostic": {
+            "type": "array",
+            "xml": {
+              "wrapped": true
+            },
+            "items": {
+              "type": "integer",
+              "format": "int32",
+              "xml": {
+                "name": "diadnostic"
+              }
+            }
+          },
+          "historyClean": {
+            "$ref": "#/components/schemas/Statistic"
+          },
+          "status": {
+            "type": "string",
+            "description": "robot status in the store",
+            "enum": [
+              "ready",
+              "charging",
+              "working"
+            ]
+          }
+        },
+        "xml": {
+          "name": "robot"
+        }
+      },
+      "ApiResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "type": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "xml": {
+          "name": "##default"
+        }
+      }
+    },
+    "requestBodies": {
+      "Robot": {
+        "description": "Robot object that needs to be added to the store",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Robot"
+            }
+          },
+          "application/xml": {
+            "schema": {
+              "$ref": "#/components/schemas/Robot"
+            }
+          }
+        }
+      },
+      "UserArray": {
+        "description": "List of user object",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
