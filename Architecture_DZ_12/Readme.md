@@ -16,7 +16,7 @@
 
 13. Unit-Test для сервисов бизнес-логики представлен в ...
 
-14. Тесты E2E разработать в https://www.postman.com/ и представлены в [postman](https://www.postman.com/kardan97/workspace/46645577-7872-42f5-8dd2-687e827c8f37/collection/24759544-f7b49e61-1145-4cf1-bdab-e25609ccc69d?action=share&creator=24759544)
+14. Тесты E2E разработаны и представлены в [postman](https://www.postman.com/kardan97/workspace/46645577-7872-42f5-8dd2-687e827c8f37/collection/24759544-f7b49e61-1145-4cf1-bdab-e25609ccc69d?action=share&creator=24759544)
 
 15. Приёмочные тесты (UAT) для сценариев Use-case разработаны в https://www.gurock.com/testrail/ и представлены в ...
 
