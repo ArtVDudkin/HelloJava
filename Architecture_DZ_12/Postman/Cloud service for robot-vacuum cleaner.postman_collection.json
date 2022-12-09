@@ -1,0 +1,4483 @@
+{
+	"info": {
+		"_postman_id": "f7b49e61-1145-4cf1-bdab-e25609ccc69d",
+		"name": "Cloud service for robot-vacuum cleaner",
+		"description": "This is a study project considering server based on the OpenAPI 3.0 specification. \nYou can now help us improve the API whether it's by making changes to the definition itself or to the code.\nThat way, with time, we can improve the API in general, and expose some of the new features in OAS3.\n\nContact Support:\n Email: kardan97@yandex.ru",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24759544"
+	},
+	"item": [
+		{
+			"name": "robot",
+			"item": [
+				{
+					"name": "{robotId}",
+					"item": [
+						{
+							"name": "Get robot by ID",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/robot/:robotId",
+									"protocol": "https",
+									"host": [
+										"2c0c3b62-1774-4414-a76c-4f97d4469079",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"robot",
+										":robotId"
+									],
+									"variable": [
+										{
+											"key": "robotId",
+											"value": "47145261"
+										}
+									]
+								},
+								"description": "Get robot by ID"
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/robot/:robotId",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"robot",
+												":robotId"
+											],
+											"variable": [
+												{
+													"key": "robotId",
+													"value": "58462282",
+													"description": "(Required) ID of robot to return"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 47145261,\n  \"serialNo\": \"voluptate\",\n  \"model\": {\n    \"id\": 2400079,\n    \"name\": \"non exercitation in in\",\n    \"firmwareID\": {\n      \"id\": -31720842,\n      \"version\": \"eiusmod in\",\n      \"URL\": \"esse\"\n    }\n  },\n  \"firmware\": \"Ut ipsum ea nostrud sint\",\n  \"config\": [\n    \"ut esse exercitation culpa\",\n    \"cillum\"\n  ],\n  \"diadnostic\": [\n    10737662,\n    31166448\n  ],\n  \"historyClean\": {\n    \"id\": 41055367,\n    \"timetableID\": {\n      \"id\": 2801496,\n      \"datetime\": \"1970-09-30T11:02:07.644Z\",\n      \"roomID\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"roomname\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"roomsquare\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"resultID\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"code\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"Details\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"resultID\": \"consectetur voluptate\"\n  },\n  \"status\": \"ready\"\n}"
+								},
+								{
+									"name": "Invalid ID supplied",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/robot/:robotId",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"robot",
+												":robotId"
+											],
+											"variable": [
+												{
+													"key": "robotId",
+													"value": "58462282",
+													"description": "(Required) ID of robot to return"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 400,\n    \"status\": \"Invalid ID supplied\"\n}"
+								},
+								{
+									"name": "Robot not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/robot/:robotId",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"robot",
+												":robotId"
+											],
+											"variable": [
+												{
+													"key": "robotId",
+													"value": "58462282",
+													"description": "(Required) ID of robot to return"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 404,\n    \"status\": \"Robot not found\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update info about an existing robot",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "47145261"
+										},
+										{
+											"key": "serialNo",
+											"value": "voluptate"
+										},
+										{
+											"key": "id",
+											"value": "2400079"
+										},
+										{
+											"key": "name",
+											"value": "non exercitation in in"
+										},
+										{
+											"key": "firmwareID",
+											"value": "{\"id\":-31720842,\"version\":\"eiusmod in\",\"URL\":\"esse\"}"
+										},
+										{
+											"key": "firmware",
+											"value": "Ut ipsum ea nostrud sint"
+										},
+										{
+											"key": "config",
+											"value": "ut esse exercitation culpa"
+										},
+										{
+											"key": "config",
+											"value": "cillum"
+										},
+										{
+											"key": "diadnostic",
+											"value": "10737662"
+										},
+										{
+											"key": "diadnostic",
+											"value": "31166448"
+										},
+										{
+											"key": "id",
+											"value": "41055367"
+										},
+										{
+											"key": "timetableID",
+											"value": "{\"id\":2801496,\"datetime\":\"1970-09-30T11:02:07.644Z\",\"roomID\":{\"id\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"roomname\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"roomsquare\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}},\"resultID\":{\"id\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"code\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"Details\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}}}"
+										},
+										{
+											"key": "resultID",
+											"value": "consectetur voluptate"
+										},
+										{
+											"key": "status",
+											"value": "ready",
+											"description": "robot status in the store"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/robot/:robotId",
+									"protocol": "https",
+									"host": [
+										"2c0c3b62-1774-4414-a76c-4f97d4469079",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"robot",
+										":robotId"
+									],
+									"variable": [
+										{
+											"key": "robotId",
+											"value": "47145261",
+											"description": "(Required) ID of robot to return"
+										}
+									]
+								},
+								"description": "Update info about an existing robot by Id"
+							},
+							"response": [
+								{
+									"name": "Successful operation",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "id",
+													"value": "-62476546"
+												},
+												{
+													"key": "serialNo",
+													"value": "esse velit nulla non"
+												},
+												{
+													"key": "id",
+													"value": "85819743"
+												},
+												{
+													"key": "name",
+													"value": "qui ad irure Lorem"
+												},
+												{
+													"key": "firmwareID",
+													"value": "{\"id\":8370557,\"version\":\"ea enim laborum Ut\",\"URL\":\"nostrud\"}"
+												},
+												{
+													"key": "firmware",
+													"value": "deserunt consectetur"
+												},
+												{
+													"key": "config",
+													"value": "aute"
+												},
+												{
+													"key": "config",
+													"value": "reprehenderit consectetur officia ei"
+												},
+												{
+													"key": "diadnostic",
+													"value": "-66871103"
+												},
+												{
+													"key": "diadnostic",
+													"value": "-31584197"
+												},
+												{
+													"key": "id",
+													"value": "-2275268"
+												},
+												{
+													"key": "timetableID",
+													"value": "{\"id\":97035748,\"datetime\":\"1961-10-28T21:09:25.733Z\",\"roomID\":{\"id\":33881955,\"roomname\":\"est reprehenderit tempor ullamco\",\"roomsquare\":\"proident Duis commodo ad\"},\"resultID\":{\"id\":1432891,\"code\":96861752,\"Details\":\"amet id\"}}"
+												},
+												{
+													"key": "resultID",
+													"value": "anim "
+												},
+												{
+													"key": "status",
+													"value": "working",
+													"description": "robot status in the store"
+												}
+											]
+										},
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/robot/:robotId",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"robot",
+												":robotId"
+											],
+											"variable": [
+												{
+													"key": "robotId",
+													"value": "58462282",
+													"description": "(Required) ID of robot to return"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 47145261,\n  \"serialNo\": \"voluptate\",\n  \"model\": {\n    \"id\": 2400079,\n    \"name\": \"non exercitation in in\",\n    \"firmwareID\": {\n      \"id\": -31720842,\n      \"version\": \"eiusmod in\",\n      \"URL\": \"esse\"\n    }\n  },\n  \"firmware\": \"Ut ipsum ea nostrud sint\",\n  \"config\": [\n    \"ut esse exercitation culpa\",\n    \"cillum\"\n  ],\n  \"diadnostic\": [\n    10737662,\n    31166448\n  ],\n  \"historyClean\": {\n    \"id\": 41055367,\n    \"timetableID\": {\n      \"id\": 2801496,\n      \"datetime\": \"1970-09-30T11:02:07.644Z\",\n      \"roomID\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"roomname\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"roomsquare\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"resultID\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"code\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"Details\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"resultID\": \"consectetur voluptate\"\n  },\n  \"status\": \"ready\"\n}"
+								},
+								{
+									"name": "Invalid ID supplied",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "id",
+													"value": "-62476546"
+												},
+												{
+													"key": "serialNo",
+													"value": "esse velit nulla non"
+												},
+												{
+													"key": "id",
+													"value": "85819743"
+												},
+												{
+													"key": "name",
+													"value": "qui ad irure Lorem"
+												},
+												{
+													"key": "firmwareID",
+													"value": "{\"id\":8370557,\"version\":\"ea enim laborum Ut\",\"URL\":\"nostrud\"}"
+												},
+												{
+													"key": "firmware",
+													"value": "deserunt consectetur"
+												},
+												{
+													"key": "config",
+													"value": "aute"
+												},
+												{
+													"key": "config",
+													"value": "reprehenderit consectetur officia ei"
+												},
+												{
+													"key": "diadnostic",
+													"value": "-66871103"
+												},
+												{
+													"key": "diadnostic",
+													"value": "-31584197"
+												},
+												{
+													"key": "id",
+													"value": "-2275268"
+												},
+												{
+													"key": "timetableID",
+													"value": "{\"id\":97035748,\"datetime\":\"1961-10-28T21:09:25.733Z\",\"roomID\":{\"id\":33881955,\"roomname\":\"est reprehenderit tempor ullamco\",\"roomsquare\":\"proident Duis commodo ad\"},\"resultID\":{\"id\":1432891,\"code\":96861752,\"Details\":\"amet id\"}}"
+												},
+												{
+													"key": "resultID",
+													"value": "anim "
+												},
+												{
+													"key": "status",
+													"value": "working",
+													"description": "robot status in the store"
+												}
+											]
+										},
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/robot/:robotId",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"robot",
+												":robotId"
+											],
+											"variable": [
+												{
+													"key": "robotId",
+													"value": "58462282",
+													"description": "(Required) ID of robot to return"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 400,\n    \"status\": \"Invalid ID supplied\"\n}"
+								},
+								{
+									"name": "Robot not found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "id",
+													"value": "-62476546"
+												},
+												{
+													"key": "serialNo",
+													"value": "esse velit nulla non"
+												},
+												{
+													"key": "id",
+													"value": "85819743"
+												},
+												{
+													"key": "name",
+													"value": "qui ad irure Lorem"
+												},
+												{
+													"key": "firmwareID",
+													"value": "{\"id\":8370557,\"version\":\"ea enim laborum Ut\",\"URL\":\"nostrud\"}"
+												},
+												{
+													"key": "firmware",
+													"value": "deserunt consectetur"
+												},
+												{
+													"key": "config",
+													"value": "aute"
+												},
+												{
+													"key": "config",
+													"value": "reprehenderit consectetur officia ei"
+												},
+												{
+													"key": "diadnostic",
+													"value": "-66871103"
+												},
+												{
+													"key": "diadnostic",
+													"value": "-31584197"
+												},
+												{
+													"key": "id",
+													"value": "-2275268"
+												},
+												{
+													"key": "timetableID",
+													"value": "{\"id\":97035748,\"datetime\":\"1961-10-28T21:09:25.733Z\",\"roomID\":{\"id\":33881955,\"roomname\":\"est reprehenderit tempor ullamco\",\"roomsquare\":\"proident Duis commodo ad\"},\"resultID\":{\"id\":1432891,\"code\":96861752,\"Details\":\"amet id\"}}"
+												},
+												{
+													"key": "resultID",
+													"value": "anim "
+												},
+												{
+													"key": "status",
+													"value": "working",
+													"description": "robot status in the store"
+												}
+											]
+										},
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/robot/:robotId",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"robot",
+												":robotId"
+											],
+											"variable": [
+												{
+													"key": "robotId",
+													"value": "58462282",
+													"description": "(Required) ID of robot to return"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 404,\n    \"status\": \"Robot not found\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete a robot by ID",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/robot/:robotId",
+									"protocol": "https",
+									"host": [
+										"2c0c3b62-1774-4414-a76c-4f97d4469079",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"robot",
+										":robotId"
+									],
+									"variable": [
+										{
+											"key": "robotId",
+											"value": "58462282",
+											"description": "(Required) Robot id to delete"
+										}
+									]
+								},
+								"description": "delete a robot by ID"
+							},
+							"response": [
+								{
+									"name": "Successful operation",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/robot/:robotId",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"robot",
+												":robotId"
+											],
+											"variable": [
+												{
+													"key": "robotId",
+													"value": "58462282",
+													"description": "(Required) Robot id to delete"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 47145261,\n  \"serialNo\": \"voluptate\",\n  \"model\": {\n    \"id\": 2400079,\n    \"name\": \"non exercitation in in\",\n    \"firmwareID\": {\n      \"id\": -31720842,\n      \"version\": \"eiusmod in\",\n      \"URL\": \"esse\"\n    }\n  },\n  \"firmware\": \"Ut ipsum ea nostrud sint\",\n  \"config\": [\n    \"ut esse exercitation culpa\",\n    \"cillum\"\n  ],\n  \"diadnostic\": [\n    10737662,\n    31166448\n  ],\n  \"historyClean\": {\n    \"id\": 41055367,\n    \"timetableID\": {\n      \"id\": 2801496,\n      \"datetime\": \"1970-09-30T11:02:07.644Z\",\n      \"roomID\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"roomname\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"roomsquare\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"resultID\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"code\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"Details\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"resultID\": \"consectetur voluptate\"\n  },\n  \"status\": \"ready\"\n}"
+								},
+								{
+									"name": "Invalid robot ID value",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/robot/:robotId",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"robot",
+												":robotId"
+											],
+											"variable": [
+												{
+													"key": "robotId",
+													"value": "58462282",
+													"description": "(Required) Robot id to delete"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 400,\n    \"status\": \"Invalid ID supplied\"\n}"
+								},
+								{
+									"name": "Robot not found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/robot/:robotId",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"robot",
+												":robotId"
+											],
+											"variable": [
+												{
+													"key": "robotId",
+													"value": "58462282",
+													"description": "(Required) Robot id to delete"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 404,\n    \"status\": \"Robot not found\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Check a new firmware update for Robot",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/robot/:robotId/checkUpdate",
+									"protocol": "https",
+									"host": [
+										"2c0c3b62-1774-4414-a76c-4f97d4469079",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"robot",
+										":robotId",
+										"checkUpdate"
+									],
+									"variable": [
+										{
+											"key": "robotId",
+											"value": "58462282",
+											"description": "(Required) Robot id to delete"
+										}
+									]
+								},
+								"description": "Check a new firmware update for Robot"
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/robot/:robotId/checkUpdate",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"robot",
+												":robotId",
+												"checkUpdate"
+											],
+											"variable": [
+												{
+													"key": "robotId",
+													"value": "58462282",
+													"description": "(Required) Robot id to delete"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": -10683133,\n  \"version\": \"dolor et in\",\n  \"URL\": \"sit ut fugiat dolor incididunt\"\n}"
+								},
+								{
+									"name": "Invalid robot ID value",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/robot/:robotId/checkUpdate",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"robot",
+												":robotId",
+												"checkUpdate"
+											],
+											"variable": [
+												{
+													"key": "robotId",
+													"value": "58462282",
+													"description": "(Required) Robot id to delete"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 400,\n    \"status\": \"Invalid ID supplied\"\n}"
+								},
+								{
+									"name": "Robot not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/robot/:robotId/checkUpdate",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"robot",
+												":robotId",
+												"checkUpdate"
+											],
+											"variable": [
+												{
+													"key": "robotId",
+													"value": "58462282",
+													"description": "(Required) Robot id to delete"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 404,\n    \"status\": \"Robot not found\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Check a current Robot status",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/robot/:robotId/checkStatus",
+									"protocol": "https",
+									"host": [
+										"2c0c3b62-1774-4414-a76c-4f97d4469079",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"robot",
+										":robotId",
+										"checkStatus"
+									],
+									"variable": [
+										{
+											"key": "robotId",
+											"value": "58462282",
+											"description": "(Required) Robot id to delete"
+										}
+									]
+								},
+								"description": "Check a current Robot status"
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/robot/:robotId/checkStatus",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"robot",
+												":robotId",
+												"checkStatus"
+											],
+											"variable": [
+												{
+													"key": "robotId",
+													"value": "58462282",
+													"description": "(Required) Robot id to delete"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 47145261,\n  \"serialNo\": \"voluptate\",\n  \"model\": {\n    \"id\": 2400079,\n    \"name\": \"non exercitation in in\",\n    \"firmwareID\": {\n      \"id\": -31720842,\n      \"version\": \"eiusmod in\",\n      \"URL\": \"esse\"\n    }\n  },\n  \"firmware\": \"Ut ipsum ea nostrud sint\",\n  \"config\": [\n    \"ut esse exercitation culpa\",\n    \"cillum\"\n  ],\n  \"diadnostic\": [\n    10737662,\n    31166448\n  ],\n  \"historyClean\": {\n    \"id\": 41055367,\n    \"timetableID\": {\n      \"id\": 2801496,\n      \"datetime\": \"1970-09-30T11:02:07.644Z\",\n      \"roomID\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"roomname\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"roomsquare\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"resultID\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"code\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"Details\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"resultID\": \"consectetur voluptate\"\n  },\n  \"status\": \"ready\"\n}"
+								},
+								{
+									"name": "Invalid robot ID value",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/robot/:robotId/checkStatus",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"robot",
+												":robotId",
+												"checkStatus"
+											],
+											"variable": [
+												{
+													"key": "robotId",
+													"value": "58462282",
+													"description": "(Required) Robot id to delete"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 400,\n    \"status\": \"Invalid ID supplied\"\n}"
+								},
+								{
+									"name": "Robot not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/robot/:robotId/checkStatus",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"robot",
+												":robotId",
+												"checkStatus"
+											],
+											"variable": [
+												{
+													"key": "robotId",
+													"value": "58462282",
+													"description": "(Required) Robot id to delete"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 404,\n    \"status\": \"Robot not found\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Downloads a new firmware update",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/robot/:robotId/downloadUpdate",
+									"protocol": "https",
+									"host": [
+										"2c0c3b62-1774-4414-a76c-4f97d4469079",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"robot",
+										":robotId",
+										"downloadUpdate"
+									],
+									"variable": [
+										{
+											"key": "robotId",
+											"value": "58462282",
+											"description": "(Required) ID of pet to update"
+										}
+									]
+								},
+								"description": "Downloads a new firmware update"
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/robot/:robotId/downloadUpdate",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"robot",
+												":robotId",
+												"downloadUpdate"
+											],
+											"variable": [
+												{
+													"key": "robotId",
+													"value": "58462282",
+													"description": "(Required) ID of pet to update"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"code\": 5045324,\n  \"type\": \"veniam ipsum adipisicing cupidatat\",\n  \"message\": \"in ipsum\"\n}"
+								},
+								{
+									"name": "Invalid robot ID value",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/robot/:robotId/downloadUpdate",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"robot",
+												":robotId",
+												"downloadUpdate"
+											],
+											"variable": [
+												{
+													"key": "robotId",
+													"value": "58462282",
+													"description": "(Required) ID of pet to update"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 400,\n    \"status\": \"Invalid ID supplied\"\n}"
+								},
+								{
+									"name": "Robot not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/robot/:robotId/downloadUpdate",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"robot",
+												":robotId",
+												"downloadUpdate"
+											],
+											"variable": [
+												{
+													"key": "robotId",
+													"value": "58462282",
+													"description": "(Required) ID of pet to update"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 404,\n    \"status\": \"Robot not found\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Add a new robot to user account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "-82595100"
+								},
+								{
+									"key": "serialNo",
+									"value": "ut sit enim officia cillum"
+								},
+								{
+									"key": "id",
+									"value": "25395025"
+								},
+								{
+									"key": "name",
+									"value": "est qui"
+								},
+								{
+									"key": "firmwareID",
+									"value": "{\"id\":-3854159,\"version\":\"paria\",\"URL\":\"do\"}"
+								},
+								{
+									"key": "firmware",
+									"value": "minim labore ea"
+								},
+								{
+									"key": "config",
+									"value": "est enim ut"
+								},
+								{
+									"key": "config",
+									"value": "aliquip"
+								},
+								{
+									"key": "diadnostic",
+									"value": "-57400331"
+								},
+								{
+									"key": "diadnostic",
+									"value": "-90470023"
+								},
+								{
+									"key": "id",
+									"value": "29464643"
+								},
+								{
+									"key": "timetableID",
+									"value": "{\"id\":63204216,\"datetime\":\"1999-12-22T04:32:33.428Z\",\"roomID\":{\"id\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"roomname\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"roomsquare\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}},\"resultID\":{\"id\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"code\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"Details\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}}}"
+								},
+								{
+									"key": "resultID",
+									"value": "aliquip eu"
+								},
+								{
+									"key": "status",
+									"value": "charging",
+									"description": "robot status in the store"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/robot/add",
+							"protocol": "https",
+							"host": [
+								"2c0c3b62-1774-4414-a76c-4f97d4469079",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"robot",
+								"add"
+							]
+						},
+						"description": "Add a new robot to user account"
+					},
+					"response": [
+						{
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "-62476546"
+										},
+										{
+											"key": "serialNo",
+											"value": "esse velit nulla non"
+										},
+										{
+											"key": "id",
+											"value": "85819743"
+										},
+										{
+											"key": "name",
+											"value": "qui ad irure Lorem"
+										},
+										{
+											"key": "firmwareID",
+											"value": "{\"id\":8370557,\"version\":\"ea enim laborum Ut\",\"URL\":\"nostrud\"}"
+										},
+										{
+											"key": "firmware",
+											"value": "deserunt consectetur"
+										},
+										{
+											"key": "config",
+											"value": "aute"
+										},
+										{
+											"key": "config",
+											"value": "reprehenderit consectetur officia ei"
+										},
+										{
+											"key": "diadnostic",
+											"value": "-66871103"
+										},
+										{
+											"key": "diadnostic",
+											"value": "-31584197"
+										},
+										{
+											"key": "id",
+											"value": "-2275268"
+										},
+										{
+											"key": "timetableID",
+											"value": "{\"id\":97035748,\"datetime\":\"1961-10-28T21:09:25.733Z\",\"roomID\":{\"id\":33881955,\"roomname\":\"est reprehenderit tempor ullamco\",\"roomsquare\":\"proident Duis commodo ad\"},\"resultID\":{\"id\":1432891,\"code\":96861752,\"Details\":\"amet id\"}}"
+										},
+										{
+											"key": "resultID",
+											"value": "anim "
+										},
+										{
+											"key": "status",
+											"value": "working",
+											"description": "robot status in the store"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/robot/add",
+									"protocol": "https",
+									"host": [
+										"2c0c3b62-1774-4414-a76c-4f97d4469079",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"robot",
+										"add"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": 47145261,\n  \"serialNo\": \"voluptate\",\n  \"model\": {\n    \"id\": 2400079,\n    \"name\": \"non exercitation in in\",\n    \"firmwareID\": {\n      \"id\": -31720842,\n      \"version\": \"eiusmod in\",\n      \"URL\": \"esse\"\n    }\n  },\n  \"firmware\": \"Ut ipsum ea nostrud sint\",\n  \"config\": [\n    \"ut esse exercitation culpa\",\n    \"cillum\"\n  ],\n  \"diadnostic\": [\n    10737662,\n    31166448\n  ],\n  \"historyClean\": {\n    \"id\": 41055367,\n    \"timetableID\": {\n      \"id\": 2801496,\n      \"datetime\": \"1970-09-30T11:02:07.644Z\",\n      \"roomID\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"roomname\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"roomsquare\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"resultID\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"code\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"Details\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"resultID\": \"consectetur voluptate\"\n  },\n  \"status\": \"ready\"\n}"
+						},
+						{
+							"name": "Invalid input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "-62476546"
+										},
+										{
+											"key": "serialNo",
+											"value": "esse velit nulla non"
+										},
+										{
+											"key": "id",
+											"value": "85819743"
+										},
+										{
+											"key": "name",
+											"value": "qui ad irure Lorem"
+										},
+										{
+											"key": "firmwareID",
+											"value": "{\"id\":8370557,\"version\":\"ea enim laborum Ut\",\"URL\":\"nostrud\"}"
+										},
+										{
+											"key": "firmware",
+											"value": "deserunt consectetur"
+										},
+										{
+											"key": "config",
+											"value": "aute"
+										},
+										{
+											"key": "config",
+											"value": "reprehenderit consectetur officia ei"
+										},
+										{
+											"key": "diadnostic",
+											"value": "-66871103"
+										},
+										{
+											"key": "diadnostic",
+											"value": "-31584197"
+										},
+										{
+											"key": "id",
+											"value": "-2275268"
+										},
+										{
+											"key": "timetableID",
+											"value": "{\"id\":97035748,\"datetime\":\"1961-10-28T21:09:25.733Z\",\"roomID\":{\"id\":33881955,\"roomname\":\"est reprehenderit tempor ullamco\",\"roomsquare\":\"proident Duis commodo ad\"},\"resultID\":{\"id\":1432891,\"code\":96861752,\"Details\":\"amet id\"}}"
+										},
+										{
+											"key": "resultID",
+											"value": "anim "
+										},
+										{
+											"key": "status",
+											"value": "working",
+											"description": "robot status in the store"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/robot/add",
+									"protocol": "https",
+									"host": [
+										"2c0c3b62-1774-4414-a76c-4f97d4469079",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"robot",
+										"add"
+									]
+								}
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": 405,\n    \"status\": \"Invalid input\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "timetable",
+			"item": [
+				{
+					"name": "all",
+					"item": [
+						{
+							"name": "Returns timetable with all known cleanings",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/timetable/all",
+									"protocol": "https",
+									"host": [
+										"2c0c3b62-1774-4414-a76c-4f97d4469079",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"timetable",
+										"all"
+									]
+								},
+								"description": "Returns timetable with all known cleanings"
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/timetable/all",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"timetable",
+												"all"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": -22378686,\n  \"datetime\": \"1974-01-12T18:06:15.453Z\",\n  \"roomID\": {\n    \"id\": 36905782,\n    \"roomname\": \"in qui cillum non tempor\",\n    \"roomsquare\": \"officia esse laboris irure laborum\"\n  },\n  \"resultID\": {\n    \"id\": 13427137,\n    \"code\": 44541680,\n    \"Details\": \"consectetur\"\n  }\n}"
+								},
+								{
+									"name": "Timetable not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/timetable/all",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"timetable",
+												"all"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 404,\n    \"status\": \"Timetable not found\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete all records from timetable",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/timetable/all",
+									"protocol": "https",
+									"host": [
+										"2c0c3b62-1774-4414-a76c-4f97d4469079",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"timetable",
+										"all"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/timetable/all",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"timetable",
+												"all"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": -22378686,\n  \"datetime\": \"1974-01-12T18:06:15.453Z\",\n  \"roomID\": {\n    \"id\": 36905782,\n    \"roomname\": \"in qui cillum non tempor\",\n    \"roomsquare\": \"officia esse laboris irure laborum\"\n  },\n  \"resultID\": {\n    \"id\": 13427137,\n    \"code\": 44541680,\n    \"Details\": \"consectetur\"\n  }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{recordId}",
+					"item": [
+						{
+							"name": "Get record in timetable by ID",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/timetable/:recordId",
+									"protocol": "https",
+									"host": [
+										"2c0c3b62-1774-4414-a76c-4f97d4469079",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"timetable",
+										":recordId"
+									],
+									"variable": [
+										{
+											"key": "recordId",
+											"value": "58462282",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/timetable/:recordId",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"timetable",
+												":recordId"
+											],
+											"variable": [
+												{
+													"key": "recordId",
+													"value": "58462282",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": -22378686,\n  \"datetime\": \"1974-01-12T18:06:15.453Z\",\n  \"roomID\": {\n    \"id\": 36905782,\n    \"roomname\": \"in qui cillum non tempor\",\n    \"roomsquare\": \"officia esse laboris irure laborum\"\n  },\n  \"resultID\": {\n    \"id\": 13427137,\n    \"code\": 44541680,\n    \"Details\": \"consectetur\"\n  }\n}"
+								},
+								{
+									"name": "Invalid ID supplied",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/timetable/:recordId",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"timetable",
+												":recordId"
+											],
+											"variable": [
+												{
+													"key": "recordId",
+													"value": "58462282",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 400,\n    \"status\": \"Invalid ID supplied\"\n}"
+								},
+								{
+									"name": "Record not found in timetable",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/timetable/:recordId",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"timetable",
+												":recordId"
+											],
+											"variable": [
+												{
+													"key": "recordId",
+													"value": "58462282",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 404,\n    \"status\": \"Record not found\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update record in timetable by ID",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/timetable/:recordId",
+									"protocol": "https",
+									"host": [
+										"2c0c3b62-1774-4414-a76c-4f97d4469079",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"timetable",
+										":recordId"
+									],
+									"variable": [
+										{
+											"key": "recordId",
+											"value": "58462282",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/timetable/:recordId",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"timetable",
+												":recordId"
+											],
+											"variable": [
+												{
+													"key": "recordId",
+													"value": "58462282",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": -22378686,\n  \"datetime\": \"1974-01-12T18:06:15.453Z\",\n  \"roomID\": {\n    \"id\": 36905782,\n    \"roomname\": \"in qui cillum non tempor\",\n    \"roomsquare\": \"officia esse laboris irure laborum\"\n  },\n  \"resultID\": {\n    \"id\": 13427137,\n    \"code\": 44541680,\n    \"Details\": \"consectetur\"\n  }\n}"
+								},
+								{
+									"name": "Invalid ID supplied",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/timetable/:recordId",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"timetable",
+												":recordId"
+											],
+											"variable": [
+												{
+													"key": "recordId",
+													"value": "58462282",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 400,\n    \"status\": \"Invalid ID supplied\"\n}"
+								},
+								{
+									"name": "Record not found in timetable",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/timetable/:recordId",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"timetable",
+												":recordId"
+											],
+											"variable": [
+												{
+													"key": "recordId",
+													"value": "58462282",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 404,\n    \"status\": \"Record not found\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete record from timetable by ID",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/timetable/:recordId",
+									"protocol": "https",
+									"host": [
+										"2c0c3b62-1774-4414-a76c-4f97d4469079",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"timetable",
+										":recordId"
+									],
+									"variable": [
+										{
+											"key": "recordId",
+											"value": "58462282",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Invalid ID supplied",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/timetable/:recordId",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"timetable",
+												":recordId"
+											],
+											"variable": [
+												{
+													"key": "recordId",
+													"value": "58462282",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 400,\n    \"status\": \"Invalid ID supplied\"\n}"
+								},
+								{
+									"name": "Record not found in timetable",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/timetable/:recordId",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"timetable",
+												":recordId"
+											],
+											"variable": [
+												{
+													"key": "recordId",
+													"value": "58462282",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 404,\n    \"status\": \"Record not found\"\n}"
+								},
+								{
+									"name": "Succesful operation",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/timetable/:recordId",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"timetable",
+												":recordId"
+											],
+											"variable": [
+												{
+													"key": "recordId",
+													"value": "58462282",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 200,\n    \"status\": \"ok\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Create a new record in timetable",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "-22378686"
+								},
+								{
+									"key": "datetime",
+									"value": "1974-01-12T18:06:15.453Z"
+								},
+								{
+									"key": "id",
+									"value": "36905782"
+								},
+								{
+									"key": "roomname",
+									"value": "in qui cillum non tempor"
+								},
+								{
+									"key": "roomsquare",
+									"value": "officia esse laboris irure laborum"
+								},
+								{
+									"key": "id",
+									"value": "13427137"
+								},
+								{
+									"key": "code",
+									"value": "44541680"
+								},
+								{
+									"key": "Details",
+									"value": "consectetur"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/timetable/newclean",
+							"protocol": "https",
+							"host": [
+								"2c0c3b62-1774-4414-a76c-4f97d4469079",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"timetable",
+								"newclean"
+							]
+						},
+						"description": "Create a new record in timetable"
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "-22378686"
+										},
+										{
+											"key": "datetime",
+											"value": "1974-01-12T18:06:15.453Z"
+										},
+										{
+											"key": "id",
+											"value": "36905782"
+										},
+										{
+											"key": "roomname",
+											"value": "in qui cillum non tempor"
+										},
+										{
+											"key": "roomsquare",
+											"value": "officia esse laboris irure laborum"
+										},
+										{
+											"key": "id",
+											"value": "13427137"
+										},
+										{
+											"key": "code",
+											"value": "44541680"
+										},
+										{
+											"key": "Details",
+											"value": "consectetur"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/timetable/newclean",
+									"protocol": "https",
+									"host": [
+										"2c0c3b62-1774-4414-a76c-4f97d4469079",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"timetable",
+										"newclean"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": -22378686,\n  \"datetime\": \"1974-01-12T18:06:15.453Z\",\n  \"roomID\": {\n    \"id\": 36905782,\n    \"roomname\": \"in qui cillum non tempor\",\n    \"roomsquare\": \"officia esse laboris irure laborum\"\n  },\n  \"resultID\": {\n    \"id\": 13427137,\n    \"code\": 44541680,\n    \"Details\": \"consectetur\"\n  }\n}"
+						},
+						{
+							"name": "Invalid input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "-22378686"
+										},
+										{
+											"key": "datetime",
+											"value": "1974-01-12T18:06:15.453Z"
+										},
+										{
+											"key": "id",
+											"value": "36905782"
+										},
+										{
+											"key": "roomname",
+											"value": "in qui cillum non tempor"
+										},
+										{
+											"key": "roomsquare",
+											"value": "officia esse laboris irure laborum"
+										},
+										{
+											"key": "id",
+											"value": "13427137"
+										},
+										{
+											"key": "code",
+											"value": "44541680"
+										},
+										{
+											"key": "Details",
+											"value": "consectetur"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/timetable/newclean",
+									"protocol": "https",
+									"host": [
+										"2c0c3b62-1774-4414-a76c-4f97d4469079",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"timetable",
+										"newclean"
+									]
+								}
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": 405,\n    \"status\": \"Invalid input\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "{userID}",
+					"item": [
+						{
+							"name": "Get user by ID",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/user/:userID",
+									"protocol": "https",
+									"host": [
+										"2c0c3b62-1774-4414-a76c-4f97d4469079",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"user",
+										":userID"
+									],
+									"variable": [
+										{
+											"key": "userID",
+											"value": "58462282",
+											"description": "(Required) The user ID that needs to be returned"
+										}
+									]
+								},
+								"description": "Get user by ID"
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/user/:userID",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"user",
+												":userID"
+											],
+											"variable": [
+												{
+													"key": "userID",
+													"value": "58462282",
+													"description": "(Required) The user ID that needs to be returned"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 64207634,\n  \"username\": \"tempor quis adipisicing\",\n  \"country\": {\n    \"id\": -9055565,\n    \"name\": \"sunt ut\",\n    \"cityID\": {\n      \"id\": -87812267,\n      \"name\": \"off\"\n    }\n  },\n  \"city\": \"ullamco do\",\n  \"phone\": 89991234567,\n  \"email\": \"john@email.com\",\n  \"password\": \"labore\",\n  \"robotID1\": {\n    \"id\": 38848674,\n    \"serialNo\": \"reprehenderit\",\n    \"model\": {\n      \"id\": 81792026,\n      \"name\": \"nisi commodo\",\n      \"firmwareID\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"version\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"URL\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"firmware\": \"enim dolore\",\n    \"config\": [\n      \"proident mollit et in\",\n      \"voluptate dolor deserunt\"\n    ],\n    \"diadnostic\": [\n      17706717,\n      11898885\n    ],\n    \"historyClean\": {\n      \"id\": 21861072,\n      \"timetableID\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"datetime\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"roomID\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"resultID\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"resultID\": \"pa\"\n    },\n    \"status\": \"charging\"\n  },\n  \"robotID2\": {\n    \"id\": -28212096,\n    \"serialNo\": \"Ut ut id nulla\",\n    \"model\": {\n      \"id\": 31714580,\n      \"name\": \"ut\",\n      \"firmwareID\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"version\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"URL\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"firmware\": \"o\",\n    \"config\": [\n      \"commodo eiusmod\",\n      \"consequat sint in tempor enim\"\n    ],\n    \"diadnostic\": [\n      1003656,\n      85275205\n    ],\n    \"historyClean\": {\n      \"id\": -41250547,\n      \"timetableID\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"datetime\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"roomID\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"resultID\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"resultID\": \"culpa Lorem magna\"\n    },\n    \"status\": \"working\"\n  },\n  \"robotID3\": {\n    \"id\": 88309414,\n    \"serialNo\": \"Lorem culpa nisi nostrud commodo\",\n    \"model\": {\n      \"id\": 24036107,\n      \"name\": \"nulla\",\n      \"firmwareID\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"version\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"URL\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"firmware\": \"ullamco ipsum Duis aliquip Lorem\",\n    \"config\": [\n      \"nisi veniam\",\n      \"exercitation\"\n    ],\n    \"diadnostic\": [\n      81734950,\n      66960910\n    ],\n    \"historyClean\": {\n      \"id\": -90212651,\n      \"timetableID\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"datetime\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"roomID\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"resultID\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"resultID\": \"minim veniam adipisicing pariat\"\n    },\n    \"status\": \"ready\"\n  }\n}"
+								},
+								{
+									"name": "Invalid user ID supplied",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/user/:userID",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"user",
+												":userID"
+											],
+											"variable": [
+												{
+													"key": "userID",
+													"value": "58462282",
+													"description": "(Required) The user ID that needs to be returned"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 400,\n    \"status\": \"Invalid user ID supplied\"\n}"
+								},
+								{
+									"name": "User not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/user/:userID",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"user",
+												":userID"
+											],
+											"variable": [
+												{
+													"key": "userID",
+													"value": "58462282",
+													"description": "(Required) The user ID that needs to be returned"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 404,\n    \"status\": \"User not found\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update user",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "64207634"
+										},
+										{
+											"key": "username",
+											"value": "tempor quis adipisicing"
+										},
+										{
+											"key": "id",
+											"value": "-9055565"
+										},
+										{
+											"key": "name",
+											"value": "sunt ut"
+										},
+										{
+											"key": "cityID",
+											"value": "{\"id\":-87812267,\"name\":\"off\"}"
+										},
+										{
+											"key": "city",
+											"value": "ullamco do"
+										},
+										{
+											"key": "phone",
+											"value": "89991234567"
+										},
+										{
+											"key": "email",
+											"value": "john@email.com"
+										},
+										{
+											"key": "password",
+											"value": "labore"
+										},
+										{
+											"key": "id",
+											"value": "38848674"
+										},
+										{
+											"key": "serialNo",
+											"value": "reprehenderit"
+										},
+										{
+											"key": "model",
+											"value": "{\"id\":81792026,\"name\":\"nisi commodo\",\"firmwareID\":{\"id\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"version\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"URL\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}}}"
+										},
+										{
+											"key": "firmware",
+											"value": "enim dolore"
+										},
+										{
+											"key": "config",
+											"value": "[\"proident mollit et in\",\"voluptate dolor deserunt\"]"
+										},
+										{
+											"key": "diadnostic",
+											"value": "[17706717,11898885]"
+										},
+										{
+											"key": "historyClean",
+											"value": "{\"id\":21861072,\"timetableID\":{\"id\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"datetime\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"roomID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"resultID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}},\"resultID\":\"pa\"}"
+										},
+										{
+											"key": "status",
+											"value": "charging"
+										},
+										{
+											"key": "id",
+											"value": "-28212096"
+										},
+										{
+											"key": "serialNo",
+											"value": "Ut ut id nulla"
+										},
+										{
+											"key": "model",
+											"value": "{\"id\":31714580,\"name\":\"ut\",\"firmwareID\":{\"id\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"version\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"URL\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}}}"
+										},
+										{
+											"key": "firmware",
+											"value": "o"
+										},
+										{
+											"key": "config",
+											"value": "[\"commodo eiusmod\",\"consequat sint in tempor enim\"]"
+										},
+										{
+											"key": "diadnostic",
+											"value": "[1003656,85275205]"
+										},
+										{
+											"key": "historyClean",
+											"value": "{\"id\":-41250547,\"timetableID\":{\"id\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"datetime\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"roomID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"resultID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}},\"resultID\":\"culpa Lorem magna\"}"
+										},
+										{
+											"key": "status",
+											"value": "working"
+										},
+										{
+											"key": "id",
+											"value": "88309414"
+										},
+										{
+											"key": "serialNo",
+											"value": "Lorem culpa nisi nostrud commodo"
+										},
+										{
+											"key": "model",
+											"value": "{\"id\":24036107,\"name\":\"nulla\",\"firmwareID\":{\"id\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"version\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"URL\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}}}"
+										},
+										{
+											"key": "firmware",
+											"value": "ullamco ipsum Duis aliquip Lorem"
+										},
+										{
+											"key": "config",
+											"value": "[\"nisi veniam\",\"exercitation\"]"
+										},
+										{
+											"key": "diadnostic",
+											"value": "[81734950,66960910]"
+										},
+										{
+											"key": "historyClean",
+											"value": "{\"id\":-90212651,\"timetableID\":{\"id\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"datetime\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"roomID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"resultID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}},\"resultID\":\"minim veniam adipisicing pariat\"}"
+										},
+										{
+											"key": "status",
+											"value": "ready"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/user/:userID",
+									"protocol": "https",
+									"host": [
+										"2c0c3b62-1774-4414-a76c-4f97d4469079",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"user",
+										":userID"
+									],
+									"variable": [
+										{
+											"key": "userID",
+											"value": "58462282",
+											"description": "(Required) user id that need to be updated"
+										}
+									]
+								},
+								"description": "This update info in user account."
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "id",
+													"value": "-43555719"
+												},
+												{
+													"key": "username",
+													"value": "dolor"
+												},
+												{
+													"key": "id",
+													"value": "-73046611"
+												},
+												{
+													"key": "name",
+													"value": "cillum adipisicing elit officia"
+												},
+												{
+													"key": "cityID",
+													"value": "{\"id\":32246245,\"name\":\"nisi\"}"
+												},
+												{
+													"key": "city",
+													"value": "dolore est aliquip nostrud voluptate"
+												},
+												{
+													"key": "phone",
+													"value": "89991234567"
+												},
+												{
+													"key": "email",
+													"value": "john@email.com"
+												},
+												{
+													"key": "password",
+													"value": "et laboris"
+												},
+												{
+													"key": "id",
+													"value": "-63520038"
+												},
+												{
+													"key": "serialNo",
+													"value": "adipisicing reprehenderit sed"
+												},
+												{
+													"key": "model",
+													"value": "{\"id\":94887700,\"name\":\"commodo Duis non\",\"firmwareID\":{\"id\":-73133142,\"version\":\"minim eiusmod magna\",\"URL\":\"pariatur\"}}"
+												},
+												{
+													"key": "firmware",
+													"value": "enim"
+												},
+												{
+													"key": "config",
+													"value": "[\"Duis\",\"qui id\"]"
+												},
+												{
+													"key": "diadnostic",
+													"value": "[-52191751,-39565692]"
+												},
+												{
+													"key": "historyClean",
+													"value": "{\"id\":-72650546,\"timetableID\":{\"id\":72115534,\"datetime\":\"1990-07-29T20:57:20.236Z\",\"roomID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"resultID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}},\"resultID\":\"fugiat aliqua eu proident\"}"
+												},
+												{
+													"key": "status",
+													"value": "working"
+												},
+												{
+													"key": "id",
+													"value": "-81714871"
+												},
+												{
+													"key": "serialNo",
+													"value": "nostrud esse deserunt"
+												},
+												{
+													"key": "model",
+													"value": "{\"id\":-3073684,\"name\":\"et incididunt\",\"firmwareID\":{\"id\":77621901,\"version\":\"pariatur\",\"URL\":\"\"}}"
+												},
+												{
+													"key": "firmware",
+													"value": "sunt in Lorem mollit"
+												},
+												{
+													"key": "config",
+													"value": "[\"irure qui labore\",\"aute\"]"
+												},
+												{
+													"key": "diadnostic",
+													"value": "[23104117,-2203618]"
+												},
+												{
+													"key": "historyClean",
+													"value": "{\"id\":12000259,\"timetableID\":{\"id\":-93087481,\"datetime\":\"1948-04-02T17:27:55.468Z\",\"roomID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"resultID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}},\"resultID\":\"enim nostrud incididunt Excepteur\"}"
+												},
+												{
+													"key": "status",
+													"value": "ready"
+												},
+												{
+													"key": "id",
+													"value": "38385533"
+												},
+												{
+													"key": "serialNo",
+													"value": "aute nulla reprehenderit pariatur culpa"
+												},
+												{
+													"key": "model",
+													"value": "{\"id\":79588353,\"name\":\"elit amet\",\"firmwareID\":{\"id\":-97081245,\"version\":\"in nulla\",\"URL\":\"ea nostrud nisi\"}}"
+												},
+												{
+													"key": "firmware",
+													"value": "et ut esse"
+												},
+												{
+													"key": "config",
+													"value": "[\"do mollit\",\"deserunt eu in incididunt commodo\"]"
+												},
+												{
+													"key": "diadnostic",
+													"value": "[94278664,-11901623]"
+												},
+												{
+													"key": "historyClean",
+													"value": "{\"id\":91691351,\"timetableID\":{\"id\":2163424,\"datetime\":\"1952-02-20T08:46:52.474Z\",\"roomID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"resultID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}},\"resultID\":\"sin\"}"
+												},
+												{
+													"key": "status",
+													"value": "working"
+												}
+											]
+										},
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/user/:userID",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"user",
+												":userID"
+											],
+											"variable": [
+												{
+													"key": "userID",
+													"value": "58462282",
+													"description": "(Required) user id that need to be updated"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 64207634,\n    \"username\": \"tempor quis adipisicing\",\n    \"country\": {\n        \"id\": -9055565,\n        \"name\": \"sunt ut\",\n        \"cityID\": {\n            \"id\": -87812267,\n            \"name\": \"off\"\n        }\n    },\n    \"city\": \"ullamco do\",\n    \"phone\": 89991234567,\n    \"email\": \"john@email.com\",\n    \"password\": \"labore\",\n    \"robotID1\": {\n        \"id\": 38848674,\n        \"serialNo\": \"reprehenderit\",\n        \"model\": {\n            \"id\": 81792026,\n            \"name\": \"nisi commodo\",\n            \"firmwareID\": {\n                \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"version\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"URL\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n            }\n        },\n        \"firmware\": \"enim dolore\",\n        \"config\": [\n            \"proident mollit et in\",\n            \"voluptate dolor deserunt\"\n        ],\n        \"diadnostic\": [\n            17706717,\n            11898885\n        ],\n        \"historyClean\": {\n            \"id\": 21861072,\n            \"timetableID\": {\n                \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"datetime\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"roomID\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"resultID\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n            },\n            \"resultID\": \"pa\"\n        },\n        \"status\": \"charging\"\n    },\n    \"robotID2\": {\n        \"id\": -28212096,\n        \"serialNo\": \"Ut ut id nulla\",\n        \"model\": {\n            \"id\": 31714580,\n            \"name\": \"ut\",\n            \"firmwareID\": {\n                \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"version\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"URL\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n            }\n        },\n        \"firmware\": \"o\",\n        \"config\": [\n            \"commodo eiusmod\",\n            \"consequat sint in tempor enim\"\n        ],\n        \"diadnostic\": [\n            1003656,\n            85275205\n        ],\n        \"historyClean\": {\n            \"id\": -41250547,\n            \"timetableID\": {\n                \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"datetime\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"roomID\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"resultID\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n            },\n            \"resultID\": \"culpa Lorem magna\"\n        },\n        \"status\": \"working\"\n    },\n    \"robotID3\": {\n        \"id\": 88309414,\n        \"serialNo\": \"Lorem culpa nisi nostrud commodo\",\n        \"model\": {\n            \"id\": 24036107,\n            \"name\": \"nulla\",\n            \"firmwareID\": {\n                \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"version\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"URL\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n            }\n        },\n        \"firmware\": \"ullamco ipsum Duis aliquip Lorem\",\n        \"config\": [\n            \"nisi veniam\",\n            \"exercitation\"\n        ],\n        \"diadnostic\": [\n            81734950,\n            66960910\n        ],\n        \"historyClean\": {\n            \"id\": -90212651,\n            \"timetableID\": {\n                \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"datetime\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"roomID\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"resultID\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n            },\n            \"resultID\": \"minim veniam adipisicing pariat\"\n        },\n        \"status\": \"ready\"\n    }\n}"
+								},
+								{
+									"name": "Invalid user ID supplied",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/user/:userID",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"user",
+												":userID"
+											],
+											"variable": [
+												{
+													"key": "userID",
+													"value": "58462282",
+													"description": "(Required) The user ID that needs to be returned"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 400,\n    \"status\": \"Invalid user ID supplied\"\n}"
+								},
+								{
+									"name": "User not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/user/:userID",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"user",
+												":userID"
+											],
+											"variable": [
+												{
+													"key": "userID",
+													"value": "58462282",
+													"description": "(Required) The user ID that needs to be returned"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 404,\n    \"status\": \"User not found\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete user",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/user/:userID",
+									"protocol": "https",
+									"host": [
+										"2c0c3b62-1774-4414-a76c-4f97d4469079",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"user",
+										":userID"
+									],
+									"variable": [
+										{
+											"key": "userID",
+											"value": "58462282",
+											"description": "(Required) user ID that needs to be deleted"
+										}
+									]
+								},
+								"description": "This delete user account."
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/user/:userID",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"user",
+												":userID"
+											],
+											"variable": [
+												{
+													"key": "userID",
+													"value": "58462282",
+													"description": "(Required) The user ID that needs to be returned"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 64207634,\n  \"username\": \"tempor quis adipisicing\",\n  \"country\": {\n    \"id\": -9055565,\n    \"name\": \"sunt ut\",\n    \"cityID\": {\n      \"id\": -87812267,\n      \"name\": \"off\"\n    }\n  },\n  \"city\": \"ullamco do\",\n  \"phone\": 89991234567,\n  \"email\": \"john@email.com\",\n  \"password\": \"labore\",\n  \"robotID1\": {\n    \"id\": 38848674,\n    \"serialNo\": \"reprehenderit\",\n    \"model\": {\n      \"id\": 81792026,\n      \"name\": \"nisi commodo\",\n      \"firmwareID\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"version\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"URL\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"firmware\": \"enim dolore\",\n    \"config\": [\n      \"proident mollit et in\",\n      \"voluptate dolor deserunt\"\n    ],\n    \"diadnostic\": [\n      17706717,\n      11898885\n    ],\n    \"historyClean\": {\n      \"id\": 21861072,\n      \"timetableID\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"datetime\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"roomID\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"resultID\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"resultID\": \"pa\"\n    },\n    \"status\": \"charging\"\n  },\n  \"robotID2\": {\n    \"id\": -28212096,\n    \"serialNo\": \"Ut ut id nulla\",\n    \"model\": {\n      \"id\": 31714580,\n      \"name\": \"ut\",\n      \"firmwareID\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"version\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"URL\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"firmware\": \"o\",\n    \"config\": [\n      \"commodo eiusmod\",\n      \"consequat sint in tempor enim\"\n    ],\n    \"diadnostic\": [\n      1003656,\n      85275205\n    ],\n    \"historyClean\": {\n      \"id\": -41250547,\n      \"timetableID\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"datetime\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"roomID\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"resultID\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"resultID\": \"culpa Lorem magna\"\n    },\n    \"status\": \"working\"\n  },\n  \"robotID3\": {\n    \"id\": 88309414,\n    \"serialNo\": \"Lorem culpa nisi nostrud commodo\",\n    \"model\": {\n      \"id\": 24036107,\n      \"name\": \"nulla\",\n      \"firmwareID\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"version\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"URL\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"firmware\": \"ullamco ipsum Duis aliquip Lorem\",\n    \"config\": [\n      \"nisi veniam\",\n      \"exercitation\"\n    ],\n    \"diadnostic\": [\n      81734950,\n      66960910\n    ],\n    \"historyClean\": {\n      \"id\": -90212651,\n      \"timetableID\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"datetime\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"roomID\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"resultID\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"resultID\": \"minim veniam adipisicing pariat\"\n    },\n    \"status\": \"ready\"\n  }\n}"
+								},
+								{
+									"name": "Invalid user ID supplied",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/user/:userID",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"user",
+												":userID"
+											],
+											"variable": [
+												{
+													"key": "userID",
+													"value": "58462282",
+													"description": "(Required) user ID that needs to be deleted"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 400,\n    \"status\": \"Invalid user ID supplied\"\n}"
+								},
+								{
+									"name": "User not found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/user/:userID",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"user",
+												":userID"
+											],
+											"variable": [
+												{
+													"key": "userID",
+													"value": "58462282",
+													"description": "(Required) user ID that needs to be deleted"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 404,\n    \"status\": \"User not found\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Create user account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "64207634"
+								},
+								{
+									"key": "username",
+									"value": "tempor quis adipisicing"
+								},
+								{
+									"key": "id",
+									"value": "-9055565"
+								},
+								{
+									"key": "name",
+									"value": "sunt ut"
+								},
+								{
+									"key": "cityID",
+									"value": "{\"id\":-87812267,\"name\":\"off\"}"
+								},
+								{
+									"key": "city",
+									"value": "ullamco do"
+								},
+								{
+									"key": "phone",
+									"value": "89991234567"
+								},
+								{
+									"key": "email",
+									"value": "john@email.com"
+								},
+								{
+									"key": "password",
+									"value": "labore"
+								},
+								{
+									"key": "id",
+									"value": "38848674"
+								},
+								{
+									"key": "serialNo",
+									"value": "reprehenderit"
+								},
+								{
+									"key": "model",
+									"value": "{\"id\":81792026,\"name\":\"nisi commodo\",\"firmwareID\":{\"id\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"version\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"URL\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}}}"
+								},
+								{
+									"key": "firmware",
+									"value": "enim dolore"
+								},
+								{
+									"key": "config",
+									"value": "[\"proident mollit et in\",\"voluptate dolor deserunt\"]"
+								},
+								{
+									"key": "diadnostic",
+									"value": "[17706717,11898885]"
+								},
+								{
+									"key": "historyClean",
+									"value": "{\"id\":21861072,\"timetableID\":{\"id\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"datetime\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"roomID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"resultID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}},\"resultID\":\"pa\"}"
+								},
+								{
+									"key": "status",
+									"value": "charging"
+								},
+								{
+									"key": "id",
+									"value": "-28212096"
+								},
+								{
+									"key": "serialNo",
+									"value": "Ut ut id nulla"
+								},
+								{
+									"key": "model",
+									"value": "{\"id\":31714580,\"name\":\"ut\",\"firmwareID\":{\"id\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"version\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"URL\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}}}"
+								},
+								{
+									"key": "firmware",
+									"value": "o"
+								},
+								{
+									"key": "config",
+									"value": "[\"commodo eiusmod\",\"consequat sint in tempor enim\"]"
+								},
+								{
+									"key": "diadnostic",
+									"value": "[1003656,85275205]"
+								},
+								{
+									"key": "historyClean",
+									"value": "{\"id\":-41250547,\"timetableID\":{\"id\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"datetime\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"roomID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"resultID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}},\"resultID\":\"culpa Lorem magna\"}"
+								},
+								{
+									"key": "status",
+									"value": "working"
+								},
+								{
+									"key": "id",
+									"value": "88309414"
+								},
+								{
+									"key": "serialNo",
+									"value": "Lorem culpa nisi nostrud commodo"
+								},
+								{
+									"key": "model",
+									"value": "{\"id\":24036107,\"name\":\"nulla\",\"firmwareID\":{\"id\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"version\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"URL\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}}}"
+								},
+								{
+									"key": "firmware",
+									"value": "ullamco ipsum Duis aliquip Lorem"
+								},
+								{
+									"key": "config",
+									"value": "[\"nisi veniam\",\"exercitation\"]"
+								},
+								{
+									"key": "diadnostic",
+									"value": "[81734950,66960910]"
+								},
+								{
+									"key": "historyClean",
+									"value": "{\"id\":-90212651,\"timetableID\":{\"id\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"datetime\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"roomID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"resultID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}},\"resultID\":\"minim veniam adipisicing pariat\"}"
+								},
+								{
+									"key": "status",
+									"value": "ready"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/user",
+							"protocol": "https",
+							"host": [
+								"2c0c3b62-1774-4414-a76c-4f97d4469079",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"user"
+							]
+						},
+						"description": "This create a new user account."
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "-43555719"
+										},
+										{
+											"key": "username",
+											"value": "dolor"
+										},
+										{
+											"key": "id",
+											"value": "-73046611"
+										},
+										{
+											"key": "name",
+											"value": "cillum adipisicing elit officia"
+										},
+										{
+											"key": "cityID",
+											"value": "{\"id\":32246245,\"name\":\"nisi\"}"
+										},
+										{
+											"key": "city",
+											"value": "dolore est aliquip nostrud voluptate"
+										},
+										{
+											"key": "phone",
+											"value": "89991234567"
+										},
+										{
+											"key": "email",
+											"value": "john@email.com"
+										},
+										{
+											"key": "password",
+											"value": "et laboris"
+										},
+										{
+											"key": "id",
+											"value": "-63520038"
+										},
+										{
+											"key": "serialNo",
+											"value": "adipisicing reprehenderit sed"
+										},
+										{
+											"key": "model",
+											"value": "{\"id\":94887700,\"name\":\"commodo Duis non\",\"firmwareID\":{\"id\":-73133142,\"version\":\"minim eiusmod magna\",\"URL\":\"pariatur\"}}"
+										},
+										{
+											"key": "firmware",
+											"value": "enim"
+										},
+										{
+											"key": "config",
+											"value": "[\"Duis\",\"qui id\"]"
+										},
+										{
+											"key": "diadnostic",
+											"value": "[-52191751,-39565692]"
+										},
+										{
+											"key": "historyClean",
+											"value": "{\"id\":-72650546,\"timetableID\":{\"id\":72115534,\"datetime\":\"1990-07-29T20:57:20.236Z\",\"roomID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"resultID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}},\"resultID\":\"fugiat aliqua eu proident\"}"
+										},
+										{
+											"key": "status",
+											"value": "working"
+										},
+										{
+											"key": "id",
+											"value": "-81714871"
+										},
+										{
+											"key": "serialNo",
+											"value": "nostrud esse deserunt"
+										},
+										{
+											"key": "model",
+											"value": "{\"id\":-3073684,\"name\":\"et incididunt\",\"firmwareID\":{\"id\":77621901,\"version\":\"pariatur\",\"URL\":\"\"}}"
+										},
+										{
+											"key": "firmware",
+											"value": "sunt in Lorem mollit"
+										},
+										{
+											"key": "config",
+											"value": "[\"irure qui labore\",\"aute\"]"
+										},
+										{
+											"key": "diadnostic",
+											"value": "[23104117,-2203618]"
+										},
+										{
+											"key": "historyClean",
+											"value": "{\"id\":12000259,\"timetableID\":{\"id\":-93087481,\"datetime\":\"1948-04-02T17:27:55.468Z\",\"roomID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"resultID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}},\"resultID\":\"enim nostrud incididunt Excepteur\"}"
+										},
+										{
+											"key": "status",
+											"value": "ready"
+										},
+										{
+											"key": "id",
+											"value": "38385533"
+										},
+										{
+											"key": "serialNo",
+											"value": "aute nulla reprehenderit pariatur culpa"
+										},
+										{
+											"key": "model",
+											"value": "{\"id\":79588353,\"name\":\"elit amet\",\"firmwareID\":{\"id\":-97081245,\"version\":\"in nulla\",\"URL\":\"ea nostrud nisi\"}}"
+										},
+										{
+											"key": "firmware",
+											"value": "et ut esse"
+										},
+										{
+											"key": "config",
+											"value": "[\"do mollit\",\"deserunt eu in incididunt commodo\"]"
+										},
+										{
+											"key": "diadnostic",
+											"value": "[94278664,-11901623]"
+										},
+										{
+											"key": "historyClean",
+											"value": "{\"id\":91691351,\"timetableID\":{\"id\":2163424,\"datetime\":\"1952-02-20T08:46:52.474Z\",\"roomID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"resultID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}},\"resultID\":\"sin\"}"
+										},
+										{
+											"key": "status",
+											"value": "working"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/user",
+									"protocol": "https",
+									"host": [
+										"2c0c3b62-1774-4414-a76c-4f97d4469079",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": 64207634,\n  \"username\": \"tempor quis adipisicing\",\n  \"country\": {\n    \"id\": -9055565,\n    \"name\": \"sunt ut\",\n    \"cityID\": {\n      \"id\": -87812267,\n      \"name\": \"off\"\n    }\n  },\n  \"city\": \"ullamco do\",\n  \"phone\": 89991234567,\n  \"email\": \"john@email.com\",\n  \"password\": \"labore\",\n  \"robotID1\": {\n    \"id\": 38848674,\n    \"serialNo\": \"reprehenderit\",\n    \"model\": {\n      \"id\": 81792026,\n      \"name\": \"nisi commodo\",\n      \"firmwareID\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"version\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"URL\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"firmware\": \"enim dolore\",\n    \"config\": [\n      \"proident mollit et in\",\n      \"voluptate dolor deserunt\"\n    ],\n    \"diadnostic\": [\n      17706717,\n      11898885\n    ],\n    \"historyClean\": {\n      \"id\": 21861072,\n      \"timetableID\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"datetime\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"roomID\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"resultID\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"resultID\": \"pa\"\n    },\n    \"status\": \"charging\"\n  },\n  \"robotID2\": {\n    \"id\": -28212096,\n    \"serialNo\": \"Ut ut id nulla\",\n    \"model\": {\n      \"id\": 31714580,\n      \"name\": \"ut\",\n      \"firmwareID\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"version\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"URL\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"firmware\": \"o\",\n    \"config\": [\n      \"commodo eiusmod\",\n      \"consequat sint in tempor enim\"\n    ],\n    \"diadnostic\": [\n      1003656,\n      85275205\n    ],\n    \"historyClean\": {\n      \"id\": -41250547,\n      \"timetableID\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"datetime\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"roomID\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"resultID\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"resultID\": \"culpa Lorem magna\"\n    },\n    \"status\": \"working\"\n  },\n  \"robotID3\": {\n    \"id\": 88309414,\n    \"serialNo\": \"Lorem culpa nisi nostrud commodo\",\n    \"model\": {\n      \"id\": 24036107,\n      \"name\": \"nulla\",\n      \"firmwareID\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"version\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"URL\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"firmware\": \"ullamco ipsum Duis aliquip Lorem\",\n    \"config\": [\n      \"nisi veniam\",\n      \"exercitation\"\n    ],\n    \"diadnostic\": [\n      81734950,\n      66960910\n    ],\n    \"historyClean\": {\n      \"id\": -90212651,\n      \"timetableID\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"datetime\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"roomID\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"resultID\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"resultID\": \"minim veniam adipisicing pariat\"\n    },\n    \"status\": \"ready\"\n  }\n}"
+						},
+						{
+							"name": "Invalid input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "-43555719"
+										},
+										{
+											"key": "username",
+											"value": "dolor"
+										},
+										{
+											"key": "id",
+											"value": "-73046611"
+										},
+										{
+											"key": "name",
+											"value": "cillum adipisicing elit officia"
+										},
+										{
+											"key": "cityID",
+											"value": "{\"id\":32246245,\"name\":\"nisi\"}"
+										},
+										{
+											"key": "city",
+											"value": "dolore est aliquip nostrud voluptate"
+										},
+										{
+											"key": "phone",
+											"value": "89991234567"
+										},
+										{
+											"key": "email",
+											"value": "john@email.com"
+										},
+										{
+											"key": "password",
+											"value": "et laboris"
+										},
+										{
+											"key": "id",
+											"value": "-63520038"
+										},
+										{
+											"key": "serialNo",
+											"value": "adipisicing reprehenderit sed"
+										},
+										{
+											"key": "model",
+											"value": "{\"id\":94887700,\"name\":\"commodo Duis non\",\"firmwareID\":{\"id\":-73133142,\"version\":\"minim eiusmod magna\",\"URL\":\"pariatur\"}}"
+										},
+										{
+											"key": "firmware",
+											"value": "enim"
+										},
+										{
+											"key": "config",
+											"value": "[\"Duis\",\"qui id\"]"
+										},
+										{
+											"key": "diadnostic",
+											"value": "[-52191751,-39565692]"
+										},
+										{
+											"key": "historyClean",
+											"value": "{\"id\":-72650546,\"timetableID\":{\"id\":72115534,\"datetime\":\"1990-07-29T20:57:20.236Z\",\"roomID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"resultID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}},\"resultID\":\"fugiat aliqua eu proident\"}"
+										},
+										{
+											"key": "status",
+											"value": "working"
+										},
+										{
+											"key": "id",
+											"value": "-81714871"
+										},
+										{
+											"key": "serialNo",
+											"value": "nostrud esse deserunt"
+										},
+										{
+											"key": "model",
+											"value": "{\"id\":-3073684,\"name\":\"et incididunt\",\"firmwareID\":{\"id\":77621901,\"version\":\"pariatur\",\"URL\":\"\"}}"
+										},
+										{
+											"key": "firmware",
+											"value": "sunt in Lorem mollit"
+										},
+										{
+											"key": "config",
+											"value": "[\"irure qui labore\",\"aute\"]"
+										},
+										{
+											"key": "diadnostic",
+											"value": "[23104117,-2203618]"
+										},
+										{
+											"key": "historyClean",
+											"value": "{\"id\":12000259,\"timetableID\":{\"id\":-93087481,\"datetime\":\"1948-04-02T17:27:55.468Z\",\"roomID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"resultID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}},\"resultID\":\"enim nostrud incididunt Excepteur\"}"
+										},
+										{
+											"key": "status",
+											"value": "ready"
+										},
+										{
+											"key": "id",
+											"value": "38385533"
+										},
+										{
+											"key": "serialNo",
+											"value": "aute nulla reprehenderit pariatur culpa"
+										},
+										{
+											"key": "model",
+											"value": "{\"id\":79588353,\"name\":\"elit amet\",\"firmwareID\":{\"id\":-97081245,\"version\":\"in nulla\",\"URL\":\"ea nostrud nisi\"}}"
+										},
+										{
+											"key": "firmware",
+											"value": "et ut esse"
+										},
+										{
+											"key": "config",
+											"value": "[\"do mollit\",\"deserunt eu in incididunt commodo\"]"
+										},
+										{
+											"key": "diadnostic",
+											"value": "[94278664,-11901623]"
+										},
+										{
+											"key": "historyClean",
+											"value": "{\"id\":91691351,\"timetableID\":{\"id\":2163424,\"datetime\":\"1952-02-20T08:46:52.474Z\",\"roomID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"resultID\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}},\"resultID\":\"sin\"}"
+										},
+										{
+											"key": "status",
+											"value": "working"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/user",
+									"protocol": "https",
+									"host": [
+										"2c0c3b62-1774-4414-a76c-4f97d4469079",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": 405,\n    \"status\": \"Invalid input\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Logs user into the system",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"url": {
+							"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/user/login?username=dolore nisi&password=dolore nisi",
+							"protocol": "https",
+							"host": [
+								"2c0c3b62-1774-4414-a76c-4f97d4469079",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"user",
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "dolore nisi",
+									"description": "The user name for login"
+								},
+								{
+									"key": "password",
+									"value": "dolore nisi",
+									"description": "The password for login in clear text"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/user/login?username=dolore nisi&password=dolore nisi",
+									"protocol": "https",
+									"host": [
+										"2c0c3b62-1774-4414-a76c-4f97d4469079",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"user",
+										"login"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "dolore nisi"
+										},
+										{
+											"key": "password",
+											"value": "dolore nisi"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Rate-Limit",
+									"value": "-9856800",
+									"description": "calls per hour allowed by the user"
+								},
+								{
+									"key": "X-Expires-After",
+									"value": "2012-08-28T19:00:18.895Z",
+									"description": "date in UTC when token expires"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"result\": 200,\r\n    \"status\": \"ok\"\r\n}"
+						},
+						{
+							"name": "Invalid username/password supplied",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/user/login?username=dolore nisi&password=dolore nisi",
+									"protocol": "https",
+									"host": [
+										"2c0c3b62-1774-4414-a76c-4f97d4469079",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"user",
+										"login"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "dolore nisi"
+										},
+										{
+											"key": "password",
+											"value": "dolore nisi"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": 400,\n    \"status\": \"Username or password is wrong\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Logs out current logged in user session",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/user/logout",
+							"protocol": "https",
+							"host": [
+								"2c0c3b62-1774-4414-a76c-4f97d4469079",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"user",
+								"logout"
+							]
+						},
+						"description": "Logs out current logged in user session"
+					},
+					"response": [
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/user/logout",
+									"protocol": "https",
+									"host": [
+										"2c0c3b62-1774-4414-a76c-4f97d4469079",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"user",
+										"logout"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": 200,\n    \"status\": \"ok\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "room",
+			"item": [
+				{
+					"name": "{roomID}",
+					"item": [
+						{
+							"name": "Get room by ID",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/room/:roomID",
+									"protocol": "https",
+									"host": [
+										"2c0c3b62-1774-4414-a76c-4f97d4469079",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"room",
+										":roomID"
+									],
+									"variable": [
+										{
+											"key": "roomID",
+											"value": "58462282",
+											"description": "(Required) The name that needs to be fetched. Use user1 for testing. "
+										}
+									]
+								},
+								"description": "Get room by ID"
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/room/:roomID",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"room",
+												":roomID"
+											],
+											"variable": [
+												{
+													"key": "roomID",
+													"value": "58462282",
+													"description": "(Required) The name that needs to be fetched. Use user1 for testing. "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 59267360,\n  \"roomname\": \"Ut quis mollit fugiat\",\n  \"roomsquare\": \"consequat ipsum\"\n}"
+								},
+								{
+									"name": "Invalid room id supplied",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/room/:roomID",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"room",
+												":roomID"
+											],
+											"variable": [
+												{
+													"key": "roomID",
+													"value": "58462282",
+													"description": "(Required) The name that needs to be fetched. Use user1 for testing. "
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 400,\n    \"status\": \"Invalid room ID supplied\"\n}"
+								},
+								{
+									"name": "Room not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/room/:roomID",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"room",
+												":roomID"
+											],
+											"variable": [
+												{
+													"key": "roomID",
+													"value": "58462282",
+													"description": "(Required) The name that needs to be fetched. Use user1 for testing. "
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 404,\n    \"status\": \"Room not found\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update room by ID",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/room/:roomID",
+									"protocol": "https",
+									"host": [
+										"2c0c3b62-1774-4414-a76c-4f97d4469079",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"room",
+										":roomID"
+									],
+									"variable": [
+										{
+											"key": "roomID",
+											"value": "58462282",
+											"description": "(Required) room ID that need to be updated"
+										}
+									]
+								},
+								"description": "Update room by ID"
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/room/:roomID",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"room",
+												":roomID"
+											],
+											"variable": [
+												{
+													"key": "roomID",
+													"value": "58462282",
+													"description": "(Required) room ID that need to be updated"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 59267360,\n  \"roomname\": \"Ut quis mollit fugiat\",\n  \"roomsquare\": \"consequat ipsum\"\n}"
+								},
+								{
+									"name": "Invalid room id supplied",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/room/:roomID",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"room",
+												":roomID"
+											],
+											"variable": [
+												{
+													"key": "roomID",
+													"value": "58462282",
+													"description": "(Required) room ID that need to be updated"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 400,\n    \"status\": \"Invalid room ID supplied\"\n}"
+								},
+								{
+									"name": "Room not found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/room/:roomID",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"room",
+												":roomID"
+											],
+											"variable": [
+												{
+													"key": "roomID",
+													"value": "58462282",
+													"description": "(Required) room ID that need to be updated"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 404,\n    \"status\": \"Room not found\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete room by ID",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/room/:roomID",
+									"protocol": "https",
+									"host": [
+										"2c0c3b62-1774-4414-a76c-4f97d4469079",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"room",
+										":roomID"
+									],
+									"variable": [
+										{
+											"key": "roomID",
+											"value": "58462282",
+											"description": "(Required) The room id that needs to be deleted"
+										}
+									]
+								},
+								"description": "This delete room by ID."
+							},
+							"response": [
+								{
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/room/:roomID",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"room",
+												":roomID"
+											],
+											"variable": [
+												{
+													"key": "roomID",
+													"value": "58462282",
+													"description": "(Required) The room id that needs to be deleted"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 59267360,\n  \"roomname\": \"Ut quis mollit fugiat\",\n  \"roomsquare\": \"consequat ipsum\"\n}"
+								},
+								{
+									"name": "Invalid room id supplied",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/room/:roomID",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"room",
+												":roomID"
+											],
+											"variable": [
+												{
+													"key": "roomID",
+													"value": "58462282",
+													"description": "(Required) The room id that needs to be deleted"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 400,\n    \"status\": \"Invalid room ID supplied\"\n}"
+								},
+								{
+									"name": "Room not found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/room/:roomID",
+											"protocol": "https",
+											"host": [
+												"2c0c3b62-1774-4414-a76c-4f97d4469079",
+												"mock",
+												"pstmn",
+												"io"
+											],
+											"path": [
+												"room",
+												":roomID"
+											],
+											"variable": [
+												{
+													"key": "roomID",
+													"value": "58462282",
+													"description": "(Required) The room id that needs to be deleted"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"result\": 404,\n    \"status\": \"Room not found\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Add a new room",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "59267360"
+								},
+								{
+									"key": "roomname",
+									"value": "Ut quis mollit fugiat"
+								},
+								{
+									"key": "roomsquare",
+									"value": "consequat ipsum"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/room",
+							"protocol": "https",
+							"host": [
+								"2c0c3b62-1774-4414-a76c-4f97d4469079",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"room"
+							]
+						},
+						"description": "Add a new room"
+					},
+					"response": [
+						{
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "59267360"
+										},
+										{
+											"key": "roomname",
+											"value": "Ut quis mollit fugiat"
+										},
+										{
+											"key": "roomsquare",
+											"value": "consequat ipsum"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/room",
+									"protocol": "https",
+									"host": [
+										"2c0c3b62-1774-4414-a76c-4f97d4469079",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"room"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": 59267360,\n  \"roomname\": \"Ut quis mollit fugiat\",\n  \"roomsquare\": \"consequat ipsum\"\n}"
+						},
+						{
+							"name": "Invalid input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "59267360"
+										},
+										{
+											"key": "roomname",
+											"value": "Ut quis mollit fugiat"
+										},
+										{
+											"key": "roomsquare",
+											"value": "consequat ipsum"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://2c0c3b62-1774-4414-a76c-4f97d4469079.mock.pstmn.io/room",
+									"protocol": "https",
+									"host": [
+										"2c0c3b62-1774-4414-a76c-4f97d4469079",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"room"
+									]
+								}
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": 405,\n    \"status\": \"Invalid input\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://petstore3.swagger.io/api/v3",
+			"type": "string"
+		}
+	]
+}
