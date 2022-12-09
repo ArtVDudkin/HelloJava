@@ -40,12 +40,14 @@
 
 5. Экранные формы интерфейса для заказа ресурсов в облачном сервисе разработаны в Figma и представлены по ссылке:
 
-https://www.figma.com/file/3kenGYrVQpmI7kBkHTzV9O/VDS_service?node-id=0%3A1&t=sQvVWU3VQIUlqnT1-1
+[Экранные формы интерфейса в Figma](https://www.figma.com/file/3kenGYrVQpmI7kBkHTzV9O/VDS_service?node-id=0%3A1&t=sQvVWU3VQIUlqnT1-1)
 
 6. ERD-модель домена представлена на диаграмме ниже:
+
 ![ERD-model](ERD_model.jpg)
 
 UML-диаграмма компонентов представлена на схеме:
+
 ![UML-diagram](UML_diagram.jpg)
 
 7. Дополнить swagger ответами домена (сутевые ответы) о статусе заказа ресурсов (создан, ошибка, нет ответа) и смоделировать ошибки REST «400, 500» типов.
