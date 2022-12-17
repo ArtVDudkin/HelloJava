@@ -12,19 +12,19 @@ import java.util.List;
 public class Program {
     
     public static void main(String[] args) {
-        int value = 500000;                          // наше исходное число N
+        int value = 500000;                             // наше исходное число N
+        SimpleNumbers simple = new SimpleNumbers();
+
         Date timeStart = new Date();
-        SimpleNumbers simple1 = new SimpleNumbers();
-        List<Integer> myList1 = simple1.getSimpleNumbers(value);
+        List<Integer> myList1 = simple.getSimpleNumbers(value);
         Date timeFinish = new Date();
         System.out.println("Простые числа от 1 до " + value);
         System.out.println(myList1);
         long workTime = timeFinish.getTime() - timeStart.getTime();
         System.out.println("Ticks: " + workTime);       // 7382 ticks for 500.000 numbers 
 
-        SimpleNumbers simple2 = new SimpleNumbers();
         timeStart = new Date(); 
-        List<Integer> myList2 = simple2.getEratosphen(value);
+        List<Integer> myList2 = simple.getEratosphen(value);
         timeFinish = new Date(); 
         System.out.println("Простые числа от 1 до " + value);
         System.out.println(myList2);

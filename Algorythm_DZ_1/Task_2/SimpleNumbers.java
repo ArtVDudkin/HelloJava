@@ -12,6 +12,7 @@ public class SimpleNumbers {
     }
 
     public List<Integer> getSimpleNumbers(Integer value) {
+        this.result.clear();
         boolean simple = true;
         for (int i = 1; i <= value / 2; i++) {
             simple = true;
@@ -29,23 +30,21 @@ public class SimpleNumbers {
     }
 
     public List<Integer> getEratosphen(Integer value) {
-        
-        int[] a = new int[value + 1];
- 
-        for (int i = 0; i <= value; i++) {      // инициализировать все числа как простые
-            a[i] = 1;
+        this.result.clear();
+        int[] arr = new int[value + 1];
+        for (int i = 0; i <= value; i++) {      // инициализируем все числа как простое число 1
+            arr[i] = 1;
         }
- 
         for (int i = 2; i <= Math.sqrt(value); i++) {
-            if (a[i] == 1) {                  // проверяет, является ли `i` простым числом
+            if (arr[i] == 1) {                  // проверяет, является ли i простым числом
                 for (int j = 2; i * j <= value; j++) {
-                    a[i * j] = 0;           // числа, кратные `i`, не являются простыми
+                    arr[i * j] = 0;             // числа, кратные i, не являются простыми
                 }
             }
         }
  
         for (int i = 1; i <= value; i++) {
-            if (a[i] == 1) {
+            if (arr[i] == 1) {
                 this.result.add(i);
             }
         }
