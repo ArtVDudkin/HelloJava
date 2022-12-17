@@ -14,7 +14,7 @@ public class Program {
     
     public static void main(String[] args) {
         int k = 4;                          // число кубиков
-        String signs = "123456";            // значения на гранях кубика 
+        String signs = "123456";            // значения на гранях кубика и их количество
         FindCombo allCombo = new FindCombo();
         allCombo.findCombo(signs, new char[k], 0);
         List<String> comboList = allCombo.showCombo();

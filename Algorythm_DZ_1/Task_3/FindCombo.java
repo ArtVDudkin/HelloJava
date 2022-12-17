@@ -13,7 +13,6 @@ public class FindCombo {
 
     public void findCombo(String alphabet, char[] word, int length) {
         if (length == word.length) {
-            //System.out.printf("%s \n", new String(word));
             this.result.add(new String(word));
             return;
         }
