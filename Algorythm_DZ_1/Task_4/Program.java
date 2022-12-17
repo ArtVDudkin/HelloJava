@@ -15,6 +15,7 @@ public class Program {
     public static void main(String[] args) {
         int num = 50;
         
+        // рекурсивный метод расчета числа Фибоначчи
         Date timeStart = new Date();  
         long res = fiboRecursion(num);
         Date timeFinish = new Date(); 
@@ -23,6 +24,7 @@ public class Program {
         System.out.println("Ticks: " + workTime);
         // для получения 50-го числа в последовательности Фибоначчи рекурсией прошло 31146 тиков
 
+        // линейный метод расчета числа Фибоначчи
         timeStart = new Date();
         res = fiboLinear(num);
         timeFinish = new Date(); 
