@@ -12,7 +12,7 @@ import java.util.List;
 public class Program {
     
     public static void main(String[] args) {
-        int value = 100000;                          // наше исходное число N
+        int value = 500000;                          // наше исходное число N
         Date timeStart = new Date();
         SimpleNumbers simple1 = new SimpleNumbers();
         List<Integer> myList1 = simple1.getSimpleNumbers(value);
@@ -20,7 +20,7 @@ public class Program {
         System.out.println("Простые числа от 1 до " + value);
         System.out.println(myList1);
         long workTime = timeFinish.getTime() - timeStart.getTime();
-        System.out.println("Ticks: " + workTime);       // 1283 ticks for 100.000 numbers 
+        System.out.println("Ticks: " + workTime);       // 7382 ticks for 500.000 numbers 
 
         SimpleNumbers simple2 = new SimpleNumbers();
         timeStart = new Date(); 
@@ -29,6 +29,6 @@ public class Program {
         System.out.println("Простые числа от 1 до " + value);
         System.out.println(myList2);
         workTime = timeFinish.getTime() - timeStart.getTime();
-        System.out.println("Ticks: " + workTime);       // 4 ticks for 100.000 numbers !!
+        System.out.println("Ticks: " + workTime);       // 10 ticks for 500.000 numbers !!
     }
 }

@@ -13,7 +13,7 @@ public class SimpleNumbers {
 
     public List<Integer> getSimpleNumbers(Integer value) {
         boolean simple = true;
-        for (int i = 1; i <= value; i++) {
+        for (int i = 1; i <= value / 2; i++) {
             simple = true;
             for (int j = 2; j < i; j++) {
                 if(i % j == 0) {
