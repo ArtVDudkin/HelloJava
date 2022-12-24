@@ -7,8 +7,15 @@ public class Program {
         RedBlackTree tree = new RedBlackTree();
         tree.add(24);
         tree.add(5);
-        
         TreePrinter.print(tree.getRoot(), "");
+        
+        // Пытаемся добавить в дерево повторяющееся значение и используем обратную связь метода Add о том, добавлено значение или нет
+        if(tree.add(5)) { 
+            TreePrinter.print(tree.getRoot(), "");
+        } else {
+            System.out.println("Error: this value already exists in tree");
+        }                      
+
         tree.add(1);
         System.out.println("-----------");
         TreePrinter.print(tree.getRoot(), "");
