@@ -1,9 +1,9 @@
-package programMergeSort;
+package Task006_mergeSort;
 
 import java.util.Random;
 
-public class programMergeSort {
-   
+public class ProgramMergeSort {
+
     public static Random rand = new Random();
 
     public static int[] FillArrayRandomly(int[] arr, int minValue, int maxValue) {
