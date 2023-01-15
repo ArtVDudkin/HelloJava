@@ -1,3 +1,5 @@
+package Task007_Ferzi;
+
 import java.io.FileWriter;
 import java.io.IOException;
 
