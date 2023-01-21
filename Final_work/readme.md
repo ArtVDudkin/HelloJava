@@ -237,7 +237,7 @@ JOIN Commands AS Cmd
 ON an.command_id=cmd.cmd_id
 ORDER BY An.id ASC;
 
-Скрипт выполнения заданий 7-12 приложен в файле
+Скрипт выполнения заданий 7-12 приложен в [файле](https://github.com/ArtVDudkin/HelloJava/blob/main/Final_work/SQL/FinalTask_Animals.sql)
 
 ### 13. Создать класс с Инкапсуляцией методов и наследованием по диаграмме.
 
