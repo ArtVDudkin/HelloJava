@@ -17,9 +17,7 @@ public abstract class Hero {
         this.armor = armor;
     }
 
-    public int attack(Hero enemy) {
-        return enemy.getWeapon().getStrength();
-    }
+    public abstract int attack(Hero enemy);
 
     public void getDamage(int damage) {
         this.health -= damage;

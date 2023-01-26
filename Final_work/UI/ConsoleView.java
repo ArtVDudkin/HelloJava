@@ -20,13 +20,13 @@ public class ConsoleView implements IView {
 
     @Override
     public void showMenu(int menu) {
-        System.out.println(" 1 - prev  2 - next  3 - add new animal  4 - remove animal  5 - show commands  6 - add new command  7 - save  8 - exit");
+        System.out.println("1 - Пред.  2 - След.  3 - Новое животное  4 - Удалить животное  5 - Показать команды  6 - Новая команда  7 - Сохранить  8 - Выход");
             
     }
 
     @Override
     public void setCurrIndex(int value) {
-        System.out.printf("Current note: %d\n", value + 1);
+        System.out.printf("Текущая строка: %d\n", value + 1);
     }
 
     private Scanner in = new Scanner(System.in);
@@ -40,10 +40,10 @@ public class ConsoleView implements IView {
     @Override
     public void printAnimals(Repository animals) {
         System.out.println("Список животных в приюте на " + LocalDate.now());
-        System.out.println("id   Type\t Class\t Name\t Birthday");  
+        System.out.println("id   Вид\t Класс\t  Кличка\t Дата рождения");  
         for (Animal animal : animals.getAnimalList()) {
             System.out.printf("%d    %s\t %s\t%s\t%s\n", 
-                1, "cat", animal.getClass(),  animal.getBirthday());       
+                1, animal.getClass().getSimpleName(), animal.getClass().getSuperclass().getSimpleName(), animal.getName(), animal.getBirthday());       
         };
         
     }

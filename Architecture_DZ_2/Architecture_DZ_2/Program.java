@@ -15,7 +15,7 @@ public class Program {
         Hero knight1 = knightFactory.createHero("Richard", "SimpleSword", "LatsLevel1");
         Hero knight2 = knightFactory.createHero("Alex", "GoodSword", "LatsLevel2");
 
-        System.out.println("-------------------");
+        System.out.println("-------Game start-------");
         archer1.attack(knight1);
         knight2.attack(archer2);
 

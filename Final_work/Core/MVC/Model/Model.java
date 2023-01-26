@@ -15,7 +15,6 @@ public class Model {
 
     public void add(Animal animal) {
         repo.add(animal);
-        System.out.println(animal.getCommands());
     }
 
     public void remove(Animal animal) {

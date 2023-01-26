@@ -1,6 +1,12 @@
 package Final_work.Core.MVC.Controller;
 
 import Final_work.Core.Models.Animal;
+import Final_work.Core.Models.Types.Dog;
+
+import java.time.LocalDate;
+
+import Final_work.Core.Infrastructure.Counter;
+import Final_work.Core.Infrastructure.OutResourseException;
 import Final_work.Core.MVC.Model.Model;
 import Final_work.Core.MVC.View.IView;
 
@@ -8,26 +14,12 @@ public class Controller {
     
     private Model model;
     private IView view;
+    private int index;
     
     public Controller(Model model, IView view) {
         this.model = model;
         this.view = view;
-    }
-
-    public void addAnimal(Animal animal) {
-        model.add(animal);
-        // Counter ct = new Counter();
-        
-        // try (ct) {
-        //     ct.add();
-        // } catch (MyException e) {
-        //     e.showMessage();
-        // }
-        // ct.add();
-    }
-
-    public void removeAnimal(Animal animal) {
-        model.remove(animal);
+        this.index = -1;
     }
 
     public void updateView() {
@@ -35,26 +27,38 @@ public class Controller {
     }
 
     public void next() {
-    //     if (model.getCurrBook().count() > 0) {
-    //         if (model.getCurrentIndex() < model.getCurrBook().count() -1) {
-    //             model.setCurrentIndex(model.getCurrentIndex() + 1);
-    //             view.print(model.getCurrBook());
-    //             view.setCurrIndex(model.getCurrentIndex());                
-    //         }
-    //     }
+        if (model.getCount() > 0) {
+            if (index < model.getCount() -1) {
+                index++;
+                updateView();
+                view.setCurrIndex(index);                
+            }
+        }
     }
 
     public void prev() {
-    //     if (model.getCurrBook().count() > 1) {
-    //         if (model.getCurrentIndex() > 0) {
-    //             model.setCurrentIndex(model.getCurrentIndex() - 1);
-    //             view.print(model.getCurrBook());
-    //             view.setCurrIndex(model.getCurrentIndex());
-    //         }
-    //     }
+        if (model.getCount() > 1 && index > 0) {
+            index--;
+            updateView();
+            view.setCurrIndex(index);
+        }
     }
 
-    public void add() {
+    public void addAnimal() {
+        model.add(new Dog("Grey", LocalDate.now()));
+        index++;
+        updateView();
+        view.setCurrIndex(index);
+        Counter ct = new Counter();
+        try (ct) {
+            ct.add();
+        } catch (OutResourseException e) {
+            e.showMessage();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        // ct.add();                    this throws exception if command add() used with out resource-try 
+
     //     int id = model.getCurrBook().count() + 1;
     //     String date = String.format("%02d.%02d.%04d", LocalDate.now().getDayOfMonth(), LocalDate.now().getMonthValue(), LocalDate.now().getYear());  
     //     String time = String.format("%02d:%02d", LocalTime.now().getHour(), LocalTime.now().getMinute());
@@ -67,19 +71,20 @@ public class Controller {
     //     view.setCurrIndex(model.getCurrentIndex());
     }
 
-    public void remove() {
-    //     if (model.getCurrBook().count() < 1) {
-    //         model.setCurrentIndex(-1);
-    //         view.print(model.getCurrBook());
-    //         view.setCurrIndex(model.getCurrentIndex());
-    //     } else {
-    //         model.getCurrBook().remove(model.getCurrentIndex());
-    //         model.setCurrentIndex(model.getCurrentIndex() - 1);
-    //         if (model.getCurrentIndex() < 0)
-    //             model.setCurrentIndex(0);
-    //         view.print(model.getCurrBook());
-    //         view.setCurrIndex(model.getCurrentIndex()); 
-    //     }
+    public void removeAnimal() {
+        if (model.getCount() == 0) {
+            index = 0;
+            view.printAnimals(model.getRepo());
+            view.setCurrIndex(index);
+        } else {
+            model.remove(model.getById(index));
+            index--;
+            if (index < 0) {
+                index = -1;
+            }
+            view.printAnimals(model.getRepo());
+            view.setCurrIndex(index);
+        }
     }
 
     public void showCommands() {
