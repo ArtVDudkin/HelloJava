@@ -1,7 +1,6 @@
 package Final_work.UI;
 
 import java.time.LocalDate;
-import java.util.List;
 import java.util.Scanner;
 
 import Final_work.Core.Infrastructure.Repository;
