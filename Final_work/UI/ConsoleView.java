@@ -42,7 +42,7 @@ public class ConsoleView implements IView {
         System.out.println("Список животных в приюте на " + LocalDate.now());
         System.out.println("id   Вид\t Класс\t  Кличка\t Дата рождения");  
         for (Animal animal : animals.getAnimalList()) {
-            System.out.printf("%d    %s\t %s\t%s\t%s\n", 
+            System.out.printf("%d    %s\t %s\t  %s\t\t %s\n", 
                 1, animal.getClass().getSimpleName(), animal.getClass().getSuperclass().getSimpleName(), animal.getName(), animal.getBirthday());       
         };
         
