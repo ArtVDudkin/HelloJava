@@ -1,25 +1,20 @@
 package Final_work.Core.MVC.Controller;
 
-import Final_work.Core.Models.Animal;
-import Final_work.Core.Models.Types.Dog;
-
 import java.time.LocalDate;
 
-import Final_work.Core.Infrastructure.Counter;
-import Final_work.Core.Infrastructure.OutResourseException;
 import Final_work.Core.MVC.Model.Model;
 import Final_work.Core.MVC.View.IView;
+import Final_work.Core.Models.Command;
+import Final_work.Core.Models.Types.Dog;
 
 public class Controller {
     
     private Model model;
     private IView view;
-    private int index;
     
     public Controller(Model model, IView view) {
         this.model = model;
-        this.view = view;
-        this.index = -1;
+        this.view = view;  
     }
 
     public void updateView() {
@@ -27,37 +22,21 @@ public class Controller {
     }
 
     public void next() {
-        if (model.getCount() > 0) {
-            if (index < model.getCount() -1) {
-                index++;
-                updateView();
-                view.setCurrIndex(index);                
-            }
-        }
+        model.next();
+        updateView();
+        view.setCurrIndex(model.getIndex());                
     }
 
     public void prev() {
-        if (model.getCount() > 1 && index > 0) {
-            index--;
-            updateView();
-            view.setCurrIndex(index);
-        }
+        model.prev();
+        updateView();
+        view.setCurrIndex(model.getIndex());
     }
 
     public void addAnimal() {
         model.add(new Dog("Grey", LocalDate.now()));
-        index++;
         updateView();
-        view.setCurrIndex(index);
-        Counter ct = new Counter();
-        try (ct) {
-            ct.add();
-        } catch (OutResourseException e) {
-            e.showMessage();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        // ct.add();                    this throws exception if command add() used with out resource-try 
+        view.setCurrIndex(model.getIndex());
 
     //     int id = model.getCurrBook().count() + 1;
     //     String date = String.format("%02d.%02d.%04d", LocalDate.now().getDayOfMonth(), LocalDate.now().getMonthValue(), LocalDate.now().getYear());  
@@ -72,19 +51,9 @@ public class Controller {
     }
 
     public void removeAnimal() {
-        if (model.getCount() == 0) {
-            index = 0;
-            view.printAnimals(model.getRepo());
-            view.setCurrIndex(index);
-        } else {
-            model.remove(model.getById(index));
-            index--;
-            if (index < 0) {
-                index = -1;
-            }
-            view.printAnimals(model.getRepo());
-            view.setCurrIndex(index);
-        }
+        model.remove(model.getById(model.getIndex()));
+        view.printAnimals(model.getRepo());
+        view.setCurrIndex(model.getIndex());
     }
 
     public void showCommands() {
@@ -92,7 +61,7 @@ public class Controller {
     }
 
     public void addCommand() {
-        
+        model.getById(model.getIndex()).addCommand(new Command("cmd", "descr"));
     }
 
     public void save() {
