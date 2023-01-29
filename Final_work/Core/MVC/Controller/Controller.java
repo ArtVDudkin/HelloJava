@@ -1,7 +1,5 @@
 package Final_work.Core.MVC.Controller;
 
-import java.io.IOException;
-
 import Final_work.Core.MVC.Model.Model;
 import Final_work.Core.MVC.View.IView;
 
@@ -49,7 +47,7 @@ public class Controller {
         view.printCommands(model.getById(model.getIndex()));
     }
 
-    public void addCommand() throws IOException {
+    public void addCommand() {
         if(model.getCount() == 0) {
             view.print("Ошибка! В реестре нет ни одного животного, которому можно добавить команду!");
         } else {

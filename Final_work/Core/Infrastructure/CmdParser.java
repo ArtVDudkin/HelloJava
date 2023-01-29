@@ -1,7 +1,5 @@
 package Final_work.Core.Infrastructure;
 
-import java.io.IOException;
-
 import Final_work.Core.Models.Command;
 
 public class CmdParser {
@@ -10,7 +8,7 @@ public class CmdParser {
     private String command;
     private String description;
     
-    public CmdParser(String input) throws IOException {
+    public CmdParser(String input) {
         if (input == null) {
             throw new NullPointerException("Данные отсутствуют");
         }

@@ -1,6 +1,5 @@
 package Final_work.Core.MVC.Model;
 
-import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -112,7 +111,7 @@ public class Model {
         return 0; 
     }
 
-    public void addCommandTo(Animal animal, String cmd) throws IOException {
+    public void addCommandTo(Animal animal, String cmd) {
         CmdParser cp = new CmdParser(cmd);
         try {
             cp.parseData();
