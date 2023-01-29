@@ -23,12 +23,12 @@ public class Donkey extends PackAnimal implements IRunable, IVoiceble {
 
     @Override
     public void voice() {
-        super.addCommand(new Command("Голос:","Иии-ааа"));
+        super.addCommand(new Command("Голос","Иии-ааа"));
     }
 
     @Override
     public void run() {
-        super.addCommand(new Command("Бежать/идти:","Еле идет с неохотой"));
+        super.addCommand(new Command("Бежать/идти","Еле идет с неохотой"));
     }
     
 }

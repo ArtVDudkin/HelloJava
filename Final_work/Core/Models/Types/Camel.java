@@ -25,17 +25,17 @@ public class Camel extends PackAnimal implements ILearnable, IRunable, IVoiceble
 
     @Override
     public void run() {
-        super.addCommand(new Command("Бежать/идти:","Бежит не быстро и забавно"));
+        super.addCommand(new Command("Бежать/идти","Бежит не быстро и забавно"));
     }
 
     @Override
     public void voice() {
-        super.addCommand(new Command("Голос:","Эо-эо-о"));
+        super.addCommand(new Command("Голос","Эо-эо-о"));
     }
 
     @Override
     public void learn() {
-        super.addCommand(new Command("Запомнить команду:","Я могу запомнить новую команду"));
+        super.addCommand(new Command("Запомнить команду","Я могу запомнить новую команду"));
     }
     
 }

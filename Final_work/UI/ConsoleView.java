@@ -30,12 +30,20 @@ public class ConsoleView implements IView {
         System.out.printf("Текущая строка: %d\n", value + 1);
     }
 
-    private Scanner in = new Scanner(System.in);
+    private Scanner input;
 
     @Override
     public String inputText(String text) {
         System.out.printf("%s", text);
-        return in.nextLine();
+        input = new Scanner(System.in, "IBM866");
+        String inputStr = input.nextLine();
+        if (inputStr.equals("") || inputStr.equals(null)) {
+            System.out.println("Ошибка ввода данных! Попробуйте еще раз!");
+            inputText(text);
+        } else {
+            inputStr = inputStr.replaceAll("\\s+", " ");
+        }
+        return inputStr;
     }
 
     @Override
@@ -52,7 +60,7 @@ public class ConsoleView implements IView {
     public void printCommands(Animal animal) {
         System.out.println("Список команд, которое знает " + animal.getClass().getSimpleName() + " " + animal.getName());
         for (Command cmd : animal.getCommands()) {
-            System.out.printf("%d    %s\n", animal.getCommands().indexOf(cmd) +1, cmd.toString());       
+            System.out.printf("%d   %s\n", animal.getCommands().indexOf(cmd) +1, cmd.toString());       
         }
     }
 

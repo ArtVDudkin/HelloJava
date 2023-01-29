@@ -25,17 +25,17 @@ public class Horse extends PackAnimal implements ILearnable, IRunable, IVoiceble
 
     @Override
     public void voice() {
-        super.addCommand(new Command("Голос:","Иго-го"));
+        super.addCommand(new Command("Голос","Иго-го"));
     }
 
     @Override
     public void run() {
-        super.addCommand(new Command("Бежать/идти:","Бежит рысцой"));
+        super.addCommand(new Command("Бежать/идти","Бежит рысцой"));
     }
 
     @Override
     public void learn() {
-        super.addCommand(new Command("Запомнить команду:","Я могу запомнить новую команду"));
+        super.addCommand(new Command("Запомнить команду","Я могу запомнить новую команду"));
     }
     
 }

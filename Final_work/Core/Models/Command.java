@@ -14,7 +14,7 @@ public class Command {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(this.cmd);
-        sb.append(" ");
+        sb.append(": ");
         sb.append(this.description);
         return sb.toString();
     }

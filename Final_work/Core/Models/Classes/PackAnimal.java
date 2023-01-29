@@ -42,7 +42,7 @@ public class PackAnimal extends Animal implements ICarryLoad {
 
     @Override
     public void carryLoad() {
-        super.commands.add(new Command("Нести груз:", "Я могу переносить грузы"));
+        super.commands.add(new Command("Нести груз", "Я могу переносить грузы"));
         
     }
 

@@ -29,12 +29,12 @@ public class Hamster extends Pet implements IRunable, IPlayable, IVoiceble {
 
     @Override
     public void play() {
-        super.addCommand(new Command("Бежать/идти:","Играет в прятки"));
+        super.addCommand(new Command("Бежать/идти","Играет в прятки"));
     }
 
     @Override
     public void run() {
-        super.addCommand(new Command("Бежать/идти:","Бежит, вращая колесо"));
+        super.addCommand(new Command("Бежать/идти","Бежит, вращая колесо"));
     }
     
 }

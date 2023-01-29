@@ -30,32 +30,32 @@ public class Dog extends Pet implements ILearnable, IGivePaw, IPlayable, ISitabl
 
     @Override
     public void run() {
-        super.addCommand(new Command("Бежать/идти:","Бежит, виляя хвостом"));
+        super.addCommand(new Command("Бежать/идти","Бежит, виляя хвостом"));
     }
 
     @Override
     public void play() {
-        super.addCommand(new Command("Играть:","Приносит палку или мячик"));
+        super.addCommand(new Command("Играть","Приносит палку или мячик"));
     }
 
     @Override
     public void givePaw() {
-        super.addCommand(new Command("Дай лапу:","Дает переднюю лапу"));
+        super.addCommand(new Command("Дай лапу","Дает переднюю лапу"));
     }
 
     @Override
     public void sit() {
-        super.addCommand(new Command("Сидеть:","Садится на задние лапы"));
+        super.addCommand(new Command("Сидеть","Садится на задние лапы"));
     }
 
     @Override
     public void voice() {
-        super.addCommand(new Command("Голос:","Гав-Гав"));
+        super.addCommand(new Command("Голос","Гав-Гав"));
     }
 
     @Override
     public void learn() {
-        super.addCommand(new Command("Запомнить команду:","Я могу запомнить новую команду"));
+        super.addCommand(new Command("Запомнить команду","Я могу запомнить новую команду"));
     }
 
 }

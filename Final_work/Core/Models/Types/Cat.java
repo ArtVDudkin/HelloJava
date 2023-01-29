@@ -26,22 +26,22 @@ public class Cat extends Pet implements IPlayable, ISitable, IRunable, IVoiceble
 
     @Override
     public void voice() {
-        super.addCommand(new Command("Голос:","Мяу-Мяу"));
+        super.addCommand(new Command("Голос","Мяу-Мяу"));
     }
 
     @Override
     public void run() {
-        super.addCommand(new Command("Бежать/идти:","Бежит быстро"));
+        super.addCommand(new Command("Бежать/идти","Бежит быстро"));
     }
 
     @Override
     public void sit() {
-        super.addCommand(new Command("Сидеть:","Садится на задние лапы"));
+        super.addCommand(new Command("Сидеть","Садится на задние лапы"));
     }
 
     @Override
     public void play() {
-        super.addCommand(new Command("Играть:","Весело играет с предметами"));
+        super.addCommand(new Command("Играть","Весело играет с предметами"));
     }
     
 }

@@ -1,8 +1,11 @@
 package Final_work.Core.MVC.Model;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 
+import Final_work.Core.Infrastructure.BadParsingException;
+import Final_work.Core.Infrastructure.CmdParser;
 import Final_work.Core.Infrastructure.Counter;
 import Final_work.Core.Infrastructure.OutResourseException;
 import Final_work.Core.Infrastructure.Repository;
@@ -109,6 +112,14 @@ public class Model {
         return 0; 
     }
 
-
+    public void addCommandTo(Animal animal, String cmd) throws IOException {
+        CmdParser cp = new CmdParser(cmd);
+        try {
+            cp.parseData();
+            animal.addCommand(cp.makeCommand());
+        } catch (BadParsingException e) {
+            e.printStackTrace();
+        }
+    }
     
 }
