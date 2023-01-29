@@ -6,6 +6,7 @@ import java.util.Scanner;
 import Final_work.Core.Infrastructure.Repository;
 import Final_work.Core.MVC.View.IView;
 import Final_work.Core.Models.Animal;
+import Final_work.Core.Models.Command;
 
 public class ConsoleView implements IView {
     
@@ -40,12 +41,19 @@ public class ConsoleView implements IView {
     @Override
     public void printAnimals(Repository animals) {
         System.out.println("Список животных в приюте на " + LocalDate.now());
-        System.out.println("id   Вид\t Класс\t  Кличка\t Дата рождения");  
+        System.out.println("№   Вид\t Класс\t  Кличка\t Дата рождения");  
         for (Animal animal : animals.getAnimalList()) {
             System.out.printf("%d    %s\t %s\t  %s\t\t %s\n", 
-                1, animal.getClass().getSimpleName(), animal.getClass().getSuperclass().getSimpleName(), animal.getName(), animal.getBirthday());       
-        };
-        
+            animals.getAnimalList().indexOf(animal) +1, animal.getClass().getSimpleName(), animal.getClass().getSuperclass().getSimpleName(), animal.getName(), animal.getBirthday());       
+        }
+    }
+
+    @Override
+    public void printCommands(Animal animal) {
+        System.out.println("Список команд, которое знает " + animal.getClass().getSimpleName() + " " + animal.getName());
+        for (Command cmd : animal.getCommands()) {
+            System.out.printf("%d    %s\n", animal.getCommands().indexOf(cmd) +1, cmd.toString());       
+        }
     }
 
     @Override

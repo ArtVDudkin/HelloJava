@@ -1,11 +1,13 @@
 package Final_work.Core.MVC.Model;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import Final_work.Core.Infrastructure.Counter;
 import Final_work.Core.Infrastructure.OutResourseException;
 import Final_work.Core.Infrastructure.Repository;
 import Final_work.Core.Models.Animal;
+import Final_work.Core.Models.Types.Dog;
 
 public class Model {
 
@@ -17,7 +19,7 @@ public class Model {
         this.index = -1;
     }
 
-    public void add(Animal animal) {
+    public void add() {
         Counter ct = new Counter();
         try (ct) {
             ct.add();
@@ -27,6 +29,17 @@ public class Model {
             e.printStackTrace();
         }
         // ct.add();                    this throws exception if command add() used with out resource-try 
+    
+    //     int id = model.getCurrBook().count() + 1;
+    //     String date = String.format("%02d.%02d.%04d", LocalDate.now().getDayOfMonth(), LocalDate.now().getMonthValue(), LocalDate.now().getYear());  
+    //     String time = String.format("%02d:%02d", LocalTime.now().getHour(), LocalTime.now().getMinute());
+    //     String deadline = view.inputText("Введите крайний срок: дд.мм.гггг: ");
+    //     String task = view.inputText("Введите текст задачи: ");
+    //     String author = view.inputText("Введите автора задачи: ");
+    //     Priority priority = Priority.toPriority(view.inputText("Введите приоритет задачи (HIGH, MEDIUM, LOW): "));
+    //     model.getCurrBook().add(new Note(id, date, time, deadline, task, author, priority));
+   
+        Animal animal = new Dog("Grey", LocalDate.now());
         repo.add(animal);
         this.index++;
     }
@@ -95,5 +108,7 @@ public class Model {
         }
         return 0; 
     }
+
+
     
 }

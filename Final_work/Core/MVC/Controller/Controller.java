@@ -1,11 +1,8 @@
 package Final_work.Core.MVC.Controller;
 
-import java.time.LocalDate;
-
 import Final_work.Core.MVC.Model.Model;
 import Final_work.Core.MVC.View.IView;
 import Final_work.Core.Models.Command;
-import Final_work.Core.Models.Types.Dog;
 
 public class Controller {
     
@@ -34,20 +31,9 @@ public class Controller {
     }
 
     public void addAnimal() {
-        model.add(new Dog("Grey", LocalDate.now()));
+        model.add();
         updateView();
         view.setCurrIndex(model.getIndex());
-
-    //     int id = model.getCurrBook().count() + 1;
-    //     String date = String.format("%02d.%02d.%04d", LocalDate.now().getDayOfMonth(), LocalDate.now().getMonthValue(), LocalDate.now().getYear());  
-    //     String time = String.format("%02d:%02d", LocalTime.now().getHour(), LocalTime.now().getMinute());
-    //     String deadline = view.inputText("Введите крайний срок: дд.мм.гггг: ");
-    //     String task = view.inputText("Введите текст задачи: ");
-    //     String author = view.inputText("Введите автора задачи: ");
-    //     Priority priority = Priority.toPriority(view.inputText("Введите приоритет задачи (HIGH, MEDIUM, LOW): "));
-    //     model.getCurrBook().add(new Note(id, date, time, deadline, task, author, priority));
-    //     view.print(model.getCurrBook());
-    //     view.setCurrIndex(model.getCurrentIndex());
     }
 
     public void removeAnimal() {
@@ -57,7 +43,7 @@ public class Controller {
     }
 
     public void showCommands() {
-        
+        view.printCommands(model.getById(model.getIndex()));
     }
 
     public void addCommand() {
