@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import Final_work.Core.MVC.Model.Model;
 import Final_work.Core.MVC.View.IView;
-import Final_work.Core.Models.Command;
 
 public class Controller {
     
@@ -56,7 +55,6 @@ public class Controller {
         } else {
             String msg = "Введите в одну строку команду и её описание. Для разделения команды и описания используйте знак =\n";
             model.addCommandTo(model.getById(model.getIndex()), view.inputText(msg));
-            //model.getById(model.getIndex()).addCommand(new Command("cmd", "descr"));
         }
     }
 
