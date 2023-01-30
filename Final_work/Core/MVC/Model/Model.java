@@ -9,7 +9,9 @@ import Final_work.Core.Infrastructure.Counter;
 import Final_work.Core.Infrastructure.OutResourseException;
 import Final_work.Core.Infrastructure.Repository;
 import Final_work.Core.Models.Animal;
+import Final_work.Core.Models.Behavior.ILearnable;
 import Final_work.Core.Models.Types.Dog;
+import Final_work.Core.Models.Types.Hamster;
 
 public class Model {
 
@@ -115,7 +117,11 @@ public class Model {
         CmdParser cp = new CmdParser(cmd);
         try {
             cp.parseData();
-            animal.addCommand(cp.makeCommand());
+            if(animal instanceof ILearnable) {
+                animal.addCommand(cp.makeCommand());
+            } else {
+                throw new RuntimeException("Это животное не может изучать новые команды");
+            }
         } catch (BadParsingException e) {
             e.printStackTrace();
         }
