@@ -1,6 +1,5 @@
 package Final_work.Core.MVC.Model;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import Final_work.Core.Infrastructure.AnimalFactory;
@@ -12,8 +11,6 @@ import Final_work.Core.Infrastructure.OutResourseException;
 import Final_work.Core.Infrastructure.Repository;
 import Final_work.Core.Models.Animal;
 import Final_work.Core.Models.Behavior.ILearnable;
-import Final_work.Core.Models.Types.Dog;
-import Final_work.Core.Models.Types.Hamster;
 
 public class Model {
 
@@ -36,19 +33,9 @@ public class Model {
         }
         // ct.add();                  //  this throws exception if command add() used with out resource-try 
     
-    //     String date = String.format("%02d.%02d.%04d", LocalDate.now().getDayOfMonth(), LocalDate.now().getMonthValue(), LocalDate.now().getYear());  
-    //     String time = String.format("%02d:%02d", LocalTime.now().getHour(), LocalTime.now().getMinute());
-    //     String deadline = view.inputText("Введите крайний срок: дд.мм.гггг: ");
-    //     String task = view.inputText("Введите текст задачи: ");
-    //     String author = view.inputText("Введите автора задачи: ");
-    //     Priority priority = Priority.toPriority(view.inputText("Введите приоритет задачи (HIGH, MEDIUM, LOW): "));
-    //     model.getCurrBook().add(new Note(id, date, time, deadline, task, author, priority));
         AnimalParcer anp = new AnimalParcer(text);
         AnimalFactory anFactory = AnimalFactory.getFactory();
-        //Animal animal = new Dog("Grey", LocalDate.now());
         anp.parseData();
-        System.out.println(anp.getName());
-        System.out.println(anp.getType());
         if(anp.getName() != null && anp.getType() != null && anp.getBirthday() != null) {
             Animal animal = anFactory.createAnimal(anp.getName(), anp.getType(), anp.getBirthday());
             repo.add(animal);
