@@ -3,6 +3,8 @@ package Final_work.Core.MVC.Model;
 import java.time.LocalDate;
 import java.util.List;
 
+import Final_work.Core.Infrastructure.AnimalFactory;
+import Final_work.Core.Infrastructure.AnimalParcer;
 import Final_work.Core.Infrastructure.BadParsingException;
 import Final_work.Core.Infrastructure.CmdParser;
 import Final_work.Core.Infrastructure.Counter;
@@ -23,7 +25,7 @@ public class Model {
         this.index = -1;
     }
 
-    public void add() {
+    public void add(String text) {
         Counter ct = new Counter();
         try (ct) {
             ct.add();
@@ -32,9 +34,8 @@ public class Model {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        // ct.add();                    this throws exception if command add() used with out resource-try 
+        // ct.add();                  //  this throws exception if command add() used with out resource-try 
     
-    //     int id = model.getCurrBook().count() + 1;
     //     String date = String.format("%02d.%02d.%04d", LocalDate.now().getDayOfMonth(), LocalDate.now().getMonthValue(), LocalDate.now().getYear());  
     //     String time = String.format("%02d:%02d", LocalTime.now().getHour(), LocalTime.now().getMinute());
     //     String deadline = view.inputText("Введите крайний срок: дд.мм.гггг: ");
@@ -42,10 +43,17 @@ public class Model {
     //     String author = view.inputText("Введите автора задачи: ");
     //     Priority priority = Priority.toPriority(view.inputText("Введите приоритет задачи (HIGH, MEDIUM, LOW): "));
     //     model.getCurrBook().add(new Note(id, date, time, deadline, task, author, priority));
-   
-        Animal animal = new Dog("Grey", LocalDate.now());
-        repo.add(animal);
-        this.index++;
+        AnimalParcer anp = new AnimalParcer(text);
+        AnimalFactory anFactory = AnimalFactory.getFactory();
+        //Animal animal = new Dog("Grey", LocalDate.now());
+        anp.parseData();
+        System.out.println(anp.getName());
+        System.out.println(anp.getType());
+        if(anp.getName() != null && anp.getType() != null && anp.getBirthday() != null) {
+            Animal animal = anFactory.createAnimal(anp.getName(), anp.getType(), anp.getBirthday());
+            repo.add(animal);
+            this.index++;
+        }
     }
 
     public void remove(Animal animal) {

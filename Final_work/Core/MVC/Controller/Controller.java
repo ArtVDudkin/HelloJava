@@ -31,8 +31,7 @@ public class Controller {
 
     public void addAnimal() {
         String msg = "Введите данные животного в одну строку через запятую в формате: \nВид животного, имя, дата рождения (в формате дд.мм.гггг)\n";
-        view.inputText(msg);
-        model.add();
+        model.add(view.inputText(msg));
         updateView();
         view.setCurrIndex(model.getIndex());
     }
