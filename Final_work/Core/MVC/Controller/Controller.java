@@ -2,6 +2,7 @@ package Final_work.Core.MVC.Controller;
 
 import Final_work.Core.MVC.Model.Model;
 import Final_work.Core.MVC.View.IView;
+import Final_work.Core.Models.Behavior.ILearnable;
 
 public class Controller {
     
@@ -50,8 +51,15 @@ public class Controller {
         if(model.getCount() == 0) {
             view.print("Ошибка! В реестре нет ни одного животного, которому можно добавить команду!");
         } else {
-            String msg = "Введите в одну строку команду и её описание. Для разделения команды и описания используйте знак =\n";
-            model.addCommandTo(model.getById(model.getIndex()), view.inputText(msg));
+            if(model.getById(model.getIndex()) instanceof ILearnable) {
+                String msg = "Введите в одну строку команду и её описание. Для разделения команды и описания используйте знак =\n";
+                model.addCommandTo(model.getById(model.getIndex()), view.inputText(msg));
+                view.printCommands(model.getById(model.getIndex()));
+            } else {
+                view.print("Это животное не может изучать новые команды");
+                view.printCommands(model.getById(model.getIndex()));
+            }
+            
         }
     }
 

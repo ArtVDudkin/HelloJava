@@ -112,13 +112,10 @@ public class Model {
         CmdParser cp = new CmdParser(cmd);
         try {
             cp.parseData();
-            if(animal instanceof ILearnable) {
-                animal.addCommand(cp.makeCommand());
-            } else {
-                throw new RuntimeException("Это животное не может изучать новые команды");
-            }
+            animal.addCommand(cp.makeCommand());
+            
         } catch (BadParsingException e) {
-            e.printStackTrace();
+            e.getMessage();
         }
     }
     
