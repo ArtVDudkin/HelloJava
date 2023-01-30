@@ -10,7 +10,6 @@ import Final_work.Core.Infrastructure.Counter;
 import Final_work.Core.Infrastructure.OutResourseException;
 import Final_work.Core.Infrastructure.Repository;
 import Final_work.Core.Models.Animal;
-import Final_work.Core.Models.Behavior.ILearnable;
 
 public class Model {
 
